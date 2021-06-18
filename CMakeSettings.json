@@ -64,6 +64,11 @@
           "name": "CMAKE_CXX_EXTENSIONS",
           "value": "OFF",
           "type": "BOOL"
+        },
+        {
+          "name": "VCPKG_TARGET_TRIPLET",
+          "value": "x64-windows-static",
+          "type": "STRING"
         }
       ]
     },
@@ -91,6 +96,11 @@
           "name": "CMAKE_CXX_EXTENSIONS",
           "value": "OFF",
           "type": "BOOL"
+        },
+        {
+          "name": "CMAKE_PREFIX_PATH",
+          "value": "/usr/lib/x86_64-linux-gnu/cmake",
+          "type": "STRING"
         }
       ],
       "inheritEnvironments": [ "linux_x64" ],

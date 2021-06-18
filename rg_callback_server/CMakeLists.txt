@@ -2,7 +2,7 @@
 # 프로젝트 특정 논리를 정의합니다.
 #
 cmake_minimum_required (VERSION 3.8)
-
+message(STATUS "CmakeList at ${CMAKE_CURRENT_SOURCE_DIR}")
 
 # Add include directories & libraries
 if (WIN32)   
@@ -10,12 +10,13 @@ if (WIN32)
     # GRPC
     include_directories("C:\\mslmlib\\grpc_1.38\\include")
     link_directories("C:\\mslmlib\\grpc_1.38\\lib\\Debug")
+    set(GRPC_LIBS "C:\\mslmlib\\grpc_1.38\\lib\\Debug\\*.lib")
 
     # OPENSSL
     include_directories("C:\\mslmlib\\OpenSSL\\include")
     link_directories("C:\\mslmlib\\OpenSSL\\lib")
 
-    set ( PROJECT_LINK_LIBS "C:\\mslmlib\\grpc_1.38\\lib\\Debug\\*.lib" libcrypto.lib libssl.lib ws2_32.lib)
+    set ( PROJECT_LINK_LIBS ${GRPC_LIBS} libcrypto.lib libssl.lib ws2_32.lib)
 
 elseif(UNIX)
 
@@ -39,21 +40,21 @@ endif()
 
 
 # Compile
-add_executable (CMake_GRPC "helper.cc" "helper.h"
+add_executable (rg_callback_server "helper.cc" "helper.h"
 							"route_guide.grpc.pb.cc" "route_guide.grpc.pb.h" "route_guide.pb.cc" "route_guide.pb.h"												
-							"route_guide_callback_server.cc"
+							"route_guide_server.cc"
 				)
 
 if(MSVC)
-    add_definitions(-DGRPC_CALLBACK_API_NONEXPERIMENTAL)
+    #add_definitions(-DGRPC_CALLBACK_API_NONEXPERIMENTAL)
 endif()
 
 if(UNIX)
-    add_definitions(-DGRPC_CALLBACK_API_NONEXPERIMENTAL)
+    #add_definitions(-DGRPC_CALLBACK_API_NONEXPERIMENTAL)
 endif()
 
 
 # Add to linker
-target_link_libraries(CMake_GRPC ${PROJECT_LINK_LIBS} )
+target_link_libraries(rg_callback_server ${PROJECT_LINK_LIBS} )
 
 
