@@ -10,3 +10,9 @@ add_subdirectory ("rg_callback_server")
 add_subdirectory("rg_callback_client")
 
 add_subdirectory("cpprest_client")
+
+add_subdirectory("grpc_keepalive_client")
+
+add_subdirectory("grpc_keepalive_server")
+
+add_subdirectory("Cloudein_API_Client")

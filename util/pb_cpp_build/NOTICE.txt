@@ -1,0 +1,7 @@
+프로그램 정보
+
+	빌드 타입 					: static
+	
+	grpc_cpp_plugin.exe 	: version 3.18.0
+
+	protoc.exe				: version 3.18
