@@ -16,3 +16,5 @@ add_subdirectory("grpc_keepalive_client")
 add_subdirectory("grpc_keepalive_server")
 
 add_subdirectory("Cloudein_API_Client")
+
+add_subdirectory("Cloudein_API_Server")

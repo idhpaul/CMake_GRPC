@@ -15,6 +15,8 @@ int main()
 	auto state_connect(std::make_shared<StateConnect>());
 	auto state_release(std::make_shared<StateRelease>());
 
+	context->setGRPC("localhost", "50051");
+
 	context->setState(state_allocate);
 	context->request();
 	std::cout << context->response() << std::endl;
@@ -30,6 +32,11 @@ int main()
 	context->setState(state_release);
 	context->request();
 	std::cout << context->response() << std::endl;
+
+	while (true)
+	{
+
+	}
 
 
 	return 0;
