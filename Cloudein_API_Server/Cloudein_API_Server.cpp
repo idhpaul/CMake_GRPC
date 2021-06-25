@@ -50,7 +50,6 @@ public:
         cq_->Shutdown();
     }
 
-    // There is no shutdown handling in this code.
     void Run() {
         std::string server_address("0.0.0.0:50051");
 
@@ -147,20 +146,19 @@ private:
         CallStatus status_;  // The current serving state.
     };
 
-    // This can be run in multiple threads if needed.
     void HandleRpcs() {
         // Spawn a new CallData instance to serve new clients.
         new CallData(&service_, cq_.get());
-        void* tag;  // uniquely identifies a request.
+
+        void* tag;
         bool ok;
+
         while (true) {
-            // Block waiting to read the next event from the completion queue. The
-            // event is uniquely identified by its tag, which in this case is the
-            // memory address of a CallData instance.
-            // The return value of Next should always be checked. This return value
-            // tells us whether there is any kind of event or cq_ is shutting down.
+
             GPR_ASSERT(cq_->Next(&tag, &ok));
+
             GPR_ASSERT(ok);
+
             static_cast<CallData*>(tag)->Proceed();
         }
     }

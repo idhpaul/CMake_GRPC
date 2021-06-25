@@ -39,7 +39,12 @@ elseif(UNIX)
 endif()
 
 # Compile
-add_executable(Cloudein_API_Client "Cloudein_API_Client.cpp" "Cloudein_API_Client.h" "CloudeinSession.cpp" "CloudeinSession.h" "CloudeinAPI.grpc.pb.cc" "CloudeinAPI.grpc.pb.h" "CloudeinAPI.pb.cc" "CloudeinAPI.pb.h")
+add_executable(Cloudein_API_Client 
+    "Cloudein_API_Client.cpp" "Cloudein_API_Client.h" 
+    "Cloudein_Session_Common.h" "Cloudein_Session.cpp" "Cloudein_Session.h" 
+    "Cloudein_Session_gRPC_Client.h" "Cloudein_Session_gRPC_Client.cpp"
+    "CloudeinAPI.grpc.pb.cc" "CloudeinAPI.grpc.pb.h" "CloudeinAPI.pb.cc" "CloudeinAPI.pb.h"
+    )
 
 if(MSVC)
     add_definitions(-DGRPC_CALLBACK_API_NONEXPERIMENTAL)

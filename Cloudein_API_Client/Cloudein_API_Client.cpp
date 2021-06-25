@@ -1,7 +1,7 @@
 ﻿// Cloudein_API_Client.cpp: 대상의 소스 파일입니다.
 //
 
-#include "Cloudein_API_Client.h"
+#include "Cloudein_Session.h"
 
 #include <iostream>
 #include <memory>
@@ -37,7 +37,7 @@ int main()
 	int num;
 	while (run)
 	{
-		std::cout << "Enter 0 is Cloudein Client Shutdown : ";
+		std::cout << "Enter 0(gRPC Shutdown) / 1(call Allocate) / 2(call prepare) / 3(call connect) / 4(call release) => ";
 		std::cin >> num;
 
 		switch (num)
@@ -45,6 +45,26 @@ int main()
 		case 0:
 			std::cout << "Cloudein Client is Shutting down" << std::endl;
 			run = false;
+			break;
+		case 1:
+			context->setState(state_allocate);
+			context->request();
+			std::cout << context->response() << std::endl;
+			break;
+		case 2:
+			context->setState(state_prepare);
+			context->request();
+			std::cout << context->response() << std::endl;
+			break;
+		case 3:
+			context->setState(state_connect);
+			context->request();
+			std::cout << context->response() << std::endl;
+			break;
+		case 4:
+			context->setState(state_release);
+			context->request();
+			std::cout << context->response() << std::endl;
 			break;
 		default:
 			std::cout << "Only allow 0" << std::endl;
