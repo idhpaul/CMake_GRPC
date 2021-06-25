@@ -33,10 +33,26 @@ int main()
 	context->request();
 	std::cout << context->response() << std::endl;
 
-	while (true)
+	bool run = true;
+	int num;
+	while (run)
 	{
+		std::cout << "Enter 0 is Cloudein Client Shutdown : ";
+		std::cin >> num;
 
+		switch (num)
+		{
+		case 0:
+			std::cout << "Cloudein Client is Shutting down" << std::endl;
+			run = false;
+			break;
+		default:
+			std::cout << "Only allow 0" << std::endl;
+			break;
+		}
 	}
+	
+	context->unsetGRPC();
 
 
 	return 0;

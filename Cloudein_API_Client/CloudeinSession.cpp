@@ -21,18 +21,33 @@ CloudeinSessionContext::~CloudeinSessionContext()
     {
         state_.reset();
     }
-
-    thread_grpc_resp_cq.join();
 }
 
 void CloudeinSessionContext::setGRPC(const std::string ip, const std::string port)
 {
-
+    std::cout << "[front]Call SetGPC" << std::endl;
     std::string connectinfo = ip + ":" + port;
 
     grpcClient_ = std::make_shared<CloudeinClient>(grpc::CreateChannel(connectinfo, grpc::InsecureChannelCredentials()));
 
-    thread_grpc_resp_cq = std::thread(&CloudeinClient::AsyncCompleteRpc, grpcClient_.get());
+    thread_grpc_resp_cq = std::thread(&CloudeinClient::StartAsyncCompleteRpc, grpcClient_.get());
+    std::cout << "[end]Call SetGPC" << std::endl;
+
+}
+
+void CloudeinSessionContext::unsetGRPC()
+{
+    std::cout << "[front]Call unsetGRPC" << std::endl;
+
+    grpcClient_->StopAsyncCompleteRpc();
+
+    if (thread_grpc_resp_cq.joinable())
+    {
+        thread_grpc_resp_cq.join();
+    }
+
+    std::cout << "[end]Call unsetGRPC" << std::endl;
+
 }
 
 void CloudeinSessionContext::setState(std::shared_ptr<CloudeinState> state)
@@ -54,6 +69,8 @@ std::string CloudeinSessionContext::response()
     return state_->return_handle();
 }
 
+
+
 /*
  *     Allocate API Request/Response message struct
  */
@@ -64,8 +81,7 @@ void StateAllocate::handle(CloudeinSessionContext* session_context)
 
 std::string StateAllocate::return_handle()
 {
-    std::cout << "info allocate resp" << this->info_.allocate_port1 << std::endl;
-    return "StateAllocate";
+    return "resp-Allocate";
 }
 
 /*
@@ -79,8 +95,7 @@ void StatePrepare::handle(CloudeinSessionContext* session_context)
 
 std::string StatePrepare::return_handle()
 {
-    std::cout << "info State resp " << this->info_.allocate_port2 << std::endl;
-    return "StatePrepare";
+    return "resp-Prepare";
 }
 
 /*
@@ -94,8 +109,7 @@ void StateConnect::handle(CloudeinSessionContext* session_context)
 
 std::string StateConnect::return_handle()
 {
-    std::cout << "info Connect resp " << this->info_.allocate_port3 << std::endl;
-    return "StateConnect";
+    return "resp-Connect";
 }
 
 /*
@@ -109,30 +123,34 @@ void StateRelease::handle(CloudeinSessionContext* session_context)
 
 std::string StateRelease::return_handle()
 {
-    std::cout << "info Release resp " << this->info_.allocate_port4 << std::endl;
-    return "StateRelease";
+    return "resp-Release";
 }
 
-std::string CloudeinState::return_handle()
-{
-    return std::string();
-}
 
-void CloudeinClient::Enqueue_tag_idx(CLOUDEIN_GRPC_TAG tag_idx, void* objAddr)
+void CloudeinClient::tag_push(CLOUDEIN_GRPC_TAG tag_idx, void* objAddr)
 {
-    std::lock_guard<std::mutex> lock_guard(queue_mutex_);
+    std::lock_guard<std::mutex> lock_guard(mutex_list_tag_idx_);
 
     auto tag_idx_pair = std::make_pair(tag_idx, objAddr);
-    queue_tag_idx_.push(tag_idx_pair);
+    list_tag_idx_.push_back(tag_idx_pair);
 }
-CLOUDEIN_GRPC_TAG CloudeinClient::Dequeue_tag_idx(void* objAddr)
+
+CLOUDEIN_GRPC_TAG CloudeinClient::tag_pop(void* objAddr)
 {
-    std::lock_guard<std::mutex> lock_guard(queue_mutex_);
+    std::lock_guard<std::mutex> lock_guard(mutex_list_tag_idx_);
 
-    auto front_pair = queue_tag_idx_.front();
-    queue_tag_idx_.pop();
+    std::list<std::pair<CLOUDEIN_GRPC_TAG, void*>>::iterator it = 
+        std::find_if(list_tag_idx_.begin(), 
+            list_tag_idx_.end(), 
+            [objAddr](std::pair<CLOUDEIN_GRPC_TAG, void*> pair) -> CLOUDEIN_GRPC_TAG {
+                if (pair.second == objAddr)
+                    return pair.first;
+                });
 
-    if (front_pair.second == objAddr)
-        return front_pair.first;
+    auto return_idx = it->first;
+    std::cout << "tag : " << return_idx << std::endl;
 
+    list_tag_idx_.erase(it);
+
+    return return_idx;
 }

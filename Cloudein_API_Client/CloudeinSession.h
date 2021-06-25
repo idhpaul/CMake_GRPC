@@ -89,7 +89,7 @@ public:
 		call->deadline_ = std::chrono::system_clock::now() + std::chrono::milliseconds(5000);
 		call->context.set_deadline(call->deadline_);
 
-		Enqueue_tag_idx(CLOUDEIN_GRPC_TAG::DoAllocateAPI, (void*)call);
+		tag_push(CLOUDEIN_GRPC_TAG::DoAllocateAPI, (void*)call);
 
 		call->response_reader_allocate = stub_->PrepareAsyncDoAllocateAPI(&call->context, request, &cq_);
 		call->response_reader_allocate->StartCall();
@@ -106,7 +106,7 @@ public:
 		call->deadline_ = std::chrono::system_clock::now() + std::chrono::milliseconds(5000);
 		call->context.set_deadline(call->deadline_);
 
-		Enqueue_tag_idx(CLOUDEIN_GRPC_TAG::DoPrepareAPI, (void*)call);
+		tag_push(CLOUDEIN_GRPC_TAG::DoPrepareAPI, (void*)call);
 
 		call->response_reader_prepare = stub_->PrepareAsyncDoPrepareAPI(&call->context, request, &cq_);
 		call->response_reader_prepare->StartCall();
@@ -123,7 +123,7 @@ public:
 		call->deadline_ = std::chrono::system_clock::now() + std::chrono::milliseconds(5000);
 		call->context.set_deadline(call->deadline_);
 
-		Enqueue_tag_idx(CLOUDEIN_GRPC_TAG::DoConnectAPI, (void*)call);
+		tag_push(CLOUDEIN_GRPC_TAG::DoConnectAPI, (void*)call);
 
 		call->response_reader_connect = stub_->PrepareAsyncDoConnectAPI(&call->context, request, &cq_);
 		call->response_reader_connect->StartCall();
@@ -140,23 +140,28 @@ public:
 		call->deadline_ = std::chrono::system_clock::now() + std::chrono::milliseconds(5000);
 		call->context.set_deadline(call->deadline_);
 
-		Enqueue_tag_idx(CLOUDEIN_GRPC_TAG::DoReleaseAPI, (void*)call);
+		tag_push(CLOUDEIN_GRPC_TAG::DoReleaseAPI, (void*)call);
 
 		call->response_reader_release = stub_->PrepareAsyncDoReleaseAPI(&call->context, request, &cq_);
 		call->response_reader_release->StartCall();
 		call->response_reader_release->Finish(&call->resp, &call->status, (void*)call);
 	}
 
-	void AsyncCompleteRpc() {
+	void StartAsyncCompleteRpc() {
+
+		std::cout << "--- [front] Start Async ComplteRpc" << std::endl;
+
 		void* got_tag;
 		bool ok = false;
-		std::list<std::pair<CLOUDEIN_GRPC_TAG, void*>>::iterator it;
 
 		while (cq_.Next(&got_tag, &ok))
 		{
-			auto tag = Dequeue_tag_idx(got_tag);
+
+			auto grpc_tag = tag_pop(got_tag);
 			
-			if (tag == CLOUDEIN_GRPC_TAG::DoAllocateAPI)
+			switch (grpc_tag)
+			{
+			case DoAllocateAPI:
 			{
 				AsyncClientCall_DoAllocate* call = static_cast<AsyncClientCall_DoAllocate*>(got_tag);
 
@@ -180,7 +185,8 @@ public:
 
 				delete call;
 			}
-			else if (tag == CLOUDEIN_GRPC_TAG::DoPrepareAPI)
+				break;
+			case DoPrepareAPI:
 			{
 				AsyncClientCall_DoPrepare* call = static_cast<AsyncClientCall_DoPrepare*>(got_tag);
 
@@ -193,7 +199,8 @@ public:
 
 				delete call;
 			}
-			else if (tag == CLOUDEIN_GRPC_TAG::DoConnectAPI)
+				break;
+			case DoConnectAPI:
 			{
 				AsyncClientCall_DoConnect* call = static_cast<AsyncClientCall_DoConnect*>(got_tag);
 
@@ -206,7 +213,8 @@ public:
 
 				delete call;
 			}
-			else if (tag == CLOUDEIN_GRPC_TAG::DoReleaseAPI)
+				break;
+			case DoReleaseAPI:
 			{
 				AsyncClientCall_DoRelease* call = static_cast<AsyncClientCall_DoRelease*>(got_tag);
 
@@ -219,8 +227,31 @@ public:
 
 				delete call;
 			}
+				break;
+			default:
+				break;
+			}
 			
 		}
+
+		// Delete Client Call Structs
+		std::list<std::pair<CLOUDEIN_GRPC_TAG, void*>>::iterator it;
+		for (it = list_tag_idx_.begin(); it != list_tag_idx_.end(); it++) {
+			delete it->second;
+		}
+		list_tag_idx_.clear();
+
+		std::cout << "--- [end] Start Async ComplteRpc" << std::endl;
+
+	}
+	void StopAsyncCompleteRpc()
+	{
+		std::cout << "--- [front] Stop Async ComplteRpc" << std::endl;
+
+		cq_.Shutdown();
+
+		std::cout << "--- [end] Stop Async ComplteRpc" << std::endl;
+
 	}
 
 private:
@@ -261,14 +292,14 @@ private:
 		std::unique_ptr<ClientAsyncResponseReader<ReleaseResponse>> response_reader_release;
 	};
 
-	void Enqueue_tag_idx(CLOUDEIN_GRPC_TAG tag_idx, void* objAddr);
-	CLOUDEIN_GRPC_TAG Dequeue_tag_idx(void* objAddr);
+	void tag_push(CLOUDEIN_GRPC_TAG tag_idx, void* objAddr);
+	CLOUDEIN_GRPC_TAG tag_pop(void* objAddr);
 
 	std::unique_ptr<CloudeinSession::Stub> stub_;
 	CompletionQueue cq_;
 
-	std::mutex queue_mutex_;
-	std::queue<std::pair<CLOUDEIN_GRPC_TAG, void*>> queue_tag_idx_;
+	std::mutex mutex_list_tag_idx_;
+	std::list<std::pair<CLOUDEIN_GRPC_TAG, void*>> list_tag_idx_;
 };
 
 
@@ -313,6 +344,8 @@ public:
 	~CloudeinSessionContext();
 
 	void setGRPC(const std::string ip, const std::string port);
+	void unsetGRPC();
+
 	void setState(std::shared_ptr<CloudeinState> state);
 
 	void request();
