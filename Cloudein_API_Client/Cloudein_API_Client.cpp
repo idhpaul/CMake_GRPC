@@ -17,22 +17,6 @@ int main()
 
 	context->setGRPC("localhost", "50051");
 
-	context->setState(state_allocate);
-	context->request();
-	std::cout << context->response() << std::endl;
-
-	context->setState(state_prepare);
-	context->request();
-	std::cout << context->response() << std::endl;
-
-	context->setState(state_connect);
-	context->request();
-	std::cout << context->response() << std::endl;
-	
-	context->setState(state_release);
-	context->request();
-	std::cout << context->response() << std::endl;
-
 	bool run = true;
 	int num;
 	while (run)
