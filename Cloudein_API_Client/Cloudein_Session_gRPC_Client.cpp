@@ -14,7 +14,7 @@ void CloudeinSessionClient::DoAllocate(const SessionInfo session_info) {
 
 	AsyncClientCall_DoAllocate* call = new AsyncClientCall_DoAllocate;
 	call->deadline_ = std::chrono::system_clock::now() + std::chrono::milliseconds(5000);
-	call->context.set_deadline(call->deadline_);
+	//call->context.set_deadline(call->deadline_);
 
 	tag_push(CLOUDEIN_GRPC_TAG::DoAllocateAPI, (void*)call);
 
@@ -197,9 +197,8 @@ CLOUDEIN_GRPC_TAG CloudeinSessionClient::tag_pop(void* objAddr)
 	std::list<std::pair<CLOUDEIN_GRPC_TAG, void*>>::iterator it =
 		std::find_if(list_tag_idx_.begin(),
 			list_tag_idx_.end(),
-			[objAddr](std::pair<CLOUDEIN_GRPC_TAG, void*> pair) -> CLOUDEIN_GRPC_TAG {
-				if (pair.second == objAddr)
-					return pair.first;
+			[objAddr](std::pair<CLOUDEIN_GRPC_TAG, void*>& pair) {
+				return pair.second == objAddr;
 			});
 
 	auto return_idx = it->first;

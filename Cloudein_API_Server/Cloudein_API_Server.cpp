@@ -101,7 +101,17 @@ private:
                 auto register_allocate_data = new AllocateData(service_, cq_, list_push_func, list_erase_func);
                 list_push_func(CLOUDEIN_GRPC_TAG::DoAllocateAPI, (void*)register_allocate_data);
 
-                std::cout << ctx_.peer() << std::endl;
+                auto ip = [](std::string uri) {
+                    std::string::size_type first_idx, second_idx;
+
+                    first_idx = uri.find_first_of(":");
+                    second_idx = uri.find_last_of(":");
+
+                    return uri.substr(first_idx + 1, second_idx - first_idx - 1);
+                };
+                std::cout << "## Client ip : " << ip(ctx_.peer()) << std::endl;
+               
+                std::cout << "##  Client peer uri : " << ctx_.peer() << std::endl;
                 std::cout << "##  Get Allocate request message  region : " << request_.region() << std::endl;
                 std::cout << "##  Get Allocate request message tx_name : " << request_.tx_name() << std::endl;
 
@@ -169,7 +179,16 @@ private:
                 auto register_prepare_data = new PrepareData(service_, cq_, list_push_func, list_erase_func);
                 list_push_func(CLOUDEIN_GRPC_TAG::DoPrepareAPI, (void*)register_prepare_data);
 
-                std::cout << ctx_.peer() << std::endl;
+                auto ip = [](std::string uri) {
+                    std::string::size_type first_idx, second_idx;
+
+                    first_idx = uri.find_first_of(":");
+                    second_idx = uri.find_last_of(":");
+
+                    return uri.substr(first_idx + 1, second_idx - first_idx - 1);
+                };
+                std::cout << "## Client ip : " << ip(ctx_.peer()) << std::endl;
+
                 std::cout << "##  Get Prepare request message  region : " << request_.region() << std::endl;
                 std::cout << "##  Get Prepare request message tx_name : " << request_.tx_name() << std::endl;
 
@@ -231,7 +250,16 @@ private:
                 auto register_connect_data = new ConnectData(service_, cq_, list_push_func, list_erase_func);
                 list_push_func(CLOUDEIN_GRPC_TAG::DoConnectAPI, (void*)register_connect_data);
 
-                std::cout << ctx_.peer() << std::endl;
+                auto ip = [](std::string uri) {
+                    std::string::size_type first_idx, second_idx;
+
+                    first_idx = uri.find_first_of(":");
+                    second_idx = uri.find_last_of(":");
+
+                    return uri.substr(first_idx + 1, second_idx - first_idx - 1);
+                };
+                std::cout << "## Client ip : " << ip(ctx_.peer()) << std::endl;
+
                 std::cout << "Get Connect request message  region : " << request_.region() << std::endl;
                 std::cout << "Get Connect request message tx_name : " << request_.tx_name() << std::endl;
 
@@ -294,7 +322,16 @@ private:
                 auto register_release_data = new ReleaseData(service_, cq_, list_push_func, list_erase_func);
                 list_push_func(CLOUDEIN_GRPC_TAG::DoReleaseAPI, (void*)register_release_data);
 
-                std::cout << ctx_.peer() << std::endl;
+                auto ip = [](std::string uri) {
+                    std::string::size_type first_idx, second_idx;
+
+                    first_idx = uri.find_first_of(":");
+                    second_idx = uri.find_last_of(":");
+
+                    return uri.substr(first_idx + 1, second_idx - first_idx - 1);
+                };
+                std::cout << "## Client ip : " << ip(ctx_.peer()) << std::endl;
+
                 std::cout << "##  Get Release request message  region : " << request_.region() << std::endl;
                 std::cout << "##  Get Release request message tx_name : " << request_.tx_name() << std::endl;
 
@@ -399,6 +436,7 @@ private:
     void tag_push(CLOUDEIN_GRPC_TAG tag_idx, void* objAddr) {
         std::lock_guard<std::mutex> lock_guard(mutex_list_tag_idx_);
 
+        std::cout << "tag-push : " << tag_idx << std::endl;
         auto tag_idx_pair = std::make_pair(tag_idx, objAddr);
         list_tag_idx_.push_back(tag_idx_pair);
     };
@@ -408,9 +446,8 @@ private:
         std::list<std::pair<CLOUDEIN_GRPC_TAG, void*>>::iterator it =
             std::find_if(list_tag_idx_.begin(),
                 list_tag_idx_.end(),
-                [objAddr](std::pair<CLOUDEIN_GRPC_TAG, void*> pair) -> CLOUDEIN_GRPC_TAG {
-                    if (pair.second == objAddr)
-                        return pair.first;
+                [objAddr](std::pair<CLOUDEIN_GRPC_TAG, void*>& pair) {
+                    return pair.second == objAddr;
                 });
 
         auto return_idx = it->first;
@@ -426,9 +463,8 @@ private:
         std::list<std::pair<CLOUDEIN_GRPC_TAG, void*>>::iterator it =
             std::find_if(list_tag_idx_.begin(),
                 list_tag_idx_.end(),
-                [objAddr](std::pair<CLOUDEIN_GRPC_TAG, void*> pair) -> CLOUDEIN_GRPC_TAG {
-                    if (pair.second == objAddr)
-                        return pair.first;
+                [objAddr](std::pair<CLOUDEIN_GRPC_TAG, void*>& pair) {
+                    return pair.second == objAddr;
                 });
 
         auto return_idx = it->first;

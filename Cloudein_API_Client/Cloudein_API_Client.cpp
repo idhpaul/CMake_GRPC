@@ -15,7 +15,7 @@ int main()
 	auto state_connect(std::make_shared<StateConnect>());
 	auto state_release(std::make_shared<StateRelease>());
 
-	context->setGRPC("localhost", "50051");
+	context->setGRPC("172.31.34.134", "50051");
 
 	bool run = true;
 	int num;
