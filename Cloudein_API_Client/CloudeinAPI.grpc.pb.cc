@@ -26,6 +26,12 @@ static const char* CloudeinSession_method_names[] = {
   "/cloudeinapi.CloudeinSession/DoPrepareAPI",
   "/cloudeinapi.CloudeinSession/DoConnectAPI",
   "/cloudeinapi.CloudeinSession/DoReleaseAPI",
+  "/cloudeinapi.CloudeinSession/DoDisconnectAPI",
+  "/cloudeinapi.CloudeinSession/DoTimeoutAPI",
+  "/cloudeinapi.CloudeinSession/DoPrepareFailAPI",
+  "/cloudeinapi.CloudeinSession/DoConnectFailAPI",
+  "/cloudeinapi.CloudeinSession/DoRebootFailAPI",
+  "/cloudeinapi.CloudeinSession/DoAuthFailAPI",
 };
 
 std::unique_ptr< CloudeinSession::Stub> CloudeinSession::NewStub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options) {
@@ -39,6 +45,12 @@ CloudeinSession::Stub::Stub(const std::shared_ptr< ::grpc::ChannelInterface>& ch
   , rpcmethod_DoPrepareAPI_(CloudeinSession_method_names[1], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   , rpcmethod_DoConnectAPI_(CloudeinSession_method_names[2], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   , rpcmethod_DoReleaseAPI_(CloudeinSession_method_names[3], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_DoDisconnectAPI_(CloudeinSession_method_names[4], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_DoTimeoutAPI_(CloudeinSession_method_names[5], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_DoPrepareFailAPI_(CloudeinSession_method_names[6], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_DoConnectFailAPI_(CloudeinSession_method_names[7], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_DoRebootFailAPI_(CloudeinSession_method_names[8], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_DoAuthFailAPI_(CloudeinSession_method_names[9], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   {}
 
 ::grpc::Status CloudeinSession::Stub::DoAllocateAPI(::grpc::ClientContext* context, const ::cloudeinapi::AllocateRequest& request, ::cloudeinapi::AllocateResponse* response) {
@@ -133,6 +145,144 @@ void CloudeinSession::Stub::experimental_async::DoReleaseAPI(::grpc::ClientConte
   return result;
 }
 
+::grpc::Status CloudeinSession::Stub::DoDisconnectAPI(::grpc::ClientContext* context, const ::cloudeinapi::DisconnectRequest& request, ::cloudeinapi::DisconnectResponse* response) {
+  return ::grpc::internal::BlockingUnaryCall< ::cloudeinapi::DisconnectRequest, ::cloudeinapi::DisconnectResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_DoDisconnectAPI_, context, request, response);
+}
+
+void CloudeinSession::Stub::experimental_async::DoDisconnectAPI(::grpc::ClientContext* context, const ::cloudeinapi::DisconnectRequest* request, ::cloudeinapi::DisconnectResponse* response, std::function<void(::grpc::Status)> f) {
+  ::grpc::internal::CallbackUnaryCall< ::cloudeinapi::DisconnectRequest, ::cloudeinapi::DisconnectResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_DoDisconnectAPI_, context, request, response, std::move(f));
+}
+
+void CloudeinSession::Stub::experimental_async::DoDisconnectAPI(::grpc::ClientContext* context, const ::cloudeinapi::DisconnectRequest* request, ::cloudeinapi::DisconnectResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+  ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_DoDisconnectAPI_, context, request, response, reactor);
+}
+
+::grpc::ClientAsyncResponseReader< ::cloudeinapi::DisconnectResponse>* CloudeinSession::Stub::PrepareAsyncDoDisconnectAPIRaw(::grpc::ClientContext* context, const ::cloudeinapi::DisconnectRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::cloudeinapi::DisconnectResponse, ::cloudeinapi::DisconnectRequest, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_DoDisconnectAPI_, context, request);
+}
+
+::grpc::ClientAsyncResponseReader< ::cloudeinapi::DisconnectResponse>* CloudeinSession::Stub::AsyncDoDisconnectAPIRaw(::grpc::ClientContext* context, const ::cloudeinapi::DisconnectRequest& request, ::grpc::CompletionQueue* cq) {
+  auto* result =
+    this->PrepareAsyncDoDisconnectAPIRaw(context, request, cq);
+  result->StartCall();
+  return result;
+}
+
+::grpc::Status CloudeinSession::Stub::DoTimeoutAPI(::grpc::ClientContext* context, const ::cloudeinapi::TimeoutRequest& request, ::cloudeinapi::TimeoutResponse* response) {
+  return ::grpc::internal::BlockingUnaryCall< ::cloudeinapi::TimeoutRequest, ::cloudeinapi::TimeoutResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_DoTimeoutAPI_, context, request, response);
+}
+
+void CloudeinSession::Stub::experimental_async::DoTimeoutAPI(::grpc::ClientContext* context, const ::cloudeinapi::TimeoutRequest* request, ::cloudeinapi::TimeoutResponse* response, std::function<void(::grpc::Status)> f) {
+  ::grpc::internal::CallbackUnaryCall< ::cloudeinapi::TimeoutRequest, ::cloudeinapi::TimeoutResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_DoTimeoutAPI_, context, request, response, std::move(f));
+}
+
+void CloudeinSession::Stub::experimental_async::DoTimeoutAPI(::grpc::ClientContext* context, const ::cloudeinapi::TimeoutRequest* request, ::cloudeinapi::TimeoutResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+  ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_DoTimeoutAPI_, context, request, response, reactor);
+}
+
+::grpc::ClientAsyncResponseReader< ::cloudeinapi::TimeoutResponse>* CloudeinSession::Stub::PrepareAsyncDoTimeoutAPIRaw(::grpc::ClientContext* context, const ::cloudeinapi::TimeoutRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::cloudeinapi::TimeoutResponse, ::cloudeinapi::TimeoutRequest, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_DoTimeoutAPI_, context, request);
+}
+
+::grpc::ClientAsyncResponseReader< ::cloudeinapi::TimeoutResponse>* CloudeinSession::Stub::AsyncDoTimeoutAPIRaw(::grpc::ClientContext* context, const ::cloudeinapi::TimeoutRequest& request, ::grpc::CompletionQueue* cq) {
+  auto* result =
+    this->PrepareAsyncDoTimeoutAPIRaw(context, request, cq);
+  result->StartCall();
+  return result;
+}
+
+::grpc::Status CloudeinSession::Stub::DoPrepareFailAPI(::grpc::ClientContext* context, const ::cloudeinapi::PrepareFailRequest& request, ::cloudeinapi::PrepareFailResponse* response) {
+  return ::grpc::internal::BlockingUnaryCall< ::cloudeinapi::PrepareFailRequest, ::cloudeinapi::PrepareFailResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_DoPrepareFailAPI_, context, request, response);
+}
+
+void CloudeinSession::Stub::experimental_async::DoPrepareFailAPI(::grpc::ClientContext* context, const ::cloudeinapi::PrepareFailRequest* request, ::cloudeinapi::PrepareFailResponse* response, std::function<void(::grpc::Status)> f) {
+  ::grpc::internal::CallbackUnaryCall< ::cloudeinapi::PrepareFailRequest, ::cloudeinapi::PrepareFailResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_DoPrepareFailAPI_, context, request, response, std::move(f));
+}
+
+void CloudeinSession::Stub::experimental_async::DoPrepareFailAPI(::grpc::ClientContext* context, const ::cloudeinapi::PrepareFailRequest* request, ::cloudeinapi::PrepareFailResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+  ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_DoPrepareFailAPI_, context, request, response, reactor);
+}
+
+::grpc::ClientAsyncResponseReader< ::cloudeinapi::PrepareFailResponse>* CloudeinSession::Stub::PrepareAsyncDoPrepareFailAPIRaw(::grpc::ClientContext* context, const ::cloudeinapi::PrepareFailRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::cloudeinapi::PrepareFailResponse, ::cloudeinapi::PrepareFailRequest, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_DoPrepareFailAPI_, context, request);
+}
+
+::grpc::ClientAsyncResponseReader< ::cloudeinapi::PrepareFailResponse>* CloudeinSession::Stub::AsyncDoPrepareFailAPIRaw(::grpc::ClientContext* context, const ::cloudeinapi::PrepareFailRequest& request, ::grpc::CompletionQueue* cq) {
+  auto* result =
+    this->PrepareAsyncDoPrepareFailAPIRaw(context, request, cq);
+  result->StartCall();
+  return result;
+}
+
+::grpc::Status CloudeinSession::Stub::DoConnectFailAPI(::grpc::ClientContext* context, const ::cloudeinapi::ConnectFailRequest& request, ::cloudeinapi::ConnectFailResponse* response) {
+  return ::grpc::internal::BlockingUnaryCall< ::cloudeinapi::ConnectFailRequest, ::cloudeinapi::ConnectFailResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_DoConnectFailAPI_, context, request, response);
+}
+
+void CloudeinSession::Stub::experimental_async::DoConnectFailAPI(::grpc::ClientContext* context, const ::cloudeinapi::ConnectFailRequest* request, ::cloudeinapi::ConnectFailResponse* response, std::function<void(::grpc::Status)> f) {
+  ::grpc::internal::CallbackUnaryCall< ::cloudeinapi::ConnectFailRequest, ::cloudeinapi::ConnectFailResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_DoConnectFailAPI_, context, request, response, std::move(f));
+}
+
+void CloudeinSession::Stub::experimental_async::DoConnectFailAPI(::grpc::ClientContext* context, const ::cloudeinapi::ConnectFailRequest* request, ::cloudeinapi::ConnectFailResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+  ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_DoConnectFailAPI_, context, request, response, reactor);
+}
+
+::grpc::ClientAsyncResponseReader< ::cloudeinapi::ConnectFailResponse>* CloudeinSession::Stub::PrepareAsyncDoConnectFailAPIRaw(::grpc::ClientContext* context, const ::cloudeinapi::ConnectFailRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::cloudeinapi::ConnectFailResponse, ::cloudeinapi::ConnectFailRequest, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_DoConnectFailAPI_, context, request);
+}
+
+::grpc::ClientAsyncResponseReader< ::cloudeinapi::ConnectFailResponse>* CloudeinSession::Stub::AsyncDoConnectFailAPIRaw(::grpc::ClientContext* context, const ::cloudeinapi::ConnectFailRequest& request, ::grpc::CompletionQueue* cq) {
+  auto* result =
+    this->PrepareAsyncDoConnectFailAPIRaw(context, request, cq);
+  result->StartCall();
+  return result;
+}
+
+::grpc::Status CloudeinSession::Stub::DoRebootFailAPI(::grpc::ClientContext* context, const ::cloudeinapi::RebootFailRequest& request, ::cloudeinapi::RebootFailResponse* response) {
+  return ::grpc::internal::BlockingUnaryCall< ::cloudeinapi::RebootFailRequest, ::cloudeinapi::RebootFailResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_DoRebootFailAPI_, context, request, response);
+}
+
+void CloudeinSession::Stub::experimental_async::DoRebootFailAPI(::grpc::ClientContext* context, const ::cloudeinapi::RebootFailRequest* request, ::cloudeinapi::RebootFailResponse* response, std::function<void(::grpc::Status)> f) {
+  ::grpc::internal::CallbackUnaryCall< ::cloudeinapi::RebootFailRequest, ::cloudeinapi::RebootFailResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_DoRebootFailAPI_, context, request, response, std::move(f));
+}
+
+void CloudeinSession::Stub::experimental_async::DoRebootFailAPI(::grpc::ClientContext* context, const ::cloudeinapi::RebootFailRequest* request, ::cloudeinapi::RebootFailResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+  ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_DoRebootFailAPI_, context, request, response, reactor);
+}
+
+::grpc::ClientAsyncResponseReader< ::cloudeinapi::RebootFailResponse>* CloudeinSession::Stub::PrepareAsyncDoRebootFailAPIRaw(::grpc::ClientContext* context, const ::cloudeinapi::RebootFailRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::cloudeinapi::RebootFailResponse, ::cloudeinapi::RebootFailRequest, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_DoRebootFailAPI_, context, request);
+}
+
+::grpc::ClientAsyncResponseReader< ::cloudeinapi::RebootFailResponse>* CloudeinSession::Stub::AsyncDoRebootFailAPIRaw(::grpc::ClientContext* context, const ::cloudeinapi::RebootFailRequest& request, ::grpc::CompletionQueue* cq) {
+  auto* result =
+    this->PrepareAsyncDoRebootFailAPIRaw(context, request, cq);
+  result->StartCall();
+  return result;
+}
+
+::grpc::Status CloudeinSession::Stub::DoAuthFailAPI(::grpc::ClientContext* context, const ::cloudeinapi::AuthFailRequest& request, ::cloudeinapi::AuthFailResponse* response) {
+  return ::grpc::internal::BlockingUnaryCall< ::cloudeinapi::AuthFailRequest, ::cloudeinapi::AuthFailResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_DoAuthFailAPI_, context, request, response);
+}
+
+void CloudeinSession::Stub::experimental_async::DoAuthFailAPI(::grpc::ClientContext* context, const ::cloudeinapi::AuthFailRequest* request, ::cloudeinapi::AuthFailResponse* response, std::function<void(::grpc::Status)> f) {
+  ::grpc::internal::CallbackUnaryCall< ::cloudeinapi::AuthFailRequest, ::cloudeinapi::AuthFailResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_DoAuthFailAPI_, context, request, response, std::move(f));
+}
+
+void CloudeinSession::Stub::experimental_async::DoAuthFailAPI(::grpc::ClientContext* context, const ::cloudeinapi::AuthFailRequest* request, ::cloudeinapi::AuthFailResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+  ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_DoAuthFailAPI_, context, request, response, reactor);
+}
+
+::grpc::ClientAsyncResponseReader< ::cloudeinapi::AuthFailResponse>* CloudeinSession::Stub::PrepareAsyncDoAuthFailAPIRaw(::grpc::ClientContext* context, const ::cloudeinapi::AuthFailRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::cloudeinapi::AuthFailResponse, ::cloudeinapi::AuthFailRequest, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_DoAuthFailAPI_, context, request);
+}
+
+::grpc::ClientAsyncResponseReader< ::cloudeinapi::AuthFailResponse>* CloudeinSession::Stub::AsyncDoAuthFailAPIRaw(::grpc::ClientContext* context, const ::cloudeinapi::AuthFailRequest& request, ::grpc::CompletionQueue* cq) {
+  auto* result =
+    this->PrepareAsyncDoAuthFailAPIRaw(context, request, cq);
+  result->StartCall();
+  return result;
+}
+
 CloudeinSession::Service::Service() {
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       CloudeinSession_method_names[0],
@@ -174,6 +324,66 @@ CloudeinSession::Service::Service() {
              ::cloudeinapi::ReleaseResponse* resp) {
                return service->DoReleaseAPI(ctx, req, resp);
              }, this)));
+  AddMethod(new ::grpc::internal::RpcServiceMethod(
+      CloudeinSession_method_names[4],
+      ::grpc::internal::RpcMethod::NORMAL_RPC,
+      new ::grpc::internal::RpcMethodHandler< CloudeinSession::Service, ::cloudeinapi::DisconnectRequest, ::cloudeinapi::DisconnectResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
+          [](CloudeinSession::Service* service,
+             ::grpc::ServerContext* ctx,
+             const ::cloudeinapi::DisconnectRequest* req,
+             ::cloudeinapi::DisconnectResponse* resp) {
+               return service->DoDisconnectAPI(ctx, req, resp);
+             }, this)));
+  AddMethod(new ::grpc::internal::RpcServiceMethod(
+      CloudeinSession_method_names[5],
+      ::grpc::internal::RpcMethod::NORMAL_RPC,
+      new ::grpc::internal::RpcMethodHandler< CloudeinSession::Service, ::cloudeinapi::TimeoutRequest, ::cloudeinapi::TimeoutResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
+          [](CloudeinSession::Service* service,
+             ::grpc::ServerContext* ctx,
+             const ::cloudeinapi::TimeoutRequest* req,
+             ::cloudeinapi::TimeoutResponse* resp) {
+               return service->DoTimeoutAPI(ctx, req, resp);
+             }, this)));
+  AddMethod(new ::grpc::internal::RpcServiceMethod(
+      CloudeinSession_method_names[6],
+      ::grpc::internal::RpcMethod::NORMAL_RPC,
+      new ::grpc::internal::RpcMethodHandler< CloudeinSession::Service, ::cloudeinapi::PrepareFailRequest, ::cloudeinapi::PrepareFailResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
+          [](CloudeinSession::Service* service,
+             ::grpc::ServerContext* ctx,
+             const ::cloudeinapi::PrepareFailRequest* req,
+             ::cloudeinapi::PrepareFailResponse* resp) {
+               return service->DoPrepareFailAPI(ctx, req, resp);
+             }, this)));
+  AddMethod(new ::grpc::internal::RpcServiceMethod(
+      CloudeinSession_method_names[7],
+      ::grpc::internal::RpcMethod::NORMAL_RPC,
+      new ::grpc::internal::RpcMethodHandler< CloudeinSession::Service, ::cloudeinapi::ConnectFailRequest, ::cloudeinapi::ConnectFailResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
+          [](CloudeinSession::Service* service,
+             ::grpc::ServerContext* ctx,
+             const ::cloudeinapi::ConnectFailRequest* req,
+             ::cloudeinapi::ConnectFailResponse* resp) {
+               return service->DoConnectFailAPI(ctx, req, resp);
+             }, this)));
+  AddMethod(new ::grpc::internal::RpcServiceMethod(
+      CloudeinSession_method_names[8],
+      ::grpc::internal::RpcMethod::NORMAL_RPC,
+      new ::grpc::internal::RpcMethodHandler< CloudeinSession::Service, ::cloudeinapi::RebootFailRequest, ::cloudeinapi::RebootFailResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
+          [](CloudeinSession::Service* service,
+             ::grpc::ServerContext* ctx,
+             const ::cloudeinapi::RebootFailRequest* req,
+             ::cloudeinapi::RebootFailResponse* resp) {
+               return service->DoRebootFailAPI(ctx, req, resp);
+             }, this)));
+  AddMethod(new ::grpc::internal::RpcServiceMethod(
+      CloudeinSession_method_names[9],
+      ::grpc::internal::RpcMethod::NORMAL_RPC,
+      new ::grpc::internal::RpcMethodHandler< CloudeinSession::Service, ::cloudeinapi::AuthFailRequest, ::cloudeinapi::AuthFailResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
+          [](CloudeinSession::Service* service,
+             ::grpc::ServerContext* ctx,
+             const ::cloudeinapi::AuthFailRequest* req,
+             ::cloudeinapi::AuthFailResponse* resp) {
+               return service->DoAuthFailAPI(ctx, req, resp);
+             }, this)));
 }
 
 CloudeinSession::Service::~Service() {
@@ -201,6 +411,48 @@ CloudeinSession::Service::~Service() {
 }
 
 ::grpc::Status CloudeinSession::Service::DoReleaseAPI(::grpc::ServerContext* context, const ::cloudeinapi::ReleaseRequest* request, ::cloudeinapi::ReleaseResponse* response) {
+  (void) context;
+  (void) request;
+  (void) response;
+  return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+}
+
+::grpc::Status CloudeinSession::Service::DoDisconnectAPI(::grpc::ServerContext* context, const ::cloudeinapi::DisconnectRequest* request, ::cloudeinapi::DisconnectResponse* response) {
+  (void) context;
+  (void) request;
+  (void) response;
+  return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+}
+
+::grpc::Status CloudeinSession::Service::DoTimeoutAPI(::grpc::ServerContext* context, const ::cloudeinapi::TimeoutRequest* request, ::cloudeinapi::TimeoutResponse* response) {
+  (void) context;
+  (void) request;
+  (void) response;
+  return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+}
+
+::grpc::Status CloudeinSession::Service::DoPrepareFailAPI(::grpc::ServerContext* context, const ::cloudeinapi::PrepareFailRequest* request, ::cloudeinapi::PrepareFailResponse* response) {
+  (void) context;
+  (void) request;
+  (void) response;
+  return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+}
+
+::grpc::Status CloudeinSession::Service::DoConnectFailAPI(::grpc::ServerContext* context, const ::cloudeinapi::ConnectFailRequest* request, ::cloudeinapi::ConnectFailResponse* response) {
+  (void) context;
+  (void) request;
+  (void) response;
+  return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+}
+
+::grpc::Status CloudeinSession::Service::DoRebootFailAPI(::grpc::ServerContext* context, const ::cloudeinapi::RebootFailRequest* request, ::cloudeinapi::RebootFailResponse* response) {
+  (void) context;
+  (void) request;
+  (void) response;
+  return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+}
+
+::grpc::Status CloudeinSession::Service::DoAuthFailAPI(::grpc::ServerContext* context, const ::cloudeinapi::AuthFailRequest* request, ::cloudeinapi::AuthFailResponse* response) {
   (void) context;
   (void) request;
   (void) response;

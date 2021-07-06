@@ -4,8 +4,8 @@
 // Original file comments:
 // ******************************************************************************
 // Created  				Jun 23, 2021
-// Modified				Jun 23, 2021
-// Version				1.0.0.0
+// Modified				Jul 05, 2021
+// Version				1.0.0.1
 //
 // FILE:					CloudeinAPI.proto
 // Author:				dhimm@mslm.kr
@@ -76,6 +76,48 @@ class CloudeinSession final {
     std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::cloudeinapi::ReleaseResponse>> PrepareAsyncDoReleaseAPI(::grpc::ClientContext* context, const ::cloudeinapi::ReleaseRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::cloudeinapi::ReleaseResponse>>(PrepareAsyncDoReleaseAPIRaw(context, request, cq));
     }
+    virtual ::grpc::Status DoDisconnectAPI(::grpc::ClientContext* context, const ::cloudeinapi::DisconnectRequest& request, ::cloudeinapi::DisconnectResponse* response) = 0;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::cloudeinapi::DisconnectResponse>> AsyncDoDisconnectAPI(::grpc::ClientContext* context, const ::cloudeinapi::DisconnectRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::cloudeinapi::DisconnectResponse>>(AsyncDoDisconnectAPIRaw(context, request, cq));
+    }
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::cloudeinapi::DisconnectResponse>> PrepareAsyncDoDisconnectAPI(::grpc::ClientContext* context, const ::cloudeinapi::DisconnectRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::cloudeinapi::DisconnectResponse>>(PrepareAsyncDoDisconnectAPIRaw(context, request, cq));
+    }
+    virtual ::grpc::Status DoTimeoutAPI(::grpc::ClientContext* context, const ::cloudeinapi::TimeoutRequest& request, ::cloudeinapi::TimeoutResponse* response) = 0;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::cloudeinapi::TimeoutResponse>> AsyncDoTimeoutAPI(::grpc::ClientContext* context, const ::cloudeinapi::TimeoutRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::cloudeinapi::TimeoutResponse>>(AsyncDoTimeoutAPIRaw(context, request, cq));
+    }
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::cloudeinapi::TimeoutResponse>> PrepareAsyncDoTimeoutAPI(::grpc::ClientContext* context, const ::cloudeinapi::TimeoutRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::cloudeinapi::TimeoutResponse>>(PrepareAsyncDoTimeoutAPIRaw(context, request, cq));
+    }
+    virtual ::grpc::Status DoPrepareFailAPI(::grpc::ClientContext* context, const ::cloudeinapi::PrepareFailRequest& request, ::cloudeinapi::PrepareFailResponse* response) = 0;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::cloudeinapi::PrepareFailResponse>> AsyncDoPrepareFailAPI(::grpc::ClientContext* context, const ::cloudeinapi::PrepareFailRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::cloudeinapi::PrepareFailResponse>>(AsyncDoPrepareFailAPIRaw(context, request, cq));
+    }
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::cloudeinapi::PrepareFailResponse>> PrepareAsyncDoPrepareFailAPI(::grpc::ClientContext* context, const ::cloudeinapi::PrepareFailRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::cloudeinapi::PrepareFailResponse>>(PrepareAsyncDoPrepareFailAPIRaw(context, request, cq));
+    }
+    virtual ::grpc::Status DoConnectFailAPI(::grpc::ClientContext* context, const ::cloudeinapi::ConnectFailRequest& request, ::cloudeinapi::ConnectFailResponse* response) = 0;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::cloudeinapi::ConnectFailResponse>> AsyncDoConnectFailAPI(::grpc::ClientContext* context, const ::cloudeinapi::ConnectFailRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::cloudeinapi::ConnectFailResponse>>(AsyncDoConnectFailAPIRaw(context, request, cq));
+    }
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::cloudeinapi::ConnectFailResponse>> PrepareAsyncDoConnectFailAPI(::grpc::ClientContext* context, const ::cloudeinapi::ConnectFailRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::cloudeinapi::ConnectFailResponse>>(PrepareAsyncDoConnectFailAPIRaw(context, request, cq));
+    }
+    virtual ::grpc::Status DoRebootFailAPI(::grpc::ClientContext* context, const ::cloudeinapi::RebootFailRequest& request, ::cloudeinapi::RebootFailResponse* response) = 0;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::cloudeinapi::RebootFailResponse>> AsyncDoRebootFailAPI(::grpc::ClientContext* context, const ::cloudeinapi::RebootFailRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::cloudeinapi::RebootFailResponse>>(AsyncDoRebootFailAPIRaw(context, request, cq));
+    }
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::cloudeinapi::RebootFailResponse>> PrepareAsyncDoRebootFailAPI(::grpc::ClientContext* context, const ::cloudeinapi::RebootFailRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::cloudeinapi::RebootFailResponse>>(PrepareAsyncDoRebootFailAPIRaw(context, request, cq));
+    }
+    virtual ::grpc::Status DoAuthFailAPI(::grpc::ClientContext* context, const ::cloudeinapi::AuthFailRequest& request, ::cloudeinapi::AuthFailResponse* response) = 0;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::cloudeinapi::AuthFailResponse>> AsyncDoAuthFailAPI(::grpc::ClientContext* context, const ::cloudeinapi::AuthFailRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::cloudeinapi::AuthFailResponse>>(AsyncDoAuthFailAPIRaw(context, request, cq));
+    }
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::cloudeinapi::AuthFailResponse>> PrepareAsyncDoAuthFailAPI(::grpc::ClientContext* context, const ::cloudeinapi::AuthFailRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::cloudeinapi::AuthFailResponse>>(PrepareAsyncDoAuthFailAPIRaw(context, request, cq));
+    }
     class experimental_async_interface {
      public:
       virtual ~experimental_async_interface() {}
@@ -103,6 +145,42 @@ class CloudeinSession final {
       #else
       virtual void DoReleaseAPI(::grpc::ClientContext* context, const ::cloudeinapi::ReleaseRequest* request, ::cloudeinapi::ReleaseResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
       #endif
+      virtual void DoDisconnectAPI(::grpc::ClientContext* context, const ::cloudeinapi::DisconnectRequest* request, ::cloudeinapi::DisconnectResponse* response, std::function<void(::grpc::Status)>) = 0;
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      virtual void DoDisconnectAPI(::grpc::ClientContext* context, const ::cloudeinapi::DisconnectRequest* request, ::cloudeinapi::DisconnectResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      #else
+      virtual void DoDisconnectAPI(::grpc::ClientContext* context, const ::cloudeinapi::DisconnectRequest* request, ::cloudeinapi::DisconnectResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
+      #endif
+      virtual void DoTimeoutAPI(::grpc::ClientContext* context, const ::cloudeinapi::TimeoutRequest* request, ::cloudeinapi::TimeoutResponse* response, std::function<void(::grpc::Status)>) = 0;
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      virtual void DoTimeoutAPI(::grpc::ClientContext* context, const ::cloudeinapi::TimeoutRequest* request, ::cloudeinapi::TimeoutResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      #else
+      virtual void DoTimeoutAPI(::grpc::ClientContext* context, const ::cloudeinapi::TimeoutRequest* request, ::cloudeinapi::TimeoutResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
+      #endif
+      virtual void DoPrepareFailAPI(::grpc::ClientContext* context, const ::cloudeinapi::PrepareFailRequest* request, ::cloudeinapi::PrepareFailResponse* response, std::function<void(::grpc::Status)>) = 0;
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      virtual void DoPrepareFailAPI(::grpc::ClientContext* context, const ::cloudeinapi::PrepareFailRequest* request, ::cloudeinapi::PrepareFailResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      #else
+      virtual void DoPrepareFailAPI(::grpc::ClientContext* context, const ::cloudeinapi::PrepareFailRequest* request, ::cloudeinapi::PrepareFailResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
+      #endif
+      virtual void DoConnectFailAPI(::grpc::ClientContext* context, const ::cloudeinapi::ConnectFailRequest* request, ::cloudeinapi::ConnectFailResponse* response, std::function<void(::grpc::Status)>) = 0;
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      virtual void DoConnectFailAPI(::grpc::ClientContext* context, const ::cloudeinapi::ConnectFailRequest* request, ::cloudeinapi::ConnectFailResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      #else
+      virtual void DoConnectFailAPI(::grpc::ClientContext* context, const ::cloudeinapi::ConnectFailRequest* request, ::cloudeinapi::ConnectFailResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
+      #endif
+      virtual void DoRebootFailAPI(::grpc::ClientContext* context, const ::cloudeinapi::RebootFailRequest* request, ::cloudeinapi::RebootFailResponse* response, std::function<void(::grpc::Status)>) = 0;
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      virtual void DoRebootFailAPI(::grpc::ClientContext* context, const ::cloudeinapi::RebootFailRequest* request, ::cloudeinapi::RebootFailResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      #else
+      virtual void DoRebootFailAPI(::grpc::ClientContext* context, const ::cloudeinapi::RebootFailRequest* request, ::cloudeinapi::RebootFailResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
+      #endif
+      virtual void DoAuthFailAPI(::grpc::ClientContext* context, const ::cloudeinapi::AuthFailRequest* request, ::cloudeinapi::AuthFailResponse* response, std::function<void(::grpc::Status)>) = 0;
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      virtual void DoAuthFailAPI(::grpc::ClientContext* context, const ::cloudeinapi::AuthFailRequest* request, ::cloudeinapi::AuthFailResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      #else
+      virtual void DoAuthFailAPI(::grpc::ClientContext* context, const ::cloudeinapi::AuthFailRequest* request, ::cloudeinapi::AuthFailResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
+      #endif
     };
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
     typedef class experimental_async_interface async_interface;
@@ -120,6 +198,18 @@ class CloudeinSession final {
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::cloudeinapi::ConnectResponse>* PrepareAsyncDoConnectAPIRaw(::grpc::ClientContext* context, const ::cloudeinapi::ConnectRequest& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::cloudeinapi::ReleaseResponse>* AsyncDoReleaseAPIRaw(::grpc::ClientContext* context, const ::cloudeinapi::ReleaseRequest& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::cloudeinapi::ReleaseResponse>* PrepareAsyncDoReleaseAPIRaw(::grpc::ClientContext* context, const ::cloudeinapi::ReleaseRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::cloudeinapi::DisconnectResponse>* AsyncDoDisconnectAPIRaw(::grpc::ClientContext* context, const ::cloudeinapi::DisconnectRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::cloudeinapi::DisconnectResponse>* PrepareAsyncDoDisconnectAPIRaw(::grpc::ClientContext* context, const ::cloudeinapi::DisconnectRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::cloudeinapi::TimeoutResponse>* AsyncDoTimeoutAPIRaw(::grpc::ClientContext* context, const ::cloudeinapi::TimeoutRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::cloudeinapi::TimeoutResponse>* PrepareAsyncDoTimeoutAPIRaw(::grpc::ClientContext* context, const ::cloudeinapi::TimeoutRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::cloudeinapi::PrepareFailResponse>* AsyncDoPrepareFailAPIRaw(::grpc::ClientContext* context, const ::cloudeinapi::PrepareFailRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::cloudeinapi::PrepareFailResponse>* PrepareAsyncDoPrepareFailAPIRaw(::grpc::ClientContext* context, const ::cloudeinapi::PrepareFailRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::cloudeinapi::ConnectFailResponse>* AsyncDoConnectFailAPIRaw(::grpc::ClientContext* context, const ::cloudeinapi::ConnectFailRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::cloudeinapi::ConnectFailResponse>* PrepareAsyncDoConnectFailAPIRaw(::grpc::ClientContext* context, const ::cloudeinapi::ConnectFailRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::cloudeinapi::RebootFailResponse>* AsyncDoRebootFailAPIRaw(::grpc::ClientContext* context, const ::cloudeinapi::RebootFailRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::cloudeinapi::RebootFailResponse>* PrepareAsyncDoRebootFailAPIRaw(::grpc::ClientContext* context, const ::cloudeinapi::RebootFailRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::cloudeinapi::AuthFailResponse>* AsyncDoAuthFailAPIRaw(::grpc::ClientContext* context, const ::cloudeinapi::AuthFailRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::cloudeinapi::AuthFailResponse>* PrepareAsyncDoAuthFailAPIRaw(::grpc::ClientContext* context, const ::cloudeinapi::AuthFailRequest& request, ::grpc::CompletionQueue* cq) = 0;
   };
   class Stub final : public StubInterface {
    public:
@@ -152,6 +242,48 @@ class CloudeinSession final {
     std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::cloudeinapi::ReleaseResponse>> PrepareAsyncDoReleaseAPI(::grpc::ClientContext* context, const ::cloudeinapi::ReleaseRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::cloudeinapi::ReleaseResponse>>(PrepareAsyncDoReleaseAPIRaw(context, request, cq));
     }
+    ::grpc::Status DoDisconnectAPI(::grpc::ClientContext* context, const ::cloudeinapi::DisconnectRequest& request, ::cloudeinapi::DisconnectResponse* response) override;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::cloudeinapi::DisconnectResponse>> AsyncDoDisconnectAPI(::grpc::ClientContext* context, const ::cloudeinapi::DisconnectRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::cloudeinapi::DisconnectResponse>>(AsyncDoDisconnectAPIRaw(context, request, cq));
+    }
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::cloudeinapi::DisconnectResponse>> PrepareAsyncDoDisconnectAPI(::grpc::ClientContext* context, const ::cloudeinapi::DisconnectRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::cloudeinapi::DisconnectResponse>>(PrepareAsyncDoDisconnectAPIRaw(context, request, cq));
+    }
+    ::grpc::Status DoTimeoutAPI(::grpc::ClientContext* context, const ::cloudeinapi::TimeoutRequest& request, ::cloudeinapi::TimeoutResponse* response) override;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::cloudeinapi::TimeoutResponse>> AsyncDoTimeoutAPI(::grpc::ClientContext* context, const ::cloudeinapi::TimeoutRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::cloudeinapi::TimeoutResponse>>(AsyncDoTimeoutAPIRaw(context, request, cq));
+    }
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::cloudeinapi::TimeoutResponse>> PrepareAsyncDoTimeoutAPI(::grpc::ClientContext* context, const ::cloudeinapi::TimeoutRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::cloudeinapi::TimeoutResponse>>(PrepareAsyncDoTimeoutAPIRaw(context, request, cq));
+    }
+    ::grpc::Status DoPrepareFailAPI(::grpc::ClientContext* context, const ::cloudeinapi::PrepareFailRequest& request, ::cloudeinapi::PrepareFailResponse* response) override;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::cloudeinapi::PrepareFailResponse>> AsyncDoPrepareFailAPI(::grpc::ClientContext* context, const ::cloudeinapi::PrepareFailRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::cloudeinapi::PrepareFailResponse>>(AsyncDoPrepareFailAPIRaw(context, request, cq));
+    }
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::cloudeinapi::PrepareFailResponse>> PrepareAsyncDoPrepareFailAPI(::grpc::ClientContext* context, const ::cloudeinapi::PrepareFailRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::cloudeinapi::PrepareFailResponse>>(PrepareAsyncDoPrepareFailAPIRaw(context, request, cq));
+    }
+    ::grpc::Status DoConnectFailAPI(::grpc::ClientContext* context, const ::cloudeinapi::ConnectFailRequest& request, ::cloudeinapi::ConnectFailResponse* response) override;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::cloudeinapi::ConnectFailResponse>> AsyncDoConnectFailAPI(::grpc::ClientContext* context, const ::cloudeinapi::ConnectFailRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::cloudeinapi::ConnectFailResponse>>(AsyncDoConnectFailAPIRaw(context, request, cq));
+    }
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::cloudeinapi::ConnectFailResponse>> PrepareAsyncDoConnectFailAPI(::grpc::ClientContext* context, const ::cloudeinapi::ConnectFailRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::cloudeinapi::ConnectFailResponse>>(PrepareAsyncDoConnectFailAPIRaw(context, request, cq));
+    }
+    ::grpc::Status DoRebootFailAPI(::grpc::ClientContext* context, const ::cloudeinapi::RebootFailRequest& request, ::cloudeinapi::RebootFailResponse* response) override;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::cloudeinapi::RebootFailResponse>> AsyncDoRebootFailAPI(::grpc::ClientContext* context, const ::cloudeinapi::RebootFailRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::cloudeinapi::RebootFailResponse>>(AsyncDoRebootFailAPIRaw(context, request, cq));
+    }
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::cloudeinapi::RebootFailResponse>> PrepareAsyncDoRebootFailAPI(::grpc::ClientContext* context, const ::cloudeinapi::RebootFailRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::cloudeinapi::RebootFailResponse>>(PrepareAsyncDoRebootFailAPIRaw(context, request, cq));
+    }
+    ::grpc::Status DoAuthFailAPI(::grpc::ClientContext* context, const ::cloudeinapi::AuthFailRequest& request, ::cloudeinapi::AuthFailResponse* response) override;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::cloudeinapi::AuthFailResponse>> AsyncDoAuthFailAPI(::grpc::ClientContext* context, const ::cloudeinapi::AuthFailRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::cloudeinapi::AuthFailResponse>>(AsyncDoAuthFailAPIRaw(context, request, cq));
+    }
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::cloudeinapi::AuthFailResponse>> PrepareAsyncDoAuthFailAPI(::grpc::ClientContext* context, const ::cloudeinapi::AuthFailRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::cloudeinapi::AuthFailResponse>>(PrepareAsyncDoAuthFailAPIRaw(context, request, cq));
+    }
     class experimental_async final :
       public StubInterface::experimental_async_interface {
      public:
@@ -179,6 +311,42 @@ class CloudeinSession final {
       #else
       void DoReleaseAPI(::grpc::ClientContext* context, const ::cloudeinapi::ReleaseRequest* request, ::cloudeinapi::ReleaseResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
       #endif
+      void DoDisconnectAPI(::grpc::ClientContext* context, const ::cloudeinapi::DisconnectRequest* request, ::cloudeinapi::DisconnectResponse* response, std::function<void(::grpc::Status)>) override;
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      void DoDisconnectAPI(::grpc::ClientContext* context, const ::cloudeinapi::DisconnectRequest* request, ::cloudeinapi::DisconnectResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
+      #else
+      void DoDisconnectAPI(::grpc::ClientContext* context, const ::cloudeinapi::DisconnectRequest* request, ::cloudeinapi::DisconnectResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
+      #endif
+      void DoTimeoutAPI(::grpc::ClientContext* context, const ::cloudeinapi::TimeoutRequest* request, ::cloudeinapi::TimeoutResponse* response, std::function<void(::grpc::Status)>) override;
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      void DoTimeoutAPI(::grpc::ClientContext* context, const ::cloudeinapi::TimeoutRequest* request, ::cloudeinapi::TimeoutResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
+      #else
+      void DoTimeoutAPI(::grpc::ClientContext* context, const ::cloudeinapi::TimeoutRequest* request, ::cloudeinapi::TimeoutResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
+      #endif
+      void DoPrepareFailAPI(::grpc::ClientContext* context, const ::cloudeinapi::PrepareFailRequest* request, ::cloudeinapi::PrepareFailResponse* response, std::function<void(::grpc::Status)>) override;
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      void DoPrepareFailAPI(::grpc::ClientContext* context, const ::cloudeinapi::PrepareFailRequest* request, ::cloudeinapi::PrepareFailResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
+      #else
+      void DoPrepareFailAPI(::grpc::ClientContext* context, const ::cloudeinapi::PrepareFailRequest* request, ::cloudeinapi::PrepareFailResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
+      #endif
+      void DoConnectFailAPI(::grpc::ClientContext* context, const ::cloudeinapi::ConnectFailRequest* request, ::cloudeinapi::ConnectFailResponse* response, std::function<void(::grpc::Status)>) override;
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      void DoConnectFailAPI(::grpc::ClientContext* context, const ::cloudeinapi::ConnectFailRequest* request, ::cloudeinapi::ConnectFailResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
+      #else
+      void DoConnectFailAPI(::grpc::ClientContext* context, const ::cloudeinapi::ConnectFailRequest* request, ::cloudeinapi::ConnectFailResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
+      #endif
+      void DoRebootFailAPI(::grpc::ClientContext* context, const ::cloudeinapi::RebootFailRequest* request, ::cloudeinapi::RebootFailResponse* response, std::function<void(::grpc::Status)>) override;
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      void DoRebootFailAPI(::grpc::ClientContext* context, const ::cloudeinapi::RebootFailRequest* request, ::cloudeinapi::RebootFailResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
+      #else
+      void DoRebootFailAPI(::grpc::ClientContext* context, const ::cloudeinapi::RebootFailRequest* request, ::cloudeinapi::RebootFailResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
+      #endif
+      void DoAuthFailAPI(::grpc::ClientContext* context, const ::cloudeinapi::AuthFailRequest* request, ::cloudeinapi::AuthFailResponse* response, std::function<void(::grpc::Status)>) override;
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      void DoAuthFailAPI(::grpc::ClientContext* context, const ::cloudeinapi::AuthFailRequest* request, ::cloudeinapi::AuthFailResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
+      #else
+      void DoAuthFailAPI(::grpc::ClientContext* context, const ::cloudeinapi::AuthFailRequest* request, ::cloudeinapi::AuthFailResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
+      #endif
      private:
       friend class Stub;
       explicit experimental_async(Stub* stub): stub_(stub) { }
@@ -198,10 +366,28 @@ class CloudeinSession final {
     ::grpc::ClientAsyncResponseReader< ::cloudeinapi::ConnectResponse>* PrepareAsyncDoConnectAPIRaw(::grpc::ClientContext* context, const ::cloudeinapi::ConnectRequest& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::cloudeinapi::ReleaseResponse>* AsyncDoReleaseAPIRaw(::grpc::ClientContext* context, const ::cloudeinapi::ReleaseRequest& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::cloudeinapi::ReleaseResponse>* PrepareAsyncDoReleaseAPIRaw(::grpc::ClientContext* context, const ::cloudeinapi::ReleaseRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::cloudeinapi::DisconnectResponse>* AsyncDoDisconnectAPIRaw(::grpc::ClientContext* context, const ::cloudeinapi::DisconnectRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::cloudeinapi::DisconnectResponse>* PrepareAsyncDoDisconnectAPIRaw(::grpc::ClientContext* context, const ::cloudeinapi::DisconnectRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::cloudeinapi::TimeoutResponse>* AsyncDoTimeoutAPIRaw(::grpc::ClientContext* context, const ::cloudeinapi::TimeoutRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::cloudeinapi::TimeoutResponse>* PrepareAsyncDoTimeoutAPIRaw(::grpc::ClientContext* context, const ::cloudeinapi::TimeoutRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::cloudeinapi::PrepareFailResponse>* AsyncDoPrepareFailAPIRaw(::grpc::ClientContext* context, const ::cloudeinapi::PrepareFailRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::cloudeinapi::PrepareFailResponse>* PrepareAsyncDoPrepareFailAPIRaw(::grpc::ClientContext* context, const ::cloudeinapi::PrepareFailRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::cloudeinapi::ConnectFailResponse>* AsyncDoConnectFailAPIRaw(::grpc::ClientContext* context, const ::cloudeinapi::ConnectFailRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::cloudeinapi::ConnectFailResponse>* PrepareAsyncDoConnectFailAPIRaw(::grpc::ClientContext* context, const ::cloudeinapi::ConnectFailRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::cloudeinapi::RebootFailResponse>* AsyncDoRebootFailAPIRaw(::grpc::ClientContext* context, const ::cloudeinapi::RebootFailRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::cloudeinapi::RebootFailResponse>* PrepareAsyncDoRebootFailAPIRaw(::grpc::ClientContext* context, const ::cloudeinapi::RebootFailRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::cloudeinapi::AuthFailResponse>* AsyncDoAuthFailAPIRaw(::grpc::ClientContext* context, const ::cloudeinapi::AuthFailRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::cloudeinapi::AuthFailResponse>* PrepareAsyncDoAuthFailAPIRaw(::grpc::ClientContext* context, const ::cloudeinapi::AuthFailRequest& request, ::grpc::CompletionQueue* cq) override;
     const ::grpc::internal::RpcMethod rpcmethod_DoAllocateAPI_;
     const ::grpc::internal::RpcMethod rpcmethod_DoPrepareAPI_;
     const ::grpc::internal::RpcMethod rpcmethod_DoConnectAPI_;
     const ::grpc::internal::RpcMethod rpcmethod_DoReleaseAPI_;
+    const ::grpc::internal::RpcMethod rpcmethod_DoDisconnectAPI_;
+    const ::grpc::internal::RpcMethod rpcmethod_DoTimeoutAPI_;
+    const ::grpc::internal::RpcMethod rpcmethod_DoPrepareFailAPI_;
+    const ::grpc::internal::RpcMethod rpcmethod_DoConnectFailAPI_;
+    const ::grpc::internal::RpcMethod rpcmethod_DoRebootFailAPI_;
+    const ::grpc::internal::RpcMethod rpcmethod_DoAuthFailAPI_;
   };
   static std::unique_ptr<Stub> NewStub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options = ::grpc::StubOptions());
 
@@ -213,6 +399,12 @@ class CloudeinSession final {
     virtual ::grpc::Status DoPrepareAPI(::grpc::ServerContext* context, const ::cloudeinapi::PrepareRequest* request, ::cloudeinapi::PrepareResponse* response);
     virtual ::grpc::Status DoConnectAPI(::grpc::ServerContext* context, const ::cloudeinapi::ConnectRequest* request, ::cloudeinapi::ConnectResponse* response);
     virtual ::grpc::Status DoReleaseAPI(::grpc::ServerContext* context, const ::cloudeinapi::ReleaseRequest* request, ::cloudeinapi::ReleaseResponse* response);
+    virtual ::grpc::Status DoDisconnectAPI(::grpc::ServerContext* context, const ::cloudeinapi::DisconnectRequest* request, ::cloudeinapi::DisconnectResponse* response);
+    virtual ::grpc::Status DoTimeoutAPI(::grpc::ServerContext* context, const ::cloudeinapi::TimeoutRequest* request, ::cloudeinapi::TimeoutResponse* response);
+    virtual ::grpc::Status DoPrepareFailAPI(::grpc::ServerContext* context, const ::cloudeinapi::PrepareFailRequest* request, ::cloudeinapi::PrepareFailResponse* response);
+    virtual ::grpc::Status DoConnectFailAPI(::grpc::ServerContext* context, const ::cloudeinapi::ConnectFailRequest* request, ::cloudeinapi::ConnectFailResponse* response);
+    virtual ::grpc::Status DoRebootFailAPI(::grpc::ServerContext* context, const ::cloudeinapi::RebootFailRequest* request, ::cloudeinapi::RebootFailResponse* response);
+    virtual ::grpc::Status DoAuthFailAPI(::grpc::ServerContext* context, const ::cloudeinapi::AuthFailRequest* request, ::cloudeinapi::AuthFailResponse* response);
   };
   template <class BaseClass>
   class WithAsyncMethod_DoAllocateAPI : public BaseClass {
@@ -294,7 +486,127 @@ class CloudeinSession final {
       ::grpc::Service::RequestAsyncUnary(3, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
-  typedef WithAsyncMethod_DoAllocateAPI<WithAsyncMethod_DoPrepareAPI<WithAsyncMethod_DoConnectAPI<WithAsyncMethod_DoReleaseAPI<Service > > > > AsyncService;
+  template <class BaseClass>
+  class WithAsyncMethod_DoDisconnectAPI : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithAsyncMethod_DoDisconnectAPI() {
+      ::grpc::Service::MarkMethodAsync(4);
+    }
+    ~WithAsyncMethod_DoDisconnectAPI() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status DoDisconnectAPI(::grpc::ServerContext* /*context*/, const ::cloudeinapi::DisconnectRequest* /*request*/, ::cloudeinapi::DisconnectResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    void RequestDoDisconnectAPI(::grpc::ServerContext* context, ::cloudeinapi::DisconnectRequest* request, ::grpc::ServerAsyncResponseWriter< ::cloudeinapi::DisconnectResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+      ::grpc::Service::RequestAsyncUnary(4, context, request, response, new_call_cq, notification_cq, tag);
+    }
+  };
+  template <class BaseClass>
+  class WithAsyncMethod_DoTimeoutAPI : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithAsyncMethod_DoTimeoutAPI() {
+      ::grpc::Service::MarkMethodAsync(5);
+    }
+    ~WithAsyncMethod_DoTimeoutAPI() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status DoTimeoutAPI(::grpc::ServerContext* /*context*/, const ::cloudeinapi::TimeoutRequest* /*request*/, ::cloudeinapi::TimeoutResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    void RequestDoTimeoutAPI(::grpc::ServerContext* context, ::cloudeinapi::TimeoutRequest* request, ::grpc::ServerAsyncResponseWriter< ::cloudeinapi::TimeoutResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+      ::grpc::Service::RequestAsyncUnary(5, context, request, response, new_call_cq, notification_cq, tag);
+    }
+  };
+  template <class BaseClass>
+  class WithAsyncMethod_DoPrepareFailAPI : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithAsyncMethod_DoPrepareFailAPI() {
+      ::grpc::Service::MarkMethodAsync(6);
+    }
+    ~WithAsyncMethod_DoPrepareFailAPI() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status DoPrepareFailAPI(::grpc::ServerContext* /*context*/, const ::cloudeinapi::PrepareFailRequest* /*request*/, ::cloudeinapi::PrepareFailResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    void RequestDoPrepareFailAPI(::grpc::ServerContext* context, ::cloudeinapi::PrepareFailRequest* request, ::grpc::ServerAsyncResponseWriter< ::cloudeinapi::PrepareFailResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+      ::grpc::Service::RequestAsyncUnary(6, context, request, response, new_call_cq, notification_cq, tag);
+    }
+  };
+  template <class BaseClass>
+  class WithAsyncMethod_DoConnectFailAPI : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithAsyncMethod_DoConnectFailAPI() {
+      ::grpc::Service::MarkMethodAsync(7);
+    }
+    ~WithAsyncMethod_DoConnectFailAPI() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status DoConnectFailAPI(::grpc::ServerContext* /*context*/, const ::cloudeinapi::ConnectFailRequest* /*request*/, ::cloudeinapi::ConnectFailResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    void RequestDoConnectFailAPI(::grpc::ServerContext* context, ::cloudeinapi::ConnectFailRequest* request, ::grpc::ServerAsyncResponseWriter< ::cloudeinapi::ConnectFailResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+      ::grpc::Service::RequestAsyncUnary(7, context, request, response, new_call_cq, notification_cq, tag);
+    }
+  };
+  template <class BaseClass>
+  class WithAsyncMethod_DoRebootFailAPI : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithAsyncMethod_DoRebootFailAPI() {
+      ::grpc::Service::MarkMethodAsync(8);
+    }
+    ~WithAsyncMethod_DoRebootFailAPI() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status DoRebootFailAPI(::grpc::ServerContext* /*context*/, const ::cloudeinapi::RebootFailRequest* /*request*/, ::cloudeinapi::RebootFailResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    void RequestDoRebootFailAPI(::grpc::ServerContext* context, ::cloudeinapi::RebootFailRequest* request, ::grpc::ServerAsyncResponseWriter< ::cloudeinapi::RebootFailResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+      ::grpc::Service::RequestAsyncUnary(8, context, request, response, new_call_cq, notification_cq, tag);
+    }
+  };
+  template <class BaseClass>
+  class WithAsyncMethod_DoAuthFailAPI : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithAsyncMethod_DoAuthFailAPI() {
+      ::grpc::Service::MarkMethodAsync(9);
+    }
+    ~WithAsyncMethod_DoAuthFailAPI() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status DoAuthFailAPI(::grpc::ServerContext* /*context*/, const ::cloudeinapi::AuthFailRequest* /*request*/, ::cloudeinapi::AuthFailResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    void RequestDoAuthFailAPI(::grpc::ServerContext* context, ::cloudeinapi::AuthFailRequest* request, ::grpc::ServerAsyncResponseWriter< ::cloudeinapi::AuthFailResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+      ::grpc::Service::RequestAsyncUnary(9, context, request, response, new_call_cq, notification_cq, tag);
+    }
+  };
+  typedef WithAsyncMethod_DoAllocateAPI<WithAsyncMethod_DoPrepareAPI<WithAsyncMethod_DoConnectAPI<WithAsyncMethod_DoReleaseAPI<WithAsyncMethod_DoDisconnectAPI<WithAsyncMethod_DoTimeoutAPI<WithAsyncMethod_DoPrepareFailAPI<WithAsyncMethod_DoConnectFailAPI<WithAsyncMethod_DoRebootFailAPI<WithAsyncMethod_DoAuthFailAPI<Service > > > > > > > > > > AsyncService;
   template <class BaseClass>
   class ExperimentalWithCallbackMethod_DoAllocateAPI : public BaseClass {
    private:
@@ -483,11 +795,293 @@ class CloudeinSession final {
     #endif
       { return nullptr; }
   };
+  template <class BaseClass>
+  class ExperimentalWithCallbackMethod_DoDisconnectAPI : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    ExperimentalWithCallbackMethod_DoDisconnectAPI() {
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      ::grpc::Service::
+    #else
+      ::grpc::Service::experimental().
+    #endif
+        MarkMethodCallback(4,
+          new ::grpc::internal::CallbackUnaryHandler< ::cloudeinapi::DisconnectRequest, ::cloudeinapi::DisconnectResponse>(
+            [this](
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+                   ::grpc::CallbackServerContext*
+    #else
+                   ::grpc::experimental::CallbackServerContext*
+    #endif
+                     context, const ::cloudeinapi::DisconnectRequest* request, ::cloudeinapi::DisconnectResponse* response) { return this->DoDisconnectAPI(context, request, response); }));}
+    void SetMessageAllocatorFor_DoDisconnectAPI(
+        ::grpc::experimental::MessageAllocator< ::cloudeinapi::DisconnectRequest, ::cloudeinapi::DisconnectResponse>* allocator) {
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(4);
+    #else
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(4);
+    #endif
+      static_cast<::grpc::internal::CallbackUnaryHandler< ::cloudeinapi::DisconnectRequest, ::cloudeinapi::DisconnectResponse>*>(handler)
+              ->SetMessageAllocator(allocator);
+    }
+    ~ExperimentalWithCallbackMethod_DoDisconnectAPI() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status DoDisconnectAPI(::grpc::ServerContext* /*context*/, const ::cloudeinapi::DisconnectRequest* /*request*/, ::cloudeinapi::DisconnectResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+    virtual ::grpc::ServerUnaryReactor* DoDisconnectAPI(
+      ::grpc::CallbackServerContext* /*context*/, const ::cloudeinapi::DisconnectRequest* /*request*/, ::cloudeinapi::DisconnectResponse* /*response*/)
+    #else
+    virtual ::grpc::experimental::ServerUnaryReactor* DoDisconnectAPI(
+      ::grpc::experimental::CallbackServerContext* /*context*/, const ::cloudeinapi::DisconnectRequest* /*request*/, ::cloudeinapi::DisconnectResponse* /*response*/)
+    #endif
+      { return nullptr; }
+  };
+  template <class BaseClass>
+  class ExperimentalWithCallbackMethod_DoTimeoutAPI : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    ExperimentalWithCallbackMethod_DoTimeoutAPI() {
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      ::grpc::Service::
+    #else
+      ::grpc::Service::experimental().
+    #endif
+        MarkMethodCallback(5,
+          new ::grpc::internal::CallbackUnaryHandler< ::cloudeinapi::TimeoutRequest, ::cloudeinapi::TimeoutResponse>(
+            [this](
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+                   ::grpc::CallbackServerContext*
+    #else
+                   ::grpc::experimental::CallbackServerContext*
+    #endif
+                     context, const ::cloudeinapi::TimeoutRequest* request, ::cloudeinapi::TimeoutResponse* response) { return this->DoTimeoutAPI(context, request, response); }));}
+    void SetMessageAllocatorFor_DoTimeoutAPI(
+        ::grpc::experimental::MessageAllocator< ::cloudeinapi::TimeoutRequest, ::cloudeinapi::TimeoutResponse>* allocator) {
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(5);
+    #else
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(5);
+    #endif
+      static_cast<::grpc::internal::CallbackUnaryHandler< ::cloudeinapi::TimeoutRequest, ::cloudeinapi::TimeoutResponse>*>(handler)
+              ->SetMessageAllocator(allocator);
+    }
+    ~ExperimentalWithCallbackMethod_DoTimeoutAPI() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status DoTimeoutAPI(::grpc::ServerContext* /*context*/, const ::cloudeinapi::TimeoutRequest* /*request*/, ::cloudeinapi::TimeoutResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+    virtual ::grpc::ServerUnaryReactor* DoTimeoutAPI(
+      ::grpc::CallbackServerContext* /*context*/, const ::cloudeinapi::TimeoutRequest* /*request*/, ::cloudeinapi::TimeoutResponse* /*response*/)
+    #else
+    virtual ::grpc::experimental::ServerUnaryReactor* DoTimeoutAPI(
+      ::grpc::experimental::CallbackServerContext* /*context*/, const ::cloudeinapi::TimeoutRequest* /*request*/, ::cloudeinapi::TimeoutResponse* /*response*/)
+    #endif
+      { return nullptr; }
+  };
+  template <class BaseClass>
+  class ExperimentalWithCallbackMethod_DoPrepareFailAPI : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    ExperimentalWithCallbackMethod_DoPrepareFailAPI() {
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      ::grpc::Service::
+    #else
+      ::grpc::Service::experimental().
+    #endif
+        MarkMethodCallback(6,
+          new ::grpc::internal::CallbackUnaryHandler< ::cloudeinapi::PrepareFailRequest, ::cloudeinapi::PrepareFailResponse>(
+            [this](
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+                   ::grpc::CallbackServerContext*
+    #else
+                   ::grpc::experimental::CallbackServerContext*
+    #endif
+                     context, const ::cloudeinapi::PrepareFailRequest* request, ::cloudeinapi::PrepareFailResponse* response) { return this->DoPrepareFailAPI(context, request, response); }));}
+    void SetMessageAllocatorFor_DoPrepareFailAPI(
+        ::grpc::experimental::MessageAllocator< ::cloudeinapi::PrepareFailRequest, ::cloudeinapi::PrepareFailResponse>* allocator) {
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(6);
+    #else
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(6);
+    #endif
+      static_cast<::grpc::internal::CallbackUnaryHandler< ::cloudeinapi::PrepareFailRequest, ::cloudeinapi::PrepareFailResponse>*>(handler)
+              ->SetMessageAllocator(allocator);
+    }
+    ~ExperimentalWithCallbackMethod_DoPrepareFailAPI() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status DoPrepareFailAPI(::grpc::ServerContext* /*context*/, const ::cloudeinapi::PrepareFailRequest* /*request*/, ::cloudeinapi::PrepareFailResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+    virtual ::grpc::ServerUnaryReactor* DoPrepareFailAPI(
+      ::grpc::CallbackServerContext* /*context*/, const ::cloudeinapi::PrepareFailRequest* /*request*/, ::cloudeinapi::PrepareFailResponse* /*response*/)
+    #else
+    virtual ::grpc::experimental::ServerUnaryReactor* DoPrepareFailAPI(
+      ::grpc::experimental::CallbackServerContext* /*context*/, const ::cloudeinapi::PrepareFailRequest* /*request*/, ::cloudeinapi::PrepareFailResponse* /*response*/)
+    #endif
+      { return nullptr; }
+  };
+  template <class BaseClass>
+  class ExperimentalWithCallbackMethod_DoConnectFailAPI : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    ExperimentalWithCallbackMethod_DoConnectFailAPI() {
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      ::grpc::Service::
+    #else
+      ::grpc::Service::experimental().
+    #endif
+        MarkMethodCallback(7,
+          new ::grpc::internal::CallbackUnaryHandler< ::cloudeinapi::ConnectFailRequest, ::cloudeinapi::ConnectFailResponse>(
+            [this](
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+                   ::grpc::CallbackServerContext*
+    #else
+                   ::grpc::experimental::CallbackServerContext*
+    #endif
+                     context, const ::cloudeinapi::ConnectFailRequest* request, ::cloudeinapi::ConnectFailResponse* response) { return this->DoConnectFailAPI(context, request, response); }));}
+    void SetMessageAllocatorFor_DoConnectFailAPI(
+        ::grpc::experimental::MessageAllocator< ::cloudeinapi::ConnectFailRequest, ::cloudeinapi::ConnectFailResponse>* allocator) {
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(7);
+    #else
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(7);
+    #endif
+      static_cast<::grpc::internal::CallbackUnaryHandler< ::cloudeinapi::ConnectFailRequest, ::cloudeinapi::ConnectFailResponse>*>(handler)
+              ->SetMessageAllocator(allocator);
+    }
+    ~ExperimentalWithCallbackMethod_DoConnectFailAPI() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status DoConnectFailAPI(::grpc::ServerContext* /*context*/, const ::cloudeinapi::ConnectFailRequest* /*request*/, ::cloudeinapi::ConnectFailResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+    virtual ::grpc::ServerUnaryReactor* DoConnectFailAPI(
+      ::grpc::CallbackServerContext* /*context*/, const ::cloudeinapi::ConnectFailRequest* /*request*/, ::cloudeinapi::ConnectFailResponse* /*response*/)
+    #else
+    virtual ::grpc::experimental::ServerUnaryReactor* DoConnectFailAPI(
+      ::grpc::experimental::CallbackServerContext* /*context*/, const ::cloudeinapi::ConnectFailRequest* /*request*/, ::cloudeinapi::ConnectFailResponse* /*response*/)
+    #endif
+      { return nullptr; }
+  };
+  template <class BaseClass>
+  class ExperimentalWithCallbackMethod_DoRebootFailAPI : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    ExperimentalWithCallbackMethod_DoRebootFailAPI() {
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      ::grpc::Service::
+    #else
+      ::grpc::Service::experimental().
+    #endif
+        MarkMethodCallback(8,
+          new ::grpc::internal::CallbackUnaryHandler< ::cloudeinapi::RebootFailRequest, ::cloudeinapi::RebootFailResponse>(
+            [this](
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+                   ::grpc::CallbackServerContext*
+    #else
+                   ::grpc::experimental::CallbackServerContext*
+    #endif
+                     context, const ::cloudeinapi::RebootFailRequest* request, ::cloudeinapi::RebootFailResponse* response) { return this->DoRebootFailAPI(context, request, response); }));}
+    void SetMessageAllocatorFor_DoRebootFailAPI(
+        ::grpc::experimental::MessageAllocator< ::cloudeinapi::RebootFailRequest, ::cloudeinapi::RebootFailResponse>* allocator) {
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(8);
+    #else
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(8);
+    #endif
+      static_cast<::grpc::internal::CallbackUnaryHandler< ::cloudeinapi::RebootFailRequest, ::cloudeinapi::RebootFailResponse>*>(handler)
+              ->SetMessageAllocator(allocator);
+    }
+    ~ExperimentalWithCallbackMethod_DoRebootFailAPI() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status DoRebootFailAPI(::grpc::ServerContext* /*context*/, const ::cloudeinapi::RebootFailRequest* /*request*/, ::cloudeinapi::RebootFailResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+    virtual ::grpc::ServerUnaryReactor* DoRebootFailAPI(
+      ::grpc::CallbackServerContext* /*context*/, const ::cloudeinapi::RebootFailRequest* /*request*/, ::cloudeinapi::RebootFailResponse* /*response*/)
+    #else
+    virtual ::grpc::experimental::ServerUnaryReactor* DoRebootFailAPI(
+      ::grpc::experimental::CallbackServerContext* /*context*/, const ::cloudeinapi::RebootFailRequest* /*request*/, ::cloudeinapi::RebootFailResponse* /*response*/)
+    #endif
+      { return nullptr; }
+  };
+  template <class BaseClass>
+  class ExperimentalWithCallbackMethod_DoAuthFailAPI : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    ExperimentalWithCallbackMethod_DoAuthFailAPI() {
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      ::grpc::Service::
+    #else
+      ::grpc::Service::experimental().
+    #endif
+        MarkMethodCallback(9,
+          new ::grpc::internal::CallbackUnaryHandler< ::cloudeinapi::AuthFailRequest, ::cloudeinapi::AuthFailResponse>(
+            [this](
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+                   ::grpc::CallbackServerContext*
+    #else
+                   ::grpc::experimental::CallbackServerContext*
+    #endif
+                     context, const ::cloudeinapi::AuthFailRequest* request, ::cloudeinapi::AuthFailResponse* response) { return this->DoAuthFailAPI(context, request, response); }));}
+    void SetMessageAllocatorFor_DoAuthFailAPI(
+        ::grpc::experimental::MessageAllocator< ::cloudeinapi::AuthFailRequest, ::cloudeinapi::AuthFailResponse>* allocator) {
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(9);
+    #else
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(9);
+    #endif
+      static_cast<::grpc::internal::CallbackUnaryHandler< ::cloudeinapi::AuthFailRequest, ::cloudeinapi::AuthFailResponse>*>(handler)
+              ->SetMessageAllocator(allocator);
+    }
+    ~ExperimentalWithCallbackMethod_DoAuthFailAPI() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status DoAuthFailAPI(::grpc::ServerContext* /*context*/, const ::cloudeinapi::AuthFailRequest* /*request*/, ::cloudeinapi::AuthFailResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+    virtual ::grpc::ServerUnaryReactor* DoAuthFailAPI(
+      ::grpc::CallbackServerContext* /*context*/, const ::cloudeinapi::AuthFailRequest* /*request*/, ::cloudeinapi::AuthFailResponse* /*response*/)
+    #else
+    virtual ::grpc::experimental::ServerUnaryReactor* DoAuthFailAPI(
+      ::grpc::experimental::CallbackServerContext* /*context*/, const ::cloudeinapi::AuthFailRequest* /*request*/, ::cloudeinapi::AuthFailResponse* /*response*/)
+    #endif
+      { return nullptr; }
+  };
   #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-  typedef ExperimentalWithCallbackMethod_DoAllocateAPI<ExperimentalWithCallbackMethod_DoPrepareAPI<ExperimentalWithCallbackMethod_DoConnectAPI<ExperimentalWithCallbackMethod_DoReleaseAPI<Service > > > > CallbackService;
+  typedef ExperimentalWithCallbackMethod_DoAllocateAPI<ExperimentalWithCallbackMethod_DoPrepareAPI<ExperimentalWithCallbackMethod_DoConnectAPI<ExperimentalWithCallbackMethod_DoReleaseAPI<ExperimentalWithCallbackMethod_DoDisconnectAPI<ExperimentalWithCallbackMethod_DoTimeoutAPI<ExperimentalWithCallbackMethod_DoPrepareFailAPI<ExperimentalWithCallbackMethod_DoConnectFailAPI<ExperimentalWithCallbackMethod_DoRebootFailAPI<ExperimentalWithCallbackMethod_DoAuthFailAPI<Service > > > > > > > > > > CallbackService;
   #endif
 
-  typedef ExperimentalWithCallbackMethod_DoAllocateAPI<ExperimentalWithCallbackMethod_DoPrepareAPI<ExperimentalWithCallbackMethod_DoConnectAPI<ExperimentalWithCallbackMethod_DoReleaseAPI<Service > > > > ExperimentalCallbackService;
+  typedef ExperimentalWithCallbackMethod_DoAllocateAPI<ExperimentalWithCallbackMethod_DoPrepareAPI<ExperimentalWithCallbackMethod_DoConnectAPI<ExperimentalWithCallbackMethod_DoReleaseAPI<ExperimentalWithCallbackMethod_DoDisconnectAPI<ExperimentalWithCallbackMethod_DoTimeoutAPI<ExperimentalWithCallbackMethod_DoPrepareFailAPI<ExperimentalWithCallbackMethod_DoConnectFailAPI<ExperimentalWithCallbackMethod_DoRebootFailAPI<ExperimentalWithCallbackMethod_DoAuthFailAPI<Service > > > > > > > > > > ExperimentalCallbackService;
   template <class BaseClass>
   class WithGenericMethod_DoAllocateAPI : public BaseClass {
    private:
@@ -552,6 +1146,108 @@ class CloudeinSession final {
     }
     // disable synchronous version of this method
     ::grpc::Status DoReleaseAPI(::grpc::ServerContext* /*context*/, const ::cloudeinapi::ReleaseRequest* /*request*/, ::cloudeinapi::ReleaseResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+  };
+  template <class BaseClass>
+  class WithGenericMethod_DoDisconnectAPI : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithGenericMethod_DoDisconnectAPI() {
+      ::grpc::Service::MarkMethodGeneric(4);
+    }
+    ~WithGenericMethod_DoDisconnectAPI() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status DoDisconnectAPI(::grpc::ServerContext* /*context*/, const ::cloudeinapi::DisconnectRequest* /*request*/, ::cloudeinapi::DisconnectResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+  };
+  template <class BaseClass>
+  class WithGenericMethod_DoTimeoutAPI : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithGenericMethod_DoTimeoutAPI() {
+      ::grpc::Service::MarkMethodGeneric(5);
+    }
+    ~WithGenericMethod_DoTimeoutAPI() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status DoTimeoutAPI(::grpc::ServerContext* /*context*/, const ::cloudeinapi::TimeoutRequest* /*request*/, ::cloudeinapi::TimeoutResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+  };
+  template <class BaseClass>
+  class WithGenericMethod_DoPrepareFailAPI : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithGenericMethod_DoPrepareFailAPI() {
+      ::grpc::Service::MarkMethodGeneric(6);
+    }
+    ~WithGenericMethod_DoPrepareFailAPI() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status DoPrepareFailAPI(::grpc::ServerContext* /*context*/, const ::cloudeinapi::PrepareFailRequest* /*request*/, ::cloudeinapi::PrepareFailResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+  };
+  template <class BaseClass>
+  class WithGenericMethod_DoConnectFailAPI : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithGenericMethod_DoConnectFailAPI() {
+      ::grpc::Service::MarkMethodGeneric(7);
+    }
+    ~WithGenericMethod_DoConnectFailAPI() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status DoConnectFailAPI(::grpc::ServerContext* /*context*/, const ::cloudeinapi::ConnectFailRequest* /*request*/, ::cloudeinapi::ConnectFailResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+  };
+  template <class BaseClass>
+  class WithGenericMethod_DoRebootFailAPI : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithGenericMethod_DoRebootFailAPI() {
+      ::grpc::Service::MarkMethodGeneric(8);
+    }
+    ~WithGenericMethod_DoRebootFailAPI() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status DoRebootFailAPI(::grpc::ServerContext* /*context*/, const ::cloudeinapi::RebootFailRequest* /*request*/, ::cloudeinapi::RebootFailResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+  };
+  template <class BaseClass>
+  class WithGenericMethod_DoAuthFailAPI : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithGenericMethod_DoAuthFailAPI() {
+      ::grpc::Service::MarkMethodGeneric(9);
+    }
+    ~WithGenericMethod_DoAuthFailAPI() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status DoAuthFailAPI(::grpc::ServerContext* /*context*/, const ::cloudeinapi::AuthFailRequest* /*request*/, ::cloudeinapi::AuthFailResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -634,6 +1330,126 @@ class CloudeinSession final {
     }
     void RequestDoReleaseAPI(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
       ::grpc::Service::RequestAsyncUnary(3, context, request, response, new_call_cq, notification_cq, tag);
+    }
+  };
+  template <class BaseClass>
+  class WithRawMethod_DoDisconnectAPI : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithRawMethod_DoDisconnectAPI() {
+      ::grpc::Service::MarkMethodRaw(4);
+    }
+    ~WithRawMethod_DoDisconnectAPI() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status DoDisconnectAPI(::grpc::ServerContext* /*context*/, const ::cloudeinapi::DisconnectRequest* /*request*/, ::cloudeinapi::DisconnectResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    void RequestDoDisconnectAPI(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+      ::grpc::Service::RequestAsyncUnary(4, context, request, response, new_call_cq, notification_cq, tag);
+    }
+  };
+  template <class BaseClass>
+  class WithRawMethod_DoTimeoutAPI : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithRawMethod_DoTimeoutAPI() {
+      ::grpc::Service::MarkMethodRaw(5);
+    }
+    ~WithRawMethod_DoTimeoutAPI() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status DoTimeoutAPI(::grpc::ServerContext* /*context*/, const ::cloudeinapi::TimeoutRequest* /*request*/, ::cloudeinapi::TimeoutResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    void RequestDoTimeoutAPI(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+      ::grpc::Service::RequestAsyncUnary(5, context, request, response, new_call_cq, notification_cq, tag);
+    }
+  };
+  template <class BaseClass>
+  class WithRawMethod_DoPrepareFailAPI : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithRawMethod_DoPrepareFailAPI() {
+      ::grpc::Service::MarkMethodRaw(6);
+    }
+    ~WithRawMethod_DoPrepareFailAPI() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status DoPrepareFailAPI(::grpc::ServerContext* /*context*/, const ::cloudeinapi::PrepareFailRequest* /*request*/, ::cloudeinapi::PrepareFailResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    void RequestDoPrepareFailAPI(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+      ::grpc::Service::RequestAsyncUnary(6, context, request, response, new_call_cq, notification_cq, tag);
+    }
+  };
+  template <class BaseClass>
+  class WithRawMethod_DoConnectFailAPI : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithRawMethod_DoConnectFailAPI() {
+      ::grpc::Service::MarkMethodRaw(7);
+    }
+    ~WithRawMethod_DoConnectFailAPI() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status DoConnectFailAPI(::grpc::ServerContext* /*context*/, const ::cloudeinapi::ConnectFailRequest* /*request*/, ::cloudeinapi::ConnectFailResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    void RequestDoConnectFailAPI(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+      ::grpc::Service::RequestAsyncUnary(7, context, request, response, new_call_cq, notification_cq, tag);
+    }
+  };
+  template <class BaseClass>
+  class WithRawMethod_DoRebootFailAPI : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithRawMethod_DoRebootFailAPI() {
+      ::grpc::Service::MarkMethodRaw(8);
+    }
+    ~WithRawMethod_DoRebootFailAPI() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status DoRebootFailAPI(::grpc::ServerContext* /*context*/, const ::cloudeinapi::RebootFailRequest* /*request*/, ::cloudeinapi::RebootFailResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    void RequestDoRebootFailAPI(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+      ::grpc::Service::RequestAsyncUnary(8, context, request, response, new_call_cq, notification_cq, tag);
+    }
+  };
+  template <class BaseClass>
+  class WithRawMethod_DoAuthFailAPI : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithRawMethod_DoAuthFailAPI() {
+      ::grpc::Service::MarkMethodRaw(9);
+    }
+    ~WithRawMethod_DoAuthFailAPI() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status DoAuthFailAPI(::grpc::ServerContext* /*context*/, const ::cloudeinapi::AuthFailRequest* /*request*/, ::cloudeinapi::AuthFailResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    void RequestDoAuthFailAPI(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+      ::grpc::Service::RequestAsyncUnary(9, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -789,6 +1605,234 @@ class CloudeinSession final {
       { return nullptr; }
   };
   template <class BaseClass>
+  class ExperimentalWithRawCallbackMethod_DoDisconnectAPI : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    ExperimentalWithRawCallbackMethod_DoDisconnectAPI() {
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      ::grpc::Service::
+    #else
+      ::grpc::Service::experimental().
+    #endif
+        MarkMethodRawCallback(4,
+          new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
+            [this](
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+                   ::grpc::CallbackServerContext*
+    #else
+                   ::grpc::experimental::CallbackServerContext*
+    #endif
+                     context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->DoDisconnectAPI(context, request, response); }));
+    }
+    ~ExperimentalWithRawCallbackMethod_DoDisconnectAPI() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status DoDisconnectAPI(::grpc::ServerContext* /*context*/, const ::cloudeinapi::DisconnectRequest* /*request*/, ::cloudeinapi::DisconnectResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+    virtual ::grpc::ServerUnaryReactor* DoDisconnectAPI(
+      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
+    #else
+    virtual ::grpc::experimental::ServerUnaryReactor* DoDisconnectAPI(
+      ::grpc::experimental::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
+    #endif
+      { return nullptr; }
+  };
+  template <class BaseClass>
+  class ExperimentalWithRawCallbackMethod_DoTimeoutAPI : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    ExperimentalWithRawCallbackMethod_DoTimeoutAPI() {
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      ::grpc::Service::
+    #else
+      ::grpc::Service::experimental().
+    #endif
+        MarkMethodRawCallback(5,
+          new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
+            [this](
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+                   ::grpc::CallbackServerContext*
+    #else
+                   ::grpc::experimental::CallbackServerContext*
+    #endif
+                     context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->DoTimeoutAPI(context, request, response); }));
+    }
+    ~ExperimentalWithRawCallbackMethod_DoTimeoutAPI() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status DoTimeoutAPI(::grpc::ServerContext* /*context*/, const ::cloudeinapi::TimeoutRequest* /*request*/, ::cloudeinapi::TimeoutResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+    virtual ::grpc::ServerUnaryReactor* DoTimeoutAPI(
+      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
+    #else
+    virtual ::grpc::experimental::ServerUnaryReactor* DoTimeoutAPI(
+      ::grpc::experimental::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
+    #endif
+      { return nullptr; }
+  };
+  template <class BaseClass>
+  class ExperimentalWithRawCallbackMethod_DoPrepareFailAPI : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    ExperimentalWithRawCallbackMethod_DoPrepareFailAPI() {
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      ::grpc::Service::
+    #else
+      ::grpc::Service::experimental().
+    #endif
+        MarkMethodRawCallback(6,
+          new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
+            [this](
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+                   ::grpc::CallbackServerContext*
+    #else
+                   ::grpc::experimental::CallbackServerContext*
+    #endif
+                     context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->DoPrepareFailAPI(context, request, response); }));
+    }
+    ~ExperimentalWithRawCallbackMethod_DoPrepareFailAPI() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status DoPrepareFailAPI(::grpc::ServerContext* /*context*/, const ::cloudeinapi::PrepareFailRequest* /*request*/, ::cloudeinapi::PrepareFailResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+    virtual ::grpc::ServerUnaryReactor* DoPrepareFailAPI(
+      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
+    #else
+    virtual ::grpc::experimental::ServerUnaryReactor* DoPrepareFailAPI(
+      ::grpc::experimental::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
+    #endif
+      { return nullptr; }
+  };
+  template <class BaseClass>
+  class ExperimentalWithRawCallbackMethod_DoConnectFailAPI : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    ExperimentalWithRawCallbackMethod_DoConnectFailAPI() {
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      ::grpc::Service::
+    #else
+      ::grpc::Service::experimental().
+    #endif
+        MarkMethodRawCallback(7,
+          new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
+            [this](
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+                   ::grpc::CallbackServerContext*
+    #else
+                   ::grpc::experimental::CallbackServerContext*
+    #endif
+                     context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->DoConnectFailAPI(context, request, response); }));
+    }
+    ~ExperimentalWithRawCallbackMethod_DoConnectFailAPI() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status DoConnectFailAPI(::grpc::ServerContext* /*context*/, const ::cloudeinapi::ConnectFailRequest* /*request*/, ::cloudeinapi::ConnectFailResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+    virtual ::grpc::ServerUnaryReactor* DoConnectFailAPI(
+      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
+    #else
+    virtual ::grpc::experimental::ServerUnaryReactor* DoConnectFailAPI(
+      ::grpc::experimental::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
+    #endif
+      { return nullptr; }
+  };
+  template <class BaseClass>
+  class ExperimentalWithRawCallbackMethod_DoRebootFailAPI : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    ExperimentalWithRawCallbackMethod_DoRebootFailAPI() {
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      ::grpc::Service::
+    #else
+      ::grpc::Service::experimental().
+    #endif
+        MarkMethodRawCallback(8,
+          new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
+            [this](
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+                   ::grpc::CallbackServerContext*
+    #else
+                   ::grpc::experimental::CallbackServerContext*
+    #endif
+                     context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->DoRebootFailAPI(context, request, response); }));
+    }
+    ~ExperimentalWithRawCallbackMethod_DoRebootFailAPI() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status DoRebootFailAPI(::grpc::ServerContext* /*context*/, const ::cloudeinapi::RebootFailRequest* /*request*/, ::cloudeinapi::RebootFailResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+    virtual ::grpc::ServerUnaryReactor* DoRebootFailAPI(
+      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
+    #else
+    virtual ::grpc::experimental::ServerUnaryReactor* DoRebootFailAPI(
+      ::grpc::experimental::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
+    #endif
+      { return nullptr; }
+  };
+  template <class BaseClass>
+  class ExperimentalWithRawCallbackMethod_DoAuthFailAPI : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    ExperimentalWithRawCallbackMethod_DoAuthFailAPI() {
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      ::grpc::Service::
+    #else
+      ::grpc::Service::experimental().
+    #endif
+        MarkMethodRawCallback(9,
+          new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
+            [this](
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+                   ::grpc::CallbackServerContext*
+    #else
+                   ::grpc::experimental::CallbackServerContext*
+    #endif
+                     context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->DoAuthFailAPI(context, request, response); }));
+    }
+    ~ExperimentalWithRawCallbackMethod_DoAuthFailAPI() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status DoAuthFailAPI(::grpc::ServerContext* /*context*/, const ::cloudeinapi::AuthFailRequest* /*request*/, ::cloudeinapi::AuthFailResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+    virtual ::grpc::ServerUnaryReactor* DoAuthFailAPI(
+      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
+    #else
+    virtual ::grpc::experimental::ServerUnaryReactor* DoAuthFailAPI(
+      ::grpc::experimental::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
+    #endif
+      { return nullptr; }
+  };
+  template <class BaseClass>
   class WithStreamedUnaryMethod_DoAllocateAPI : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
@@ -896,9 +1940,171 @@ class CloudeinSession final {
     // replace default version of method with streamed unary
     virtual ::grpc::Status StreamedDoReleaseAPI(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::cloudeinapi::ReleaseRequest,::cloudeinapi::ReleaseResponse>* server_unary_streamer) = 0;
   };
-  typedef WithStreamedUnaryMethod_DoAllocateAPI<WithStreamedUnaryMethod_DoPrepareAPI<WithStreamedUnaryMethod_DoConnectAPI<WithStreamedUnaryMethod_DoReleaseAPI<Service > > > > StreamedUnaryService;
+  template <class BaseClass>
+  class WithStreamedUnaryMethod_DoDisconnectAPI : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithStreamedUnaryMethod_DoDisconnectAPI() {
+      ::grpc::Service::MarkMethodStreamed(4,
+        new ::grpc::internal::StreamedUnaryHandler<
+          ::cloudeinapi::DisconnectRequest, ::cloudeinapi::DisconnectResponse>(
+            [this](::grpc::ServerContext* context,
+                   ::grpc::ServerUnaryStreamer<
+                     ::cloudeinapi::DisconnectRequest, ::cloudeinapi::DisconnectResponse>* streamer) {
+                       return this->StreamedDoDisconnectAPI(context,
+                         streamer);
+                  }));
+    }
+    ~WithStreamedUnaryMethod_DoDisconnectAPI() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable regular version of this method
+    ::grpc::Status DoDisconnectAPI(::grpc::ServerContext* /*context*/, const ::cloudeinapi::DisconnectRequest* /*request*/, ::cloudeinapi::DisconnectResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    // replace default version of method with streamed unary
+    virtual ::grpc::Status StreamedDoDisconnectAPI(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::cloudeinapi::DisconnectRequest,::cloudeinapi::DisconnectResponse>* server_unary_streamer) = 0;
+  };
+  template <class BaseClass>
+  class WithStreamedUnaryMethod_DoTimeoutAPI : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithStreamedUnaryMethod_DoTimeoutAPI() {
+      ::grpc::Service::MarkMethodStreamed(5,
+        new ::grpc::internal::StreamedUnaryHandler<
+          ::cloudeinapi::TimeoutRequest, ::cloudeinapi::TimeoutResponse>(
+            [this](::grpc::ServerContext* context,
+                   ::grpc::ServerUnaryStreamer<
+                     ::cloudeinapi::TimeoutRequest, ::cloudeinapi::TimeoutResponse>* streamer) {
+                       return this->StreamedDoTimeoutAPI(context,
+                         streamer);
+                  }));
+    }
+    ~WithStreamedUnaryMethod_DoTimeoutAPI() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable regular version of this method
+    ::grpc::Status DoTimeoutAPI(::grpc::ServerContext* /*context*/, const ::cloudeinapi::TimeoutRequest* /*request*/, ::cloudeinapi::TimeoutResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    // replace default version of method with streamed unary
+    virtual ::grpc::Status StreamedDoTimeoutAPI(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::cloudeinapi::TimeoutRequest,::cloudeinapi::TimeoutResponse>* server_unary_streamer) = 0;
+  };
+  template <class BaseClass>
+  class WithStreamedUnaryMethod_DoPrepareFailAPI : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithStreamedUnaryMethod_DoPrepareFailAPI() {
+      ::grpc::Service::MarkMethodStreamed(6,
+        new ::grpc::internal::StreamedUnaryHandler<
+          ::cloudeinapi::PrepareFailRequest, ::cloudeinapi::PrepareFailResponse>(
+            [this](::grpc::ServerContext* context,
+                   ::grpc::ServerUnaryStreamer<
+                     ::cloudeinapi::PrepareFailRequest, ::cloudeinapi::PrepareFailResponse>* streamer) {
+                       return this->StreamedDoPrepareFailAPI(context,
+                         streamer);
+                  }));
+    }
+    ~WithStreamedUnaryMethod_DoPrepareFailAPI() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable regular version of this method
+    ::grpc::Status DoPrepareFailAPI(::grpc::ServerContext* /*context*/, const ::cloudeinapi::PrepareFailRequest* /*request*/, ::cloudeinapi::PrepareFailResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    // replace default version of method with streamed unary
+    virtual ::grpc::Status StreamedDoPrepareFailAPI(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::cloudeinapi::PrepareFailRequest,::cloudeinapi::PrepareFailResponse>* server_unary_streamer) = 0;
+  };
+  template <class BaseClass>
+  class WithStreamedUnaryMethod_DoConnectFailAPI : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithStreamedUnaryMethod_DoConnectFailAPI() {
+      ::grpc::Service::MarkMethodStreamed(7,
+        new ::grpc::internal::StreamedUnaryHandler<
+          ::cloudeinapi::ConnectFailRequest, ::cloudeinapi::ConnectFailResponse>(
+            [this](::grpc::ServerContext* context,
+                   ::grpc::ServerUnaryStreamer<
+                     ::cloudeinapi::ConnectFailRequest, ::cloudeinapi::ConnectFailResponse>* streamer) {
+                       return this->StreamedDoConnectFailAPI(context,
+                         streamer);
+                  }));
+    }
+    ~WithStreamedUnaryMethod_DoConnectFailAPI() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable regular version of this method
+    ::grpc::Status DoConnectFailAPI(::grpc::ServerContext* /*context*/, const ::cloudeinapi::ConnectFailRequest* /*request*/, ::cloudeinapi::ConnectFailResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    // replace default version of method with streamed unary
+    virtual ::grpc::Status StreamedDoConnectFailAPI(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::cloudeinapi::ConnectFailRequest,::cloudeinapi::ConnectFailResponse>* server_unary_streamer) = 0;
+  };
+  template <class BaseClass>
+  class WithStreamedUnaryMethod_DoRebootFailAPI : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithStreamedUnaryMethod_DoRebootFailAPI() {
+      ::grpc::Service::MarkMethodStreamed(8,
+        new ::grpc::internal::StreamedUnaryHandler<
+          ::cloudeinapi::RebootFailRequest, ::cloudeinapi::RebootFailResponse>(
+            [this](::grpc::ServerContext* context,
+                   ::grpc::ServerUnaryStreamer<
+                     ::cloudeinapi::RebootFailRequest, ::cloudeinapi::RebootFailResponse>* streamer) {
+                       return this->StreamedDoRebootFailAPI(context,
+                         streamer);
+                  }));
+    }
+    ~WithStreamedUnaryMethod_DoRebootFailAPI() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable regular version of this method
+    ::grpc::Status DoRebootFailAPI(::grpc::ServerContext* /*context*/, const ::cloudeinapi::RebootFailRequest* /*request*/, ::cloudeinapi::RebootFailResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    // replace default version of method with streamed unary
+    virtual ::grpc::Status StreamedDoRebootFailAPI(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::cloudeinapi::RebootFailRequest,::cloudeinapi::RebootFailResponse>* server_unary_streamer) = 0;
+  };
+  template <class BaseClass>
+  class WithStreamedUnaryMethod_DoAuthFailAPI : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithStreamedUnaryMethod_DoAuthFailAPI() {
+      ::grpc::Service::MarkMethodStreamed(9,
+        new ::grpc::internal::StreamedUnaryHandler<
+          ::cloudeinapi::AuthFailRequest, ::cloudeinapi::AuthFailResponse>(
+            [this](::grpc::ServerContext* context,
+                   ::grpc::ServerUnaryStreamer<
+                     ::cloudeinapi::AuthFailRequest, ::cloudeinapi::AuthFailResponse>* streamer) {
+                       return this->StreamedDoAuthFailAPI(context,
+                         streamer);
+                  }));
+    }
+    ~WithStreamedUnaryMethod_DoAuthFailAPI() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable regular version of this method
+    ::grpc::Status DoAuthFailAPI(::grpc::ServerContext* /*context*/, const ::cloudeinapi::AuthFailRequest* /*request*/, ::cloudeinapi::AuthFailResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    // replace default version of method with streamed unary
+    virtual ::grpc::Status StreamedDoAuthFailAPI(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::cloudeinapi::AuthFailRequest,::cloudeinapi::AuthFailResponse>* server_unary_streamer) = 0;
+  };
+  typedef WithStreamedUnaryMethod_DoAllocateAPI<WithStreamedUnaryMethod_DoPrepareAPI<WithStreamedUnaryMethod_DoConnectAPI<WithStreamedUnaryMethod_DoReleaseAPI<WithStreamedUnaryMethod_DoDisconnectAPI<WithStreamedUnaryMethod_DoTimeoutAPI<WithStreamedUnaryMethod_DoPrepareFailAPI<WithStreamedUnaryMethod_DoConnectFailAPI<WithStreamedUnaryMethod_DoRebootFailAPI<WithStreamedUnaryMethod_DoAuthFailAPI<Service > > > > > > > > > > StreamedUnaryService;
   typedef Service SplitStreamedService;
-  typedef WithStreamedUnaryMethod_DoAllocateAPI<WithStreamedUnaryMethod_DoPrepareAPI<WithStreamedUnaryMethod_DoConnectAPI<WithStreamedUnaryMethod_DoReleaseAPI<Service > > > > StreamedService;
+  typedef WithStreamedUnaryMethod_DoAllocateAPI<WithStreamedUnaryMethod_DoPrepareAPI<WithStreamedUnaryMethod_DoConnectAPI<WithStreamedUnaryMethod_DoReleaseAPI<WithStreamedUnaryMethod_DoDisconnectAPI<WithStreamedUnaryMethod_DoTimeoutAPI<WithStreamedUnaryMethod_DoPrepareFailAPI<WithStreamedUnaryMethod_DoConnectFailAPI<WithStreamedUnaryMethod_DoRebootFailAPI<WithStreamedUnaryMethod_DoAuthFailAPI<Service > > > > > > > > > > StreamedService;
 };
 
 }  // namespace cloudeinapi

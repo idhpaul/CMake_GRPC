@@ -14,9 +14,9 @@ void CloudeinSessionClient::DoAllocate(const SessionInfo session_info) {
 
 	AsyncClientCall_DoAllocate* call = new AsyncClientCall_DoAllocate;
 	call->deadline_ = std::chrono::system_clock::now() + std::chrono::milliseconds(5000);
-	//call->context.set_deadline(call->deadline_);
+	call->context.set_deadline(call->deadline_);
 
-	tag_push(CLOUDEIN_GRPC_TAG::DoAllocateAPI, (void*)call);
+	tag_push(CLOUDEIN_GRPC_TAG::DoAllocate_API, (void*)call);
 
 	call->response_reader_allocate = stub_->PrepareAsyncDoAllocateAPI(&call->context, request, &cq_);
 	call->response_reader_allocate->StartCall();
@@ -33,7 +33,7 @@ void CloudeinSessionClient::DoPrepare(const SessionInfo session_info) {
 	call->deadline_ = std::chrono::system_clock::now() + std::chrono::milliseconds(5000);
 	call->context.set_deadline(call->deadline_);
 
-	tag_push(CLOUDEIN_GRPC_TAG::DoPrepareAPI, (void*)call);
+	tag_push(CLOUDEIN_GRPC_TAG::DoPrepare_API, (void*)call);
 
 	call->response_reader_prepare = stub_->PrepareAsyncDoPrepareAPI(&call->context, request, &cq_);
 	call->response_reader_prepare->StartCall();
@@ -50,7 +50,7 @@ void CloudeinSessionClient::DoConnect(const SessionInfo session_info) {
 	call->deadline_ = std::chrono::system_clock::now() + std::chrono::milliseconds(5000);
 	call->context.set_deadline(call->deadline_);
 
-	tag_push(CLOUDEIN_GRPC_TAG::DoConnectAPI, (void*)call);
+	tag_push(CLOUDEIN_GRPC_TAG::DoConnect_API, (void*)call);
 
 	call->response_reader_connect = stub_->PrepareAsyncDoConnectAPI(&call->context, request, &cq_);
 	call->response_reader_connect->StartCall();
@@ -67,11 +67,113 @@ void CloudeinSessionClient::DoRelease(const SessionInfo session_info) {
 	call->deadline_ = std::chrono::system_clock::now() + std::chrono::milliseconds(5000);
 	call->context.set_deadline(call->deadline_);
 
-	tag_push(CLOUDEIN_GRPC_TAG::DoReleaseAPI, (void*)call);
+	tag_push(CLOUDEIN_GRPC_TAG::DoRelease_API, (void*)call);
 
 	call->response_reader_release = stub_->PrepareAsyncDoReleaseAPI(&call->context, request, &cq_);
 	call->response_reader_release->StartCall();
 	call->response_reader_release->Finish(&call->resp, &call->status, (void*)call);
+}
+
+void CloudeinSessionClient::DoDisconnect(const SessionInfo session_info)
+{
+	DisconnectRequest request;
+	request.set_region(std::to_string(session_info.region));
+	request.set_tx_name("tx-DoDisconnect");
+
+	AsyncClientCall_DoDisconnect* call = new AsyncClientCall_DoDisconnect;
+	call->deadline_ = std::chrono::system_clock::now() + std::chrono::milliseconds(5000);
+	call->context.set_deadline(call->deadline_);
+
+	tag_push(CLOUDEIN_GRPC_TAG::DoDisconnect_API, (void*)call);
+
+	call->response_reader_disconnect = stub_->PrepareAsyncDoDisconnectAPI(&call->context, request, &cq_);
+	call->response_reader_disconnect->StartCall();
+	call->response_reader_disconnect->Finish(&call->resp, &call->status, (void*)call);
+}
+
+void CloudeinSessionClient::DoTimeout(const SessionInfo session_info)
+{
+	TimeoutRequest request;
+	request.set_region(std::to_string(session_info.region));
+	request.set_tx_name("tx-DoTimeout");
+
+	AsyncClientCall_DoTimeout* call = new AsyncClientCall_DoTimeout;
+	call->deadline_ = std::chrono::system_clock::now() + std::chrono::milliseconds(5000);
+	call->context.set_deadline(call->deadline_);
+
+	tag_push(CLOUDEIN_GRPC_TAG::DoTimeout_API, (void*)call);
+
+	call->response_reader_timeout = stub_->PrepareAsyncDoTimeoutAPI(&call->context, request, &cq_);
+	call->response_reader_timeout->StartCall();
+	call->response_reader_timeout->Finish(&call->resp, &call->status, (void*)call);
+}
+
+void CloudeinSessionClient::DoPrepareFail(const SessionInfo session_info)
+{
+	PrepareFailRequest request;
+	request.set_region(std::to_string(session_info.region));
+	request.set_tx_name("tx-DoPrepareFail");
+
+	AsyncClientCall_DoPrepareFail* call = new AsyncClientCall_DoPrepareFail;
+	call->deadline_ = std::chrono::system_clock::now() + std::chrono::milliseconds(5000);
+	call->context.set_deadline(call->deadline_);
+
+	tag_push(CLOUDEIN_GRPC_TAG::DoPrepareFail_API, (void*)call);
+
+	call->response_reader_preparefail = stub_->PrepareAsyncDoPrepareFailAPI(&call->context, request, &cq_);
+	call->response_reader_preparefail->StartCall();
+	call->response_reader_preparefail->Finish(&call->resp, &call->status, (void*)call);
+}
+
+void CloudeinSessionClient::DoConnectFail(const SessionInfo session_info)
+{
+	ConnectFailRequest request;
+	request.set_region(std::to_string(session_info.region));
+	request.set_tx_name("tx-DoConnectFail");
+
+	AsyncClientCall_DoConnectFail* call = new AsyncClientCall_DoConnectFail;
+	call->deadline_ = std::chrono::system_clock::now() + std::chrono::milliseconds(5000);
+	call->context.set_deadline(call->deadline_);
+
+	tag_push(CLOUDEIN_GRPC_TAG::DoPrepareFail_API, (void*)call);
+
+	call->response_reader_connectfail = stub_->PrepareAsyncDoConnectFailAPI(&call->context, request, &cq_);
+	call->response_reader_connectfail->StartCall();
+	call->response_reader_connectfail->Finish(&call->resp, &call->status, (void*)call);
+}
+
+void CloudeinSessionClient::DoRebootFail(const SessionInfo session_info)
+{
+	RebootFailRequest request;
+	request.set_region(std::to_string(session_info.region));
+	request.set_tx_name("tx-DoRebootFail");
+
+	AsyncClientCall_DoRebootFail* call = new AsyncClientCall_DoRebootFail;
+	call->deadline_ = std::chrono::system_clock::now() + std::chrono::milliseconds(5000);
+	call->context.set_deadline(call->deadline_);
+
+	tag_push(CLOUDEIN_GRPC_TAG::DoPrepareFail_API, (void*)call);
+
+	call->response_reader_rebootfail = stub_->PrepareAsyncDoRebootFailAPI(&call->context, request, &cq_);
+	call->response_reader_rebootfail->StartCall();
+	call->response_reader_rebootfail->Finish(&call->resp, &call->status, (void*)call);
+}
+
+void CloudeinSessionClient::DoAuthFail(const SessionInfo session_info)
+{
+	AuthFailRequest request;
+	request.set_region(std::to_string(session_info.region));
+	request.set_tx_name("tx-DoAuthFail");
+
+	AsyncClientCall_DoAuthFail* call = new AsyncClientCall_DoAuthFail;
+	call->deadline_ = std::chrono::system_clock::now() + std::chrono::milliseconds(5000);
+	call->context.set_deadline(call->deadline_);
+
+	tag_push(CLOUDEIN_GRPC_TAG::DoPrepareFail_API, (void*)call);
+
+	call->response_reader_authfail = stub_->PrepareAsyncDoAuthFailAPI(&call->context, request, &cq_);
+	call->response_reader_authfail->StartCall();
+	call->response_reader_authfail->Finish(&call->resp, &call->status, (void*)call);
 }
 
 void CloudeinSessionClient::StartAsyncCompleteRpc() {
@@ -88,7 +190,7 @@ void CloudeinSessionClient::StartAsyncCompleteRpc() {
 
 		switch (grpc_tag)
 		{
-		case DoAllocateAPI:
+		case DoAllocate_API:
 		{
 			AsyncClientCall_DoAllocate* call = static_cast<AsyncClientCall_DoAllocate*>(got_tag);
 
@@ -105,7 +207,8 @@ void CloudeinSessionClient::StartAsyncCompleteRpc() {
 			}
 			else if (call->status.error_code() == grpc::StatusCode::NOT_FOUND)
 			{
-				std::cout << "DoALLocateAPI-resp NotFound please retry" << std::endl;
+				std::cout << "DoALLocateAPI-resp Not Found please retry" << std::endl;
+				std::cout << call->status.error_message() << std::endl;
 			}
 			else
 				std::cout << "DoALLocateAPI-resp failed" << std::endl;
@@ -113,7 +216,7 @@ void CloudeinSessionClient::StartAsyncCompleteRpc() {
 			delete call;
 		}
 		break;
-		case DoPrepareAPI:
+		case DoPrepare_API:
 		{
 			AsyncClientCall_DoPrepare* call = static_cast<AsyncClientCall_DoPrepare*>(got_tag);
 
@@ -122,35 +225,119 @@ void CloudeinSessionClient::StartAsyncCompleteRpc() {
 			if (call->status.ok())
 				std::cout << "DoPrepareAPI-resp OK region: " << call->resp.region() << std::endl;
 			else
-				std::cout << "RPC failed" << std::endl;
+				std::cout << "DoPrepareAPI RPC failed" << std::endl;
 
 			delete call;
 		}
 		break;
-		case DoConnectAPI:
+		case DoConnect_API:
 		{
 			AsyncClientCall_DoConnect* call = static_cast<AsyncClientCall_DoConnect*>(got_tag);
 
 			//GPR_ASSERT(ok);
 
 			if (call->status.ok())
-				std::cout << "DoPrepareAPI-resp OK region: " << call->resp.region() << std::endl;
+				std::cout << "DoConnectAPI-resp OK region: " << call->resp.region() << std::endl;
 			else
-				std::cout << "RPC failed" << std::endl;
+				std::cout << "DoConnectAPI RPC failed" << std::endl;
 
 			delete call;
 		}
 		break;
-		case DoReleaseAPI:
+		case DoRelease_API:
 		{
 			AsyncClientCall_DoRelease* call = static_cast<AsyncClientCall_DoRelease*>(got_tag);
 
 			//GPR_ASSERT(ok);
 
 			if (call->status.ok())
-				std::cout << "DoPrepareAPI-resp OK region: " << call->resp.region() << std::endl;
+				std::cout << "DoReleaseAPI-resp OK region: " << call->resp.region() << std::endl;
 			else
-				std::cout << "RPC failed" << std::endl;
+				std::cout << "DoReleaseAPI RPC failed" << std::endl;
+
+			delete call;
+		}
+		break;
+		case DoDisconnect_API:
+		{
+			AsyncClientCall_DoDisconnect* call = static_cast<AsyncClientCall_DoDisconnect*>(got_tag);
+
+			//GPR_ASSERT(ok);
+
+			if (call->status.ok())
+				std::cout << "DoDisconnect-resp OK region: " << call->resp.region() << std::endl;
+			else
+				std::cout << "DoDisconnect RPC failed" << std::endl;
+
+			delete call;
+		}
+		break;
+		case DoTimeout_API:
+		{
+			AsyncClientCall_DoTimeout* call = static_cast<AsyncClientCall_DoTimeout*>(got_tag);
+
+			//GPR_ASSERT(ok);
+
+			if (call->status.ok())
+				std::cout << "DoTimeout-resp OK region: " << call->resp.region() << std::endl;
+			else
+				std::cout << "DoTimeout RPC failed" << std::endl;
+
+			delete call;
+		}
+		break;
+		case DoPrepareFail_API:
+		{
+			AsyncClientCall_DoPrepareFail* call = static_cast<AsyncClientCall_DoPrepareFail*>(got_tag);
+
+			//GPR_ASSERT(ok);
+
+			if (call->status.ok())
+				std::cout << "DoPrepareFail-resp OK region: " << call->resp.region() << std::endl;
+			else
+				std::cout << "DoPrepareFail RPC failed" << std::endl;
+
+			delete call;
+		}
+		break;
+		case DoConnectFail_API:
+		{
+			AsyncClientCall_DoConnectFail* call = static_cast<AsyncClientCall_DoConnectFail*>(got_tag);
+
+			//GPR_ASSERT(ok);
+
+			if (call->status.ok())
+				std::cout << "DoConnectFail-resp OK region: " << call->resp.region() << std::endl;
+			else
+				std::cout << "DoConnectFail RPC failed" << std::endl;
+
+			delete call;
+		}
+		break;
+		case DoRebootFail_API:
+		{
+			AsyncClientCall_DoRebootFail* call = static_cast<AsyncClientCall_DoRebootFail*>(got_tag);
+
+			//GPR_ASSERT(ok);
+
+			if (call->status.ok())
+				std::cout << "DoRebootFail-resp OK region: " << call->resp.region() << std::endl;
+			else
+				std::cout << "DoRebootFail RPC failed" << std::endl;
+
+			delete call;
+		}
+		break;
+		case DoAuthFail_API:
+		{
+			AsyncClientCall_DoAuthFail* call = static_cast<AsyncClientCall_DoAuthFail*>(got_tag);
+
+			//GPR_ASSERT(ok);
+
+			if (call->status.ok())
+				std::cout << "DoAuthFail-resp OK region: " << call->resp.region() << std::endl;
+			else
+				std::cout << "DoAuthFail RPC failed" << std::endl;
 
 			delete call;
 		}

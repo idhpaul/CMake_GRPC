@@ -125,3 +125,63 @@ std::string StateRelease::return_handle()
 {
     return "resp-Release";
 }
+
+void StateDisconnect::handle(CloudeinSessionContext* session_context)
+{
+    session_context->grpcClient_->DoDisconnect(this->info_);
+}
+
+std::string StateDisconnect::return_handle()
+{
+    return "resp-Disconnect";
+}
+
+void StateTimeout::handle(CloudeinSessionContext* session_context)
+{
+    session_context->grpcClient_->DoTimeout(this->info_);
+}
+
+std::string StateTimeout::return_handle()
+{
+    return "resp-Timeout";
+}
+
+void StatePrepareFail::handle(CloudeinSessionContext* session_context)
+{
+    session_context->grpcClient_->DoPrepareFail(this->info_);
+}
+
+std::string StatePrepareFail::return_handle()
+{
+    return "resp-ReadyFail";
+}
+
+void StateConnectFail::handle(CloudeinSessionContext* session_context)
+{
+    session_context->grpcClient_->DoConnectFail(this->info_);
+}
+
+std::string StateConnectFail::return_handle()
+{
+    return "resp-ConnectFail";
+}
+
+void StateRebootFail::handle(CloudeinSessionContext* session_context)
+{
+    session_context->grpcClient_->DoRebootFail(this->info_);
+}
+
+std::string StateRebootFail::return_handle()
+{
+    return "resp-RebootFail";
+}
+
+void StateAuthFail::handle(CloudeinSessionContext* session_context)
+{
+    session_context->grpcClient_->DoAuthFail(this->info_);
+}
+
+std::string StateAuthFail::return_handle()
+{
+    return "resp-AuthFail";
+}

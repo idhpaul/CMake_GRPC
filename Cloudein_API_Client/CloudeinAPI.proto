@@ -1,0 +1,142 @@
+/*******************************************************************************
+* Created  				Jun 23, 2021
+* Modified				Jul 05, 2021
+* Version				1.0.0.1
+
+* FILE:					CloudeinAPI.proto
+* Author:				dhimm@mslm.kr
+* DESCRIPTION:			Cloudein TX-SM API grpc proto
+* 
+*******************************************************************************/
+
+syntax = "proto3";
+
+package cloudeinapi;
+
+service CloudeinSession {
+  rpc DoAllocateAPI (AllocateRequest) returns (AllocateResponse) {}
+  rpc DoPrepareAPI (PrepareRequest) returns (PrepareResponse) {}
+  rpc DoConnectAPI (ConnectRequest) returns (ConnectResponse) {}
+  rpc DoReleaseAPI (ReleaseRequest) returns (ReleaseResponse) {}
+  rpc DoDisconnectAPI (DisconnectRequest) returns (DisconnectResponse) {}
+  rpc DoTimeoutAPI (TimeoutRequest) returns (TimeoutResponse) {}
+  rpc DoPrepareFailAPI (PrepareFailRequest) returns (PrepareFailResponse) {}
+  rpc DoConnectFailAPI (ConnectFailRequest) returns (ConnectFailResponse) {}
+  rpc DoRebootFailAPI (RebootFailRequest) returns (RebootFailResponse) {}
+  rpc DoAuthFailAPI (AuthFailRequest) returns (AuthFailResponse) {}
+}
+
+/*
+ *     Allocate API Request/Response message struct
+*/
+message AllocateRequest {
+  string region = 1;
+  string tx_name = 2;
+}
+message AllocateResponse {
+  string region = 1;
+  uint64 allocate_port1 = 11;
+  uint64 allocate_port2 = 12;
+  uint64 allocate_port3 = 13;
+  uint64 allocate_port4 = 14;
+  uint64 allocate_port5 = 15;
+}
+
+/*
+ *     Prepare API Request/Response message struct
+*/
+message PrepareRequest {
+  string region = 1;
+  string tx_name = 2;
+}
+message PrepareResponse {
+  string region = 1;
+}
+
+/*
+ *     Connect API Request/Response message struct
+*/
+message ConnectRequest {
+  string region = 1;
+  string tx_name = 2;
+}
+message ConnectResponse {
+  string region = 1;
+}
+
+/*
+ *     Release API Request/Response message struct
+*/
+message ReleaseRequest {
+  string region = 1;
+  string tx_name = 2;
+}
+message ReleaseResponse {
+  string region = 1;
+}
+
+/*
+ *     Disconnect API Request/Response message struct
+*/
+message DisconnectRequest {
+  string region = 1;
+  string tx_name = 2;
+}
+message DisconnectResponse {
+  string region = 1;
+}
+
+/*
+ *     Timeout API Request/Response message struct
+*/
+message TimeoutRequest {
+  string region = 1;
+  string tx_name = 2;
+}
+message TimeoutResponse {
+  string region = 1;
+}
+
+/*
+ *     PrepareFail API Request/Response message struct
+*/
+message PrepareFailRequest {
+  string region = 1;
+  string tx_name = 2;
+}
+message PrepareFailResponse {
+  string region = 1;
+}
+
+/*
+ *     ConnectFail API Request/Response message struct
+*/
+message ConnectFailRequest {
+  string region = 1;
+  string tx_name = 2;
+}
+message ConnectFailResponse {
+  string region = 1;
+}
+
+/*
+ *     RebootFail API Request/Response message struct
+*/
+message RebootFailRequest {
+  string region = 1;
+  string tx_name = 2;
+}
+message RebootFailResponse {
+  string region = 1;
+}
+
+/*
+ *    	AuthFail API Request/Response message struct
+*/
+message AuthFailRequest {
+  string region = 1;
+  string tx_name = 2;
+}
+message AuthFailResponse {
+  string region = 1;
+}

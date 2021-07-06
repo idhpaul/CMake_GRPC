@@ -4,6 +4,10 @@
 cmake_minimum_required (VERSION 3.8)
 message(STATUS "CmakeList at ${CMAKE_CURRENT_SOURCE_DIR}")
 
+add_custom_target(graphviz ALL
+                  "${CMAKE_COMMAND}" "--graphviz=foo" .
+                  WORKING_DIRECTORY "${CMAKE_BINARY_DIR}")
+
 # Add include directories & libraries
 if (WIN32)   
 
@@ -47,12 +51,12 @@ add_executable(Cloudein_API_Client
     )
 
 if(MSVC)
-    add_definitions(-DGRPC_CALLBACK_API_NONEXPERIMENTAL)
-    add_definitions(-DNOMINMAX)
+    #add_definitions(-DGRPC_CALLBACK_API_NONEXPERIMENTAL)
+    #add_definitions(-DNOMINMAX)
 endif()
 
 if(UNIX)
-    add_definitions(-DGRPC_CALLBACK_API_NONEXPERIMENTAL)
+    #add_definitions(-DGRPC_CALLBACK_API_NONEXPERIMENTAL)
 endif()
 
 

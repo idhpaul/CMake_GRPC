@@ -69,44 +69,13 @@
           "name": "VCPKG_TARGET_TRIPLET",
           "value": "x64-windows-static",
           "type": "STRING"
+        },
+        {
+          "name": "CMAKE_TOOLCHAIN_FILE",
+          "value": "C:/mslmlib/vcpkg/scripts/buildsystems/vcpkg.cmake",
+          "type": "STRING"
         }
       ]
-    },
-    {
-      "name": "WSL-GCC-Debug",
-      "generator": "Unix Makefiles",
-      "configurationType": "Debug",
-      "buildRoot": "${projectDir}\\out\\build\\${name}",
-      "installRoot": "${projectDir}\\out\\install\\${name}",
-      "cmakeExecutable": "cmake",
-      "buildCommandArgs": "",
-      "ctestCommandArgs": "",
-      "variables": [
-        {
-          "name": "CMAKE_CXX_STANDARD",
-          "value": "14",
-          "type": "STRING"
-        },
-        {
-          "name": "CMAKE_CXX_STANDARD_REQUIRED",
-          "value": "ON",
-          "type": "BOOL"
-        },
-        {
-          "name": "CMAKE_CXX_EXTENSIONS",
-          "value": "OFF",
-          "type": "BOOL"
-        },
-        {
-          "name": "CMAKE_PREFIX_PATH",
-          "value": "/usr/lib/x86_64-linux-gnu/cmake",
-          "type": "STRING"
-        }
-      ],
-      "inheritEnvironments": [ "linux_x64" ],
-      "intelliSenseMode": "linux-gcc-x64",
-      "wslPath": "${defaultWSLPath}",
-      "remoteCopyUseCompilerDefaults": false
     },
     {
       "name": "x64-Release",
@@ -177,6 +146,93 @@
         {
           "name": "VCPKG_TARGET_TRIPLET",
           "value": "x64-windows-static",
+          "type": "STRING"
+        },
+        {
+          "name": "CMAKE_TOOLCHAIN_FILE",
+          "value": "C:/mslmlib/vcpkg/scripts/buildsystems/vcpkg.cmake",
+          "type": "STRING"
+        }
+      ]
+    },
+    {
+      "buildCommandArgs": "",
+      "buildRoot": "${projectDir}\\out\\build\\${name}",
+      "cmakeExecutable": "cmake",
+      "configurationType": "Debug",
+      "ctestCommandArgs": "",
+      "generator": "Unix Makefiles",
+      "inheritEnvironments": [ "linux_x64" ],
+      "installRoot": "${projectDir}\\out\\install\\${name}",
+      "intelliSenseMode": "linux-gcc-x64",
+      "name": "WSL-GCC-Debug",
+      "variables": [
+        {
+          "name": "CMAKE_CXX_STANDARD",
+          "value": "14",
+          "type": "STRING"
+        },
+        {
+          "name": "CMAKE_CXX_STANDARD_REQUIRED",
+          "value": "ON",
+          "type": "BOOL"
+        },
+        {
+          "name": "CMAKE_CXX_EXTENSIONS",
+          "value": "OFF",
+          "type": "BOOL"
+        },
+        {
+          "name": "CMAKE_PREFIX_PATH",
+          "value": "/usr/lib/x86_64-linux-gnu/cmake",
+          "type": "STRING"
+        },
+        {
+          "name": "CMAKE_CXX_FLAGS_DEBUG",
+          "value": "-g -D_DEBUG",
+          "type": "STRING"
+        }
+      ],
+      "wslPath": "${defaultWSLPath}",
+      "remoteCopyUseCompilerDefaults": false
+    },
+    {
+      "buildCommandArgs": "",
+      "cmakeCommandArgs": "",
+      "cmakeExecutable": "cmake",
+      "configurationType": "Debug",
+      "ctestCommandArgs": "",
+      "generator": "Unix Makefiles",
+      "inheritEnvironments": [ "linux_x64" ],
+      "name": "Linux-GCC-Debug",
+      "remoteBuildRoot": "$HOME/.vs/${projectDirName}/${workspaceHash}/out/build/${name}",
+      "remoteCMakeListsRoot": "$HOME/.vs/${projectDirName}/${workspaceHash}/src",
+      "remoteCopyBuildOutput": false,
+      "remoteCopySources": true,
+      "remoteCopySourcesExclusionList": [ ".vs", ".git", "out" ],
+      "remoteCopySourcesMethod": "rsync",
+      "remoteInstallRoot": "$HOME/.vs/${projectDirName}/${workspaceHash}/out/install/${name}",
+      "remoteMachineName": "${defaultRemoteMachineName}",
+      "rsyncCommandArgs": "-t --delete --delete-excluded",
+      "variables": [
+        {
+          "name": "CMAKE_CXX_STANDARD",
+          "value": "14",
+          "type": "STRING"
+        },
+        {
+          "name": "CMAKE_CXX_STANDARD_REQUIRED",
+          "value": "ON",
+          "type": "BOOL"
+        },
+        {
+          "name": "CMAKE_CXX_EXTENSIONS",
+          "value": "OFF",
+          "type": "BOOL"
+        },
+        {
+          "name": "CMAKE_PREFIX_PATH",
+          "value": "/usr/lib/x86_64-linux-gnu/cmake",
           "type": "STRING"
         }
       ]

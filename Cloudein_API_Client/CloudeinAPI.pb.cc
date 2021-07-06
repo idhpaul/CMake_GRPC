@@ -122,8 +122,158 @@ struct ReleaseResponseDefaultTypeInternal {
   };
 };
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT ReleaseResponseDefaultTypeInternal _ReleaseResponse_default_instance_;
+constexpr DisconnectRequest::DisconnectRequest(
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
+  : region_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , tx_name_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string){}
+struct DisconnectRequestDefaultTypeInternal {
+  constexpr DisconnectRequestDefaultTypeInternal()
+    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  ~DisconnectRequestDefaultTypeInternal() {}
+  union {
+    DisconnectRequest _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT DisconnectRequestDefaultTypeInternal _DisconnectRequest_default_instance_;
+constexpr DisconnectResponse::DisconnectResponse(
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
+  : region_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string){}
+struct DisconnectResponseDefaultTypeInternal {
+  constexpr DisconnectResponseDefaultTypeInternal()
+    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  ~DisconnectResponseDefaultTypeInternal() {}
+  union {
+    DisconnectResponse _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT DisconnectResponseDefaultTypeInternal _DisconnectResponse_default_instance_;
+constexpr TimeoutRequest::TimeoutRequest(
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
+  : region_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , tx_name_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string){}
+struct TimeoutRequestDefaultTypeInternal {
+  constexpr TimeoutRequestDefaultTypeInternal()
+    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  ~TimeoutRequestDefaultTypeInternal() {}
+  union {
+    TimeoutRequest _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT TimeoutRequestDefaultTypeInternal _TimeoutRequest_default_instance_;
+constexpr TimeoutResponse::TimeoutResponse(
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
+  : region_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string){}
+struct TimeoutResponseDefaultTypeInternal {
+  constexpr TimeoutResponseDefaultTypeInternal()
+    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  ~TimeoutResponseDefaultTypeInternal() {}
+  union {
+    TimeoutResponse _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT TimeoutResponseDefaultTypeInternal _TimeoutResponse_default_instance_;
+constexpr PrepareFailRequest::PrepareFailRequest(
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
+  : region_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , tx_name_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string){}
+struct PrepareFailRequestDefaultTypeInternal {
+  constexpr PrepareFailRequestDefaultTypeInternal()
+    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  ~PrepareFailRequestDefaultTypeInternal() {}
+  union {
+    PrepareFailRequest _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PrepareFailRequestDefaultTypeInternal _PrepareFailRequest_default_instance_;
+constexpr PrepareFailResponse::PrepareFailResponse(
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
+  : region_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string){}
+struct PrepareFailResponseDefaultTypeInternal {
+  constexpr PrepareFailResponseDefaultTypeInternal()
+    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  ~PrepareFailResponseDefaultTypeInternal() {}
+  union {
+    PrepareFailResponse _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PrepareFailResponseDefaultTypeInternal _PrepareFailResponse_default_instance_;
+constexpr ConnectFailRequest::ConnectFailRequest(
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
+  : region_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , tx_name_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string){}
+struct ConnectFailRequestDefaultTypeInternal {
+  constexpr ConnectFailRequestDefaultTypeInternal()
+    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  ~ConnectFailRequestDefaultTypeInternal() {}
+  union {
+    ConnectFailRequest _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT ConnectFailRequestDefaultTypeInternal _ConnectFailRequest_default_instance_;
+constexpr ConnectFailResponse::ConnectFailResponse(
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
+  : region_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string){}
+struct ConnectFailResponseDefaultTypeInternal {
+  constexpr ConnectFailResponseDefaultTypeInternal()
+    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  ~ConnectFailResponseDefaultTypeInternal() {}
+  union {
+    ConnectFailResponse _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT ConnectFailResponseDefaultTypeInternal _ConnectFailResponse_default_instance_;
+constexpr RebootFailRequest::RebootFailRequest(
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
+  : region_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , tx_name_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string){}
+struct RebootFailRequestDefaultTypeInternal {
+  constexpr RebootFailRequestDefaultTypeInternal()
+    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  ~RebootFailRequestDefaultTypeInternal() {}
+  union {
+    RebootFailRequest _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT RebootFailRequestDefaultTypeInternal _RebootFailRequest_default_instance_;
+constexpr RebootFailResponse::RebootFailResponse(
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
+  : region_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string){}
+struct RebootFailResponseDefaultTypeInternal {
+  constexpr RebootFailResponseDefaultTypeInternal()
+    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  ~RebootFailResponseDefaultTypeInternal() {}
+  union {
+    RebootFailResponse _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT RebootFailResponseDefaultTypeInternal _RebootFailResponse_default_instance_;
+constexpr AuthFailRequest::AuthFailRequest(
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
+  : region_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , tx_name_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string){}
+struct AuthFailRequestDefaultTypeInternal {
+  constexpr AuthFailRequestDefaultTypeInternal()
+    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  ~AuthFailRequestDefaultTypeInternal() {}
+  union {
+    AuthFailRequest _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT AuthFailRequestDefaultTypeInternal _AuthFailRequest_default_instance_;
+constexpr AuthFailResponse::AuthFailResponse(
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
+  : region_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string){}
+struct AuthFailResponseDefaultTypeInternal {
+  constexpr AuthFailResponseDefaultTypeInternal()
+    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  ~AuthFailResponseDefaultTypeInternal() {}
+  union {
+    AuthFailResponse _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT AuthFailResponseDefaultTypeInternal _AuthFailResponse_default_instance_;
 }  // namespace cloudeinapi
-static ::PROTOBUF_NAMESPACE_ID::Metadata file_level_metadata_CloudeinAPI_2eproto[8];
+static ::PROTOBUF_NAMESPACE_ID::Metadata file_level_metadata_CloudeinAPI_2eproto[20];
 static constexpr ::PROTOBUF_NAMESPACE_ID::EnumDescriptor const** file_level_enum_descriptors_CloudeinAPI_2eproto = nullptr;
 static constexpr ::PROTOBUF_NAMESPACE_ID::ServiceDescriptor const** file_level_service_descriptors_CloudeinAPI_2eproto = nullptr;
 
@@ -185,6 +335,84 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_CloudeinAPI_2eproto::offsets[]
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   PROTOBUF_FIELD_OFFSET(::cloudeinapi::ReleaseResponse, region_),
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::cloudeinapi::DisconnectRequest, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::cloudeinapi::DisconnectRequest, region_),
+  PROTOBUF_FIELD_OFFSET(::cloudeinapi::DisconnectRequest, tx_name_),
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::cloudeinapi::DisconnectResponse, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::cloudeinapi::DisconnectResponse, region_),
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::cloudeinapi::TimeoutRequest, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::cloudeinapi::TimeoutRequest, region_),
+  PROTOBUF_FIELD_OFFSET(::cloudeinapi::TimeoutRequest, tx_name_),
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::cloudeinapi::TimeoutResponse, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::cloudeinapi::TimeoutResponse, region_),
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::cloudeinapi::PrepareFailRequest, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::cloudeinapi::PrepareFailRequest, region_),
+  PROTOBUF_FIELD_OFFSET(::cloudeinapi::PrepareFailRequest, tx_name_),
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::cloudeinapi::PrepareFailResponse, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::cloudeinapi::PrepareFailResponse, region_),
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::cloudeinapi::ConnectFailRequest, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::cloudeinapi::ConnectFailRequest, region_),
+  PROTOBUF_FIELD_OFFSET(::cloudeinapi::ConnectFailRequest, tx_name_),
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::cloudeinapi::ConnectFailResponse, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::cloudeinapi::ConnectFailResponse, region_),
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::cloudeinapi::RebootFailRequest, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::cloudeinapi::RebootFailRequest, region_),
+  PROTOBUF_FIELD_OFFSET(::cloudeinapi::RebootFailRequest, tx_name_),
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::cloudeinapi::RebootFailResponse, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::cloudeinapi::RebootFailResponse, region_),
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::cloudeinapi::AuthFailRequest, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::cloudeinapi::AuthFailRequest, region_),
+  PROTOBUF_FIELD_OFFSET(::cloudeinapi::AuthFailRequest, tx_name_),
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::cloudeinapi::AuthFailResponse, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::cloudeinapi::AuthFailResponse, region_),
 };
 static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
   { 0, -1, sizeof(::cloudeinapi::AllocateRequest)},
@@ -195,6 +423,18 @@ static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOB
   { 38, -1, sizeof(::cloudeinapi::ConnectResponse)},
   { 44, -1, sizeof(::cloudeinapi::ReleaseRequest)},
   { 51, -1, sizeof(::cloudeinapi::ReleaseResponse)},
+  { 57, -1, sizeof(::cloudeinapi::DisconnectRequest)},
+  { 64, -1, sizeof(::cloudeinapi::DisconnectResponse)},
+  { 70, -1, sizeof(::cloudeinapi::TimeoutRequest)},
+  { 77, -1, sizeof(::cloudeinapi::TimeoutResponse)},
+  { 83, -1, sizeof(::cloudeinapi::PrepareFailRequest)},
+  { 90, -1, sizeof(::cloudeinapi::PrepareFailResponse)},
+  { 96, -1, sizeof(::cloudeinapi::ConnectFailRequest)},
+  { 103, -1, sizeof(::cloudeinapi::ConnectFailResponse)},
+  { 109, -1, sizeof(::cloudeinapi::RebootFailRequest)},
+  { 116, -1, sizeof(::cloudeinapi::RebootFailResponse)},
+  { 122, -1, sizeof(::cloudeinapi::AuthFailRequest)},
+  { 129, -1, sizeof(::cloudeinapi::AuthFailResponse)},
 };
 
 static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] = {
@@ -206,6 +446,18 @@ static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] =
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::cloudeinapi::_ConnectResponse_default_instance_),
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::cloudeinapi::_ReleaseRequest_default_instance_),
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::cloudeinapi::_ReleaseResponse_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::cloudeinapi::_DisconnectRequest_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::cloudeinapi::_DisconnectResponse_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::cloudeinapi::_TimeoutRequest_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::cloudeinapi::_TimeoutResponse_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::cloudeinapi::_PrepareFailRequest_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::cloudeinapi::_PrepareFailResponse_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::cloudeinapi::_ConnectFailRequest_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::cloudeinapi::_ConnectFailResponse_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::cloudeinapi::_RebootFailRequest_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::cloudeinapi::_RebootFailResponse_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::cloudeinapi::_AuthFailRequest_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::cloudeinapi::_AuthFailResponse_default_instance_),
 };
 
 const char descriptor_table_protodef_CloudeinAPI_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) =
@@ -221,20 +473,47 @@ const char descriptor_table_protodef_CloudeinAPI_2eproto[] PROTOBUF_SECTION_VARI
   "\t\022\017\n\007tx_name\030\002 \001(\t\"!\n\017ConnectResponse\022\016\n"
   "\006region\030\001 \001(\t\"1\n\016ReleaseRequest\022\016\n\006regio"
   "n\030\001 \001(\t\022\017\n\007tx_name\030\002 \001(\t\"!\n\017ReleaseRespo"
-  "nse\022\016\n\006region\030\001 \001(\t2\310\002\n\017CloudeinSession\022"
-  "N\n\rDoAllocateAPI\022\034.cloudeinapi.AllocateR"
-  "equest\032\035.cloudeinapi.AllocateResponse\"\000\022"
-  "K\n\014DoPrepareAPI\022\033.cloudeinapi.PrepareReq"
-  "uest\032\034.cloudeinapi.PrepareResponse\"\000\022K\n\014"
-  "DoConnectAPI\022\033.cloudeinapi.ConnectReques"
-  "t\032\034.cloudeinapi.ConnectResponse\"\000\022K\n\014DoR"
-  "eleaseAPI\022\033.cloudeinapi.ReleaseRequest\032\034"
-  ".cloudeinapi.ReleaseResponse\"\000b\006proto3"
+  "nse\022\016\n\006region\030\001 \001(\t\"4\n\021DisconnectRequest"
+  "\022\016\n\006region\030\001 \001(\t\022\017\n\007tx_name\030\002 \001(\t\"$\n\022Dis"
+  "connectResponse\022\016\n\006region\030\001 \001(\t\"1\n\016Timeo"
+  "utRequest\022\016\n\006region\030\001 \001(\t\022\017\n\007tx_name\030\002 \001"
+  "(\t\"!\n\017TimeoutResponse\022\016\n\006region\030\001 \001(\t\"5\n"
+  "\022PrepareFailRequest\022\016\n\006region\030\001 \001(\t\022\017\n\007t"
+  "x_name\030\002 \001(\t\"%\n\023PrepareFailResponse\022\016\n\006r"
+  "egion\030\001 \001(\t\"5\n\022ConnectFailRequest\022\016\n\006reg"
+  "ion\030\001 \001(\t\022\017\n\007tx_name\030\002 \001(\t\"%\n\023ConnectFai"
+  "lResponse\022\016\n\006region\030\001 \001(\t\"4\n\021RebootFailR"
+  "equest\022\016\n\006region\030\001 \001(\t\022\017\n\007tx_name\030\002 \001(\t\""
+  "$\n\022RebootFailResponse\022\016\n\006region\030\001 \001(\t\"2\n"
+  "\017AuthFailRequest\022\016\n\006region\030\001 \001(\t\022\017\n\007tx_n"
+  "ame\030\002 \001(\t\"\"\n\020AuthFailResponse\022\016\n\006region\030"
+  "\001 \001(\t2\303\006\n\017CloudeinSession\022N\n\rDoAllocateA"
+  "PI\022\034.cloudeinapi.AllocateRequest\032\035.cloud"
+  "einapi.AllocateResponse\"\000\022K\n\014DoPrepareAP"
+  "I\022\033.cloudeinapi.PrepareRequest\032\034.cloudei"
+  "napi.PrepareResponse\"\000\022K\n\014DoConnectAPI\022\033"
+  ".cloudeinapi.ConnectRequest\032\034.cloudeinap"
+  "i.ConnectResponse\"\000\022K\n\014DoReleaseAPI\022\033.cl"
+  "oudeinapi.ReleaseRequest\032\034.cloudeinapi.R"
+  "eleaseResponse\"\000\022T\n\017DoDisconnectAPI\022\036.cl"
+  "oudeinapi.DisconnectRequest\032\037.cloudeinap"
+  "i.DisconnectResponse\"\000\022K\n\014DoTimeoutAPI\022\033"
+  ".cloudeinapi.TimeoutRequest\032\034.cloudeinap"
+  "i.TimeoutResponse\"\000\022W\n\020DoPrepareFailAPI\022"
+  "\037.cloudeinapi.PrepareFailRequest\032 .cloud"
+  "einapi.PrepareFailResponse\"\000\022W\n\020DoConnec"
+  "tFailAPI\022\037.cloudeinapi.ConnectFailReques"
+  "t\032 .cloudeinapi.ConnectFailResponse\"\000\022T\n"
+  "\017DoRebootFailAPI\022\036.cloudeinapi.RebootFai"
+  "lRequest\032\037.cloudeinapi.RebootFailRespons"
+  "e\"\000\022N\n\rDoAuthFailAPI\022\034.cloudeinapi.AuthF"
+  "ailRequest\032\035.cloudeinapi.AuthFailRespons"
+  "e\"\000b\006proto3"
   ;
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_CloudeinAPI_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_CloudeinAPI_2eproto = {
-  false, false, 838, descriptor_table_protodef_CloudeinAPI_2eproto, "CloudeinAPI.proto", 
-  &descriptor_table_CloudeinAPI_2eproto_once, nullptr, 0, 8,
+  false, false, 1891, descriptor_table_protodef_CloudeinAPI_2eproto, "CloudeinAPI.proto", 
+  &descriptor_table_CloudeinAPI_2eproto_once, nullptr, 0, 20,
   schemas, file_default_instances, TableStruct_CloudeinAPI_2eproto::offsets,
   file_level_metadata_CloudeinAPI_2eproto, file_level_enum_descriptors_CloudeinAPI_2eproto, file_level_service_descriptors_CloudeinAPI_2eproto,
 };
@@ -2131,6 +2410,2634 @@ void ReleaseResponse::InternalSwap(ReleaseResponse* other) {
 }
 
 
+// ===================================================================
+
+class DisconnectRequest::_Internal {
+ public:
+};
+
+DisconnectRequest::DisconnectRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
+  SharedCtor();
+  RegisterArenaDtor(arena);
+  // @@protoc_insertion_point(arena_constructor:cloudeinapi.DisconnectRequest)
+}
+DisconnectRequest::DisconnectRequest(const DisconnectRequest& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  region_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!from._internal_region().empty()) {
+    region_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_region(), 
+      GetArena());
+  }
+  tx_name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!from._internal_tx_name().empty()) {
+    tx_name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_tx_name(), 
+      GetArena());
+  }
+  // @@protoc_insertion_point(copy_constructor:cloudeinapi.DisconnectRequest)
+}
+
+void DisconnectRequest::SharedCtor() {
+region_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+tx_name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+}
+
+DisconnectRequest::~DisconnectRequest() {
+  // @@protoc_insertion_point(destructor:cloudeinapi.DisconnectRequest)
+  SharedDtor();
+  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+void DisconnectRequest::SharedDtor() {
+  GOOGLE_DCHECK(GetArena() == nullptr);
+  region_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  tx_name_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+}
+
+void DisconnectRequest::ArenaDtor(void* object) {
+  DisconnectRequest* _this = reinterpret_cast< DisconnectRequest* >(object);
+  (void)_this;
+}
+void DisconnectRequest::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
+void DisconnectRequest::SetCachedSize(int size) const {
+  _cached_size_.Set(size);
+}
+
+void DisconnectRequest::Clear() {
+// @@protoc_insertion_point(message_clear_start:cloudeinapi.DisconnectRequest)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  region_.ClearToEmpty();
+  tx_name_.ClearToEmpty();
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+const char* DisconnectRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    CHK_(ptr);
+    switch (tag >> 3) {
+      // string region = 1;
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
+          auto str = _internal_mutable_region();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "cloudeinapi.DisconnectRequest.region"));
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // string tx_name = 2;
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
+          auto str = _internal_mutable_tx_name();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "cloudeinapi.DisconnectRequest.tx_name"));
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      default: {
+      handle_unusual:
+        if ((tag & 7) == 4 || tag == 0) {
+          ctx->SetLastTag(tag);
+          goto success;
+        }
+        ptr = UnknownFieldParse(tag,
+            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+            ptr, ctx);
+        CHK_(ptr != nullptr);
+        continue;
+      }
+    }  // switch
+  }  // while
+success:
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto success;
+#undef CHK_
+}
+
+::PROTOBUF_NAMESPACE_ID::uint8* DisconnectRequest::_InternalSerialize(
+    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:cloudeinapi.DisconnectRequest)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // string region = 1;
+  if (this->region().size() > 0) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_region().data(), static_cast<int>(this->_internal_region().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "cloudeinapi.DisconnectRequest.region");
+    target = stream->WriteStringMaybeAliased(
+        1, this->_internal_region(), target);
+  }
+
+  // string tx_name = 2;
+  if (this->tx_name().size() > 0) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_tx_name().data(), static_cast<int>(this->_internal_tx_name().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "cloudeinapi.DisconnectRequest.tx_name");
+    target = stream->WriteStringMaybeAliased(
+        2, this->_internal_tx_name(), target);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:cloudeinapi.DisconnectRequest)
+  return target;
+}
+
+size_t DisconnectRequest::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:cloudeinapi.DisconnectRequest)
+  size_t total_size = 0;
+
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  // string region = 1;
+  if (this->region().size() > 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_region());
+  }
+
+  // string tx_name = 2;
+  if (this->tx_name().size() > 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_tx_name());
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
+        _internal_metadata_, total_size, &_cached_size_);
+  }
+  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
+  SetCachedSize(cached_size);
+  return total_size;
+}
+
+void DisconnectRequest::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:cloudeinapi.DisconnectRequest)
+  GOOGLE_DCHECK_NE(&from, this);
+  const DisconnectRequest* source =
+      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<DisconnectRequest>(
+          &from);
+  if (source == nullptr) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:cloudeinapi.DisconnectRequest)
+    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
+  } else {
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:cloudeinapi.DisconnectRequest)
+    MergeFrom(*source);
+  }
+}
+
+void DisconnectRequest::MergeFrom(const DisconnectRequest& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:cloudeinapi.DisconnectRequest)
+  GOOGLE_DCHECK_NE(&from, this);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  if (from.region().size() > 0) {
+    _internal_set_region(from._internal_region());
+  }
+  if (from.tx_name().size() > 0) {
+    _internal_set_tx_name(from._internal_tx_name());
+  }
+}
+
+void DisconnectRequest::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:cloudeinapi.DisconnectRequest)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+void DisconnectRequest::CopyFrom(const DisconnectRequest& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:cloudeinapi.DisconnectRequest)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool DisconnectRequest::IsInitialized() const {
+  return true;
+}
+
+void DisconnectRequest::InternalSwap(DisconnectRequest* other) {
+  using std::swap;
+  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
+  region_.Swap(&other->region_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+  tx_name_.Swap(&other->tx_name_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+}
+
+::PROTOBUF_NAMESPACE_ID::Metadata DisconnectRequest::GetMetadata() const {
+  return GetMetadataStatic();
+}
+
+
+// ===================================================================
+
+class DisconnectResponse::_Internal {
+ public:
+};
+
+DisconnectResponse::DisconnectResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
+  SharedCtor();
+  RegisterArenaDtor(arena);
+  // @@protoc_insertion_point(arena_constructor:cloudeinapi.DisconnectResponse)
+}
+DisconnectResponse::DisconnectResponse(const DisconnectResponse& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  region_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!from._internal_region().empty()) {
+    region_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_region(), 
+      GetArena());
+  }
+  // @@protoc_insertion_point(copy_constructor:cloudeinapi.DisconnectResponse)
+}
+
+void DisconnectResponse::SharedCtor() {
+region_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+}
+
+DisconnectResponse::~DisconnectResponse() {
+  // @@protoc_insertion_point(destructor:cloudeinapi.DisconnectResponse)
+  SharedDtor();
+  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+void DisconnectResponse::SharedDtor() {
+  GOOGLE_DCHECK(GetArena() == nullptr);
+  region_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+}
+
+void DisconnectResponse::ArenaDtor(void* object) {
+  DisconnectResponse* _this = reinterpret_cast< DisconnectResponse* >(object);
+  (void)_this;
+}
+void DisconnectResponse::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
+void DisconnectResponse::SetCachedSize(int size) const {
+  _cached_size_.Set(size);
+}
+
+void DisconnectResponse::Clear() {
+// @@protoc_insertion_point(message_clear_start:cloudeinapi.DisconnectResponse)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  region_.ClearToEmpty();
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+const char* DisconnectResponse::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    CHK_(ptr);
+    switch (tag >> 3) {
+      // string region = 1;
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
+          auto str = _internal_mutable_region();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "cloudeinapi.DisconnectResponse.region"));
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      default: {
+      handle_unusual:
+        if ((tag & 7) == 4 || tag == 0) {
+          ctx->SetLastTag(tag);
+          goto success;
+        }
+        ptr = UnknownFieldParse(tag,
+            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+            ptr, ctx);
+        CHK_(ptr != nullptr);
+        continue;
+      }
+    }  // switch
+  }  // while
+success:
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto success;
+#undef CHK_
+}
+
+::PROTOBUF_NAMESPACE_ID::uint8* DisconnectResponse::_InternalSerialize(
+    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:cloudeinapi.DisconnectResponse)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // string region = 1;
+  if (this->region().size() > 0) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_region().data(), static_cast<int>(this->_internal_region().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "cloudeinapi.DisconnectResponse.region");
+    target = stream->WriteStringMaybeAliased(
+        1, this->_internal_region(), target);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:cloudeinapi.DisconnectResponse)
+  return target;
+}
+
+size_t DisconnectResponse::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:cloudeinapi.DisconnectResponse)
+  size_t total_size = 0;
+
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  // string region = 1;
+  if (this->region().size() > 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_region());
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
+        _internal_metadata_, total_size, &_cached_size_);
+  }
+  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
+  SetCachedSize(cached_size);
+  return total_size;
+}
+
+void DisconnectResponse::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:cloudeinapi.DisconnectResponse)
+  GOOGLE_DCHECK_NE(&from, this);
+  const DisconnectResponse* source =
+      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<DisconnectResponse>(
+          &from);
+  if (source == nullptr) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:cloudeinapi.DisconnectResponse)
+    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
+  } else {
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:cloudeinapi.DisconnectResponse)
+    MergeFrom(*source);
+  }
+}
+
+void DisconnectResponse::MergeFrom(const DisconnectResponse& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:cloudeinapi.DisconnectResponse)
+  GOOGLE_DCHECK_NE(&from, this);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  if (from.region().size() > 0) {
+    _internal_set_region(from._internal_region());
+  }
+}
+
+void DisconnectResponse::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:cloudeinapi.DisconnectResponse)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+void DisconnectResponse::CopyFrom(const DisconnectResponse& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:cloudeinapi.DisconnectResponse)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool DisconnectResponse::IsInitialized() const {
+  return true;
+}
+
+void DisconnectResponse::InternalSwap(DisconnectResponse* other) {
+  using std::swap;
+  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
+  region_.Swap(&other->region_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+}
+
+::PROTOBUF_NAMESPACE_ID::Metadata DisconnectResponse::GetMetadata() const {
+  return GetMetadataStatic();
+}
+
+
+// ===================================================================
+
+class TimeoutRequest::_Internal {
+ public:
+};
+
+TimeoutRequest::TimeoutRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
+  SharedCtor();
+  RegisterArenaDtor(arena);
+  // @@protoc_insertion_point(arena_constructor:cloudeinapi.TimeoutRequest)
+}
+TimeoutRequest::TimeoutRequest(const TimeoutRequest& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  region_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!from._internal_region().empty()) {
+    region_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_region(), 
+      GetArena());
+  }
+  tx_name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!from._internal_tx_name().empty()) {
+    tx_name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_tx_name(), 
+      GetArena());
+  }
+  // @@protoc_insertion_point(copy_constructor:cloudeinapi.TimeoutRequest)
+}
+
+void TimeoutRequest::SharedCtor() {
+region_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+tx_name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+}
+
+TimeoutRequest::~TimeoutRequest() {
+  // @@protoc_insertion_point(destructor:cloudeinapi.TimeoutRequest)
+  SharedDtor();
+  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+void TimeoutRequest::SharedDtor() {
+  GOOGLE_DCHECK(GetArena() == nullptr);
+  region_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  tx_name_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+}
+
+void TimeoutRequest::ArenaDtor(void* object) {
+  TimeoutRequest* _this = reinterpret_cast< TimeoutRequest* >(object);
+  (void)_this;
+}
+void TimeoutRequest::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
+void TimeoutRequest::SetCachedSize(int size) const {
+  _cached_size_.Set(size);
+}
+
+void TimeoutRequest::Clear() {
+// @@protoc_insertion_point(message_clear_start:cloudeinapi.TimeoutRequest)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  region_.ClearToEmpty();
+  tx_name_.ClearToEmpty();
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+const char* TimeoutRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    CHK_(ptr);
+    switch (tag >> 3) {
+      // string region = 1;
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
+          auto str = _internal_mutable_region();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "cloudeinapi.TimeoutRequest.region"));
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // string tx_name = 2;
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
+          auto str = _internal_mutable_tx_name();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "cloudeinapi.TimeoutRequest.tx_name"));
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      default: {
+      handle_unusual:
+        if ((tag & 7) == 4 || tag == 0) {
+          ctx->SetLastTag(tag);
+          goto success;
+        }
+        ptr = UnknownFieldParse(tag,
+            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+            ptr, ctx);
+        CHK_(ptr != nullptr);
+        continue;
+      }
+    }  // switch
+  }  // while
+success:
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto success;
+#undef CHK_
+}
+
+::PROTOBUF_NAMESPACE_ID::uint8* TimeoutRequest::_InternalSerialize(
+    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:cloudeinapi.TimeoutRequest)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // string region = 1;
+  if (this->region().size() > 0) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_region().data(), static_cast<int>(this->_internal_region().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "cloudeinapi.TimeoutRequest.region");
+    target = stream->WriteStringMaybeAliased(
+        1, this->_internal_region(), target);
+  }
+
+  // string tx_name = 2;
+  if (this->tx_name().size() > 0) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_tx_name().data(), static_cast<int>(this->_internal_tx_name().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "cloudeinapi.TimeoutRequest.tx_name");
+    target = stream->WriteStringMaybeAliased(
+        2, this->_internal_tx_name(), target);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:cloudeinapi.TimeoutRequest)
+  return target;
+}
+
+size_t TimeoutRequest::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:cloudeinapi.TimeoutRequest)
+  size_t total_size = 0;
+
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  // string region = 1;
+  if (this->region().size() > 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_region());
+  }
+
+  // string tx_name = 2;
+  if (this->tx_name().size() > 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_tx_name());
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
+        _internal_metadata_, total_size, &_cached_size_);
+  }
+  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
+  SetCachedSize(cached_size);
+  return total_size;
+}
+
+void TimeoutRequest::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:cloudeinapi.TimeoutRequest)
+  GOOGLE_DCHECK_NE(&from, this);
+  const TimeoutRequest* source =
+      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<TimeoutRequest>(
+          &from);
+  if (source == nullptr) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:cloudeinapi.TimeoutRequest)
+    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
+  } else {
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:cloudeinapi.TimeoutRequest)
+    MergeFrom(*source);
+  }
+}
+
+void TimeoutRequest::MergeFrom(const TimeoutRequest& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:cloudeinapi.TimeoutRequest)
+  GOOGLE_DCHECK_NE(&from, this);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  if (from.region().size() > 0) {
+    _internal_set_region(from._internal_region());
+  }
+  if (from.tx_name().size() > 0) {
+    _internal_set_tx_name(from._internal_tx_name());
+  }
+}
+
+void TimeoutRequest::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:cloudeinapi.TimeoutRequest)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+void TimeoutRequest::CopyFrom(const TimeoutRequest& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:cloudeinapi.TimeoutRequest)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool TimeoutRequest::IsInitialized() const {
+  return true;
+}
+
+void TimeoutRequest::InternalSwap(TimeoutRequest* other) {
+  using std::swap;
+  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
+  region_.Swap(&other->region_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+  tx_name_.Swap(&other->tx_name_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+}
+
+::PROTOBUF_NAMESPACE_ID::Metadata TimeoutRequest::GetMetadata() const {
+  return GetMetadataStatic();
+}
+
+
+// ===================================================================
+
+class TimeoutResponse::_Internal {
+ public:
+};
+
+TimeoutResponse::TimeoutResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
+  SharedCtor();
+  RegisterArenaDtor(arena);
+  // @@protoc_insertion_point(arena_constructor:cloudeinapi.TimeoutResponse)
+}
+TimeoutResponse::TimeoutResponse(const TimeoutResponse& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  region_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!from._internal_region().empty()) {
+    region_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_region(), 
+      GetArena());
+  }
+  // @@protoc_insertion_point(copy_constructor:cloudeinapi.TimeoutResponse)
+}
+
+void TimeoutResponse::SharedCtor() {
+region_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+}
+
+TimeoutResponse::~TimeoutResponse() {
+  // @@protoc_insertion_point(destructor:cloudeinapi.TimeoutResponse)
+  SharedDtor();
+  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+void TimeoutResponse::SharedDtor() {
+  GOOGLE_DCHECK(GetArena() == nullptr);
+  region_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+}
+
+void TimeoutResponse::ArenaDtor(void* object) {
+  TimeoutResponse* _this = reinterpret_cast< TimeoutResponse* >(object);
+  (void)_this;
+}
+void TimeoutResponse::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
+void TimeoutResponse::SetCachedSize(int size) const {
+  _cached_size_.Set(size);
+}
+
+void TimeoutResponse::Clear() {
+// @@protoc_insertion_point(message_clear_start:cloudeinapi.TimeoutResponse)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  region_.ClearToEmpty();
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+const char* TimeoutResponse::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    CHK_(ptr);
+    switch (tag >> 3) {
+      // string region = 1;
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
+          auto str = _internal_mutable_region();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "cloudeinapi.TimeoutResponse.region"));
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      default: {
+      handle_unusual:
+        if ((tag & 7) == 4 || tag == 0) {
+          ctx->SetLastTag(tag);
+          goto success;
+        }
+        ptr = UnknownFieldParse(tag,
+            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+            ptr, ctx);
+        CHK_(ptr != nullptr);
+        continue;
+      }
+    }  // switch
+  }  // while
+success:
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto success;
+#undef CHK_
+}
+
+::PROTOBUF_NAMESPACE_ID::uint8* TimeoutResponse::_InternalSerialize(
+    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:cloudeinapi.TimeoutResponse)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // string region = 1;
+  if (this->region().size() > 0) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_region().data(), static_cast<int>(this->_internal_region().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "cloudeinapi.TimeoutResponse.region");
+    target = stream->WriteStringMaybeAliased(
+        1, this->_internal_region(), target);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:cloudeinapi.TimeoutResponse)
+  return target;
+}
+
+size_t TimeoutResponse::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:cloudeinapi.TimeoutResponse)
+  size_t total_size = 0;
+
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  // string region = 1;
+  if (this->region().size() > 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_region());
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
+        _internal_metadata_, total_size, &_cached_size_);
+  }
+  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
+  SetCachedSize(cached_size);
+  return total_size;
+}
+
+void TimeoutResponse::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:cloudeinapi.TimeoutResponse)
+  GOOGLE_DCHECK_NE(&from, this);
+  const TimeoutResponse* source =
+      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<TimeoutResponse>(
+          &from);
+  if (source == nullptr) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:cloudeinapi.TimeoutResponse)
+    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
+  } else {
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:cloudeinapi.TimeoutResponse)
+    MergeFrom(*source);
+  }
+}
+
+void TimeoutResponse::MergeFrom(const TimeoutResponse& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:cloudeinapi.TimeoutResponse)
+  GOOGLE_DCHECK_NE(&from, this);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  if (from.region().size() > 0) {
+    _internal_set_region(from._internal_region());
+  }
+}
+
+void TimeoutResponse::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:cloudeinapi.TimeoutResponse)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+void TimeoutResponse::CopyFrom(const TimeoutResponse& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:cloudeinapi.TimeoutResponse)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool TimeoutResponse::IsInitialized() const {
+  return true;
+}
+
+void TimeoutResponse::InternalSwap(TimeoutResponse* other) {
+  using std::swap;
+  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
+  region_.Swap(&other->region_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+}
+
+::PROTOBUF_NAMESPACE_ID::Metadata TimeoutResponse::GetMetadata() const {
+  return GetMetadataStatic();
+}
+
+
+// ===================================================================
+
+class PrepareFailRequest::_Internal {
+ public:
+};
+
+PrepareFailRequest::PrepareFailRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
+  SharedCtor();
+  RegisterArenaDtor(arena);
+  // @@protoc_insertion_point(arena_constructor:cloudeinapi.PrepareFailRequest)
+}
+PrepareFailRequest::PrepareFailRequest(const PrepareFailRequest& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  region_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!from._internal_region().empty()) {
+    region_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_region(), 
+      GetArena());
+  }
+  tx_name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!from._internal_tx_name().empty()) {
+    tx_name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_tx_name(), 
+      GetArena());
+  }
+  // @@protoc_insertion_point(copy_constructor:cloudeinapi.PrepareFailRequest)
+}
+
+void PrepareFailRequest::SharedCtor() {
+region_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+tx_name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+}
+
+PrepareFailRequest::~PrepareFailRequest() {
+  // @@protoc_insertion_point(destructor:cloudeinapi.PrepareFailRequest)
+  SharedDtor();
+  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+void PrepareFailRequest::SharedDtor() {
+  GOOGLE_DCHECK(GetArena() == nullptr);
+  region_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  tx_name_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+}
+
+void PrepareFailRequest::ArenaDtor(void* object) {
+  PrepareFailRequest* _this = reinterpret_cast< PrepareFailRequest* >(object);
+  (void)_this;
+}
+void PrepareFailRequest::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
+void PrepareFailRequest::SetCachedSize(int size) const {
+  _cached_size_.Set(size);
+}
+
+void PrepareFailRequest::Clear() {
+// @@protoc_insertion_point(message_clear_start:cloudeinapi.PrepareFailRequest)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  region_.ClearToEmpty();
+  tx_name_.ClearToEmpty();
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+const char* PrepareFailRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    CHK_(ptr);
+    switch (tag >> 3) {
+      // string region = 1;
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
+          auto str = _internal_mutable_region();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "cloudeinapi.PrepareFailRequest.region"));
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // string tx_name = 2;
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
+          auto str = _internal_mutable_tx_name();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "cloudeinapi.PrepareFailRequest.tx_name"));
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      default: {
+      handle_unusual:
+        if ((tag & 7) == 4 || tag == 0) {
+          ctx->SetLastTag(tag);
+          goto success;
+        }
+        ptr = UnknownFieldParse(tag,
+            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+            ptr, ctx);
+        CHK_(ptr != nullptr);
+        continue;
+      }
+    }  // switch
+  }  // while
+success:
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto success;
+#undef CHK_
+}
+
+::PROTOBUF_NAMESPACE_ID::uint8* PrepareFailRequest::_InternalSerialize(
+    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:cloudeinapi.PrepareFailRequest)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // string region = 1;
+  if (this->region().size() > 0) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_region().data(), static_cast<int>(this->_internal_region().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "cloudeinapi.PrepareFailRequest.region");
+    target = stream->WriteStringMaybeAliased(
+        1, this->_internal_region(), target);
+  }
+
+  // string tx_name = 2;
+  if (this->tx_name().size() > 0) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_tx_name().data(), static_cast<int>(this->_internal_tx_name().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "cloudeinapi.PrepareFailRequest.tx_name");
+    target = stream->WriteStringMaybeAliased(
+        2, this->_internal_tx_name(), target);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:cloudeinapi.PrepareFailRequest)
+  return target;
+}
+
+size_t PrepareFailRequest::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:cloudeinapi.PrepareFailRequest)
+  size_t total_size = 0;
+
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  // string region = 1;
+  if (this->region().size() > 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_region());
+  }
+
+  // string tx_name = 2;
+  if (this->tx_name().size() > 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_tx_name());
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
+        _internal_metadata_, total_size, &_cached_size_);
+  }
+  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
+  SetCachedSize(cached_size);
+  return total_size;
+}
+
+void PrepareFailRequest::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:cloudeinapi.PrepareFailRequest)
+  GOOGLE_DCHECK_NE(&from, this);
+  const PrepareFailRequest* source =
+      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<PrepareFailRequest>(
+          &from);
+  if (source == nullptr) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:cloudeinapi.PrepareFailRequest)
+    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
+  } else {
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:cloudeinapi.PrepareFailRequest)
+    MergeFrom(*source);
+  }
+}
+
+void PrepareFailRequest::MergeFrom(const PrepareFailRequest& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:cloudeinapi.PrepareFailRequest)
+  GOOGLE_DCHECK_NE(&from, this);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  if (from.region().size() > 0) {
+    _internal_set_region(from._internal_region());
+  }
+  if (from.tx_name().size() > 0) {
+    _internal_set_tx_name(from._internal_tx_name());
+  }
+}
+
+void PrepareFailRequest::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:cloudeinapi.PrepareFailRequest)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+void PrepareFailRequest::CopyFrom(const PrepareFailRequest& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:cloudeinapi.PrepareFailRequest)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool PrepareFailRequest::IsInitialized() const {
+  return true;
+}
+
+void PrepareFailRequest::InternalSwap(PrepareFailRequest* other) {
+  using std::swap;
+  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
+  region_.Swap(&other->region_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+  tx_name_.Swap(&other->tx_name_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+}
+
+::PROTOBUF_NAMESPACE_ID::Metadata PrepareFailRequest::GetMetadata() const {
+  return GetMetadataStatic();
+}
+
+
+// ===================================================================
+
+class PrepareFailResponse::_Internal {
+ public:
+};
+
+PrepareFailResponse::PrepareFailResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
+  SharedCtor();
+  RegisterArenaDtor(arena);
+  // @@protoc_insertion_point(arena_constructor:cloudeinapi.PrepareFailResponse)
+}
+PrepareFailResponse::PrepareFailResponse(const PrepareFailResponse& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  region_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!from._internal_region().empty()) {
+    region_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_region(), 
+      GetArena());
+  }
+  // @@protoc_insertion_point(copy_constructor:cloudeinapi.PrepareFailResponse)
+}
+
+void PrepareFailResponse::SharedCtor() {
+region_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+}
+
+PrepareFailResponse::~PrepareFailResponse() {
+  // @@protoc_insertion_point(destructor:cloudeinapi.PrepareFailResponse)
+  SharedDtor();
+  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+void PrepareFailResponse::SharedDtor() {
+  GOOGLE_DCHECK(GetArena() == nullptr);
+  region_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+}
+
+void PrepareFailResponse::ArenaDtor(void* object) {
+  PrepareFailResponse* _this = reinterpret_cast< PrepareFailResponse* >(object);
+  (void)_this;
+}
+void PrepareFailResponse::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
+void PrepareFailResponse::SetCachedSize(int size) const {
+  _cached_size_.Set(size);
+}
+
+void PrepareFailResponse::Clear() {
+// @@protoc_insertion_point(message_clear_start:cloudeinapi.PrepareFailResponse)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  region_.ClearToEmpty();
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+const char* PrepareFailResponse::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    CHK_(ptr);
+    switch (tag >> 3) {
+      // string region = 1;
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
+          auto str = _internal_mutable_region();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "cloudeinapi.PrepareFailResponse.region"));
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      default: {
+      handle_unusual:
+        if ((tag & 7) == 4 || tag == 0) {
+          ctx->SetLastTag(tag);
+          goto success;
+        }
+        ptr = UnknownFieldParse(tag,
+            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+            ptr, ctx);
+        CHK_(ptr != nullptr);
+        continue;
+      }
+    }  // switch
+  }  // while
+success:
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto success;
+#undef CHK_
+}
+
+::PROTOBUF_NAMESPACE_ID::uint8* PrepareFailResponse::_InternalSerialize(
+    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:cloudeinapi.PrepareFailResponse)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // string region = 1;
+  if (this->region().size() > 0) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_region().data(), static_cast<int>(this->_internal_region().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "cloudeinapi.PrepareFailResponse.region");
+    target = stream->WriteStringMaybeAliased(
+        1, this->_internal_region(), target);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:cloudeinapi.PrepareFailResponse)
+  return target;
+}
+
+size_t PrepareFailResponse::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:cloudeinapi.PrepareFailResponse)
+  size_t total_size = 0;
+
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  // string region = 1;
+  if (this->region().size() > 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_region());
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
+        _internal_metadata_, total_size, &_cached_size_);
+  }
+  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
+  SetCachedSize(cached_size);
+  return total_size;
+}
+
+void PrepareFailResponse::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:cloudeinapi.PrepareFailResponse)
+  GOOGLE_DCHECK_NE(&from, this);
+  const PrepareFailResponse* source =
+      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<PrepareFailResponse>(
+          &from);
+  if (source == nullptr) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:cloudeinapi.PrepareFailResponse)
+    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
+  } else {
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:cloudeinapi.PrepareFailResponse)
+    MergeFrom(*source);
+  }
+}
+
+void PrepareFailResponse::MergeFrom(const PrepareFailResponse& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:cloudeinapi.PrepareFailResponse)
+  GOOGLE_DCHECK_NE(&from, this);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  if (from.region().size() > 0) {
+    _internal_set_region(from._internal_region());
+  }
+}
+
+void PrepareFailResponse::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:cloudeinapi.PrepareFailResponse)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+void PrepareFailResponse::CopyFrom(const PrepareFailResponse& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:cloudeinapi.PrepareFailResponse)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool PrepareFailResponse::IsInitialized() const {
+  return true;
+}
+
+void PrepareFailResponse::InternalSwap(PrepareFailResponse* other) {
+  using std::swap;
+  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
+  region_.Swap(&other->region_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+}
+
+::PROTOBUF_NAMESPACE_ID::Metadata PrepareFailResponse::GetMetadata() const {
+  return GetMetadataStatic();
+}
+
+
+// ===================================================================
+
+class ConnectFailRequest::_Internal {
+ public:
+};
+
+ConnectFailRequest::ConnectFailRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
+  SharedCtor();
+  RegisterArenaDtor(arena);
+  // @@protoc_insertion_point(arena_constructor:cloudeinapi.ConnectFailRequest)
+}
+ConnectFailRequest::ConnectFailRequest(const ConnectFailRequest& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  region_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!from._internal_region().empty()) {
+    region_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_region(), 
+      GetArena());
+  }
+  tx_name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!from._internal_tx_name().empty()) {
+    tx_name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_tx_name(), 
+      GetArena());
+  }
+  // @@protoc_insertion_point(copy_constructor:cloudeinapi.ConnectFailRequest)
+}
+
+void ConnectFailRequest::SharedCtor() {
+region_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+tx_name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+}
+
+ConnectFailRequest::~ConnectFailRequest() {
+  // @@protoc_insertion_point(destructor:cloudeinapi.ConnectFailRequest)
+  SharedDtor();
+  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+void ConnectFailRequest::SharedDtor() {
+  GOOGLE_DCHECK(GetArena() == nullptr);
+  region_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  tx_name_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+}
+
+void ConnectFailRequest::ArenaDtor(void* object) {
+  ConnectFailRequest* _this = reinterpret_cast< ConnectFailRequest* >(object);
+  (void)_this;
+}
+void ConnectFailRequest::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
+void ConnectFailRequest::SetCachedSize(int size) const {
+  _cached_size_.Set(size);
+}
+
+void ConnectFailRequest::Clear() {
+// @@protoc_insertion_point(message_clear_start:cloudeinapi.ConnectFailRequest)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  region_.ClearToEmpty();
+  tx_name_.ClearToEmpty();
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+const char* ConnectFailRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    CHK_(ptr);
+    switch (tag >> 3) {
+      // string region = 1;
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
+          auto str = _internal_mutable_region();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "cloudeinapi.ConnectFailRequest.region"));
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // string tx_name = 2;
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
+          auto str = _internal_mutable_tx_name();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "cloudeinapi.ConnectFailRequest.tx_name"));
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      default: {
+      handle_unusual:
+        if ((tag & 7) == 4 || tag == 0) {
+          ctx->SetLastTag(tag);
+          goto success;
+        }
+        ptr = UnknownFieldParse(tag,
+            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+            ptr, ctx);
+        CHK_(ptr != nullptr);
+        continue;
+      }
+    }  // switch
+  }  // while
+success:
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto success;
+#undef CHK_
+}
+
+::PROTOBUF_NAMESPACE_ID::uint8* ConnectFailRequest::_InternalSerialize(
+    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:cloudeinapi.ConnectFailRequest)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // string region = 1;
+  if (this->region().size() > 0) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_region().data(), static_cast<int>(this->_internal_region().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "cloudeinapi.ConnectFailRequest.region");
+    target = stream->WriteStringMaybeAliased(
+        1, this->_internal_region(), target);
+  }
+
+  // string tx_name = 2;
+  if (this->tx_name().size() > 0) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_tx_name().data(), static_cast<int>(this->_internal_tx_name().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "cloudeinapi.ConnectFailRequest.tx_name");
+    target = stream->WriteStringMaybeAliased(
+        2, this->_internal_tx_name(), target);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:cloudeinapi.ConnectFailRequest)
+  return target;
+}
+
+size_t ConnectFailRequest::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:cloudeinapi.ConnectFailRequest)
+  size_t total_size = 0;
+
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  // string region = 1;
+  if (this->region().size() > 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_region());
+  }
+
+  // string tx_name = 2;
+  if (this->tx_name().size() > 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_tx_name());
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
+        _internal_metadata_, total_size, &_cached_size_);
+  }
+  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
+  SetCachedSize(cached_size);
+  return total_size;
+}
+
+void ConnectFailRequest::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:cloudeinapi.ConnectFailRequest)
+  GOOGLE_DCHECK_NE(&from, this);
+  const ConnectFailRequest* source =
+      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<ConnectFailRequest>(
+          &from);
+  if (source == nullptr) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:cloudeinapi.ConnectFailRequest)
+    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
+  } else {
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:cloudeinapi.ConnectFailRequest)
+    MergeFrom(*source);
+  }
+}
+
+void ConnectFailRequest::MergeFrom(const ConnectFailRequest& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:cloudeinapi.ConnectFailRequest)
+  GOOGLE_DCHECK_NE(&from, this);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  if (from.region().size() > 0) {
+    _internal_set_region(from._internal_region());
+  }
+  if (from.tx_name().size() > 0) {
+    _internal_set_tx_name(from._internal_tx_name());
+  }
+}
+
+void ConnectFailRequest::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:cloudeinapi.ConnectFailRequest)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+void ConnectFailRequest::CopyFrom(const ConnectFailRequest& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:cloudeinapi.ConnectFailRequest)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool ConnectFailRequest::IsInitialized() const {
+  return true;
+}
+
+void ConnectFailRequest::InternalSwap(ConnectFailRequest* other) {
+  using std::swap;
+  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
+  region_.Swap(&other->region_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+  tx_name_.Swap(&other->tx_name_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+}
+
+::PROTOBUF_NAMESPACE_ID::Metadata ConnectFailRequest::GetMetadata() const {
+  return GetMetadataStatic();
+}
+
+
+// ===================================================================
+
+class ConnectFailResponse::_Internal {
+ public:
+};
+
+ConnectFailResponse::ConnectFailResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
+  SharedCtor();
+  RegisterArenaDtor(arena);
+  // @@protoc_insertion_point(arena_constructor:cloudeinapi.ConnectFailResponse)
+}
+ConnectFailResponse::ConnectFailResponse(const ConnectFailResponse& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  region_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!from._internal_region().empty()) {
+    region_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_region(), 
+      GetArena());
+  }
+  // @@protoc_insertion_point(copy_constructor:cloudeinapi.ConnectFailResponse)
+}
+
+void ConnectFailResponse::SharedCtor() {
+region_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+}
+
+ConnectFailResponse::~ConnectFailResponse() {
+  // @@protoc_insertion_point(destructor:cloudeinapi.ConnectFailResponse)
+  SharedDtor();
+  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+void ConnectFailResponse::SharedDtor() {
+  GOOGLE_DCHECK(GetArena() == nullptr);
+  region_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+}
+
+void ConnectFailResponse::ArenaDtor(void* object) {
+  ConnectFailResponse* _this = reinterpret_cast< ConnectFailResponse* >(object);
+  (void)_this;
+}
+void ConnectFailResponse::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
+void ConnectFailResponse::SetCachedSize(int size) const {
+  _cached_size_.Set(size);
+}
+
+void ConnectFailResponse::Clear() {
+// @@protoc_insertion_point(message_clear_start:cloudeinapi.ConnectFailResponse)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  region_.ClearToEmpty();
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+const char* ConnectFailResponse::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    CHK_(ptr);
+    switch (tag >> 3) {
+      // string region = 1;
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
+          auto str = _internal_mutable_region();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "cloudeinapi.ConnectFailResponse.region"));
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      default: {
+      handle_unusual:
+        if ((tag & 7) == 4 || tag == 0) {
+          ctx->SetLastTag(tag);
+          goto success;
+        }
+        ptr = UnknownFieldParse(tag,
+            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+            ptr, ctx);
+        CHK_(ptr != nullptr);
+        continue;
+      }
+    }  // switch
+  }  // while
+success:
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto success;
+#undef CHK_
+}
+
+::PROTOBUF_NAMESPACE_ID::uint8* ConnectFailResponse::_InternalSerialize(
+    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:cloudeinapi.ConnectFailResponse)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // string region = 1;
+  if (this->region().size() > 0) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_region().data(), static_cast<int>(this->_internal_region().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "cloudeinapi.ConnectFailResponse.region");
+    target = stream->WriteStringMaybeAliased(
+        1, this->_internal_region(), target);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:cloudeinapi.ConnectFailResponse)
+  return target;
+}
+
+size_t ConnectFailResponse::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:cloudeinapi.ConnectFailResponse)
+  size_t total_size = 0;
+
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  // string region = 1;
+  if (this->region().size() > 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_region());
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
+        _internal_metadata_, total_size, &_cached_size_);
+  }
+  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
+  SetCachedSize(cached_size);
+  return total_size;
+}
+
+void ConnectFailResponse::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:cloudeinapi.ConnectFailResponse)
+  GOOGLE_DCHECK_NE(&from, this);
+  const ConnectFailResponse* source =
+      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<ConnectFailResponse>(
+          &from);
+  if (source == nullptr) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:cloudeinapi.ConnectFailResponse)
+    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
+  } else {
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:cloudeinapi.ConnectFailResponse)
+    MergeFrom(*source);
+  }
+}
+
+void ConnectFailResponse::MergeFrom(const ConnectFailResponse& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:cloudeinapi.ConnectFailResponse)
+  GOOGLE_DCHECK_NE(&from, this);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  if (from.region().size() > 0) {
+    _internal_set_region(from._internal_region());
+  }
+}
+
+void ConnectFailResponse::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:cloudeinapi.ConnectFailResponse)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+void ConnectFailResponse::CopyFrom(const ConnectFailResponse& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:cloudeinapi.ConnectFailResponse)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool ConnectFailResponse::IsInitialized() const {
+  return true;
+}
+
+void ConnectFailResponse::InternalSwap(ConnectFailResponse* other) {
+  using std::swap;
+  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
+  region_.Swap(&other->region_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+}
+
+::PROTOBUF_NAMESPACE_ID::Metadata ConnectFailResponse::GetMetadata() const {
+  return GetMetadataStatic();
+}
+
+
+// ===================================================================
+
+class RebootFailRequest::_Internal {
+ public:
+};
+
+RebootFailRequest::RebootFailRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
+  SharedCtor();
+  RegisterArenaDtor(arena);
+  // @@protoc_insertion_point(arena_constructor:cloudeinapi.RebootFailRequest)
+}
+RebootFailRequest::RebootFailRequest(const RebootFailRequest& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  region_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!from._internal_region().empty()) {
+    region_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_region(), 
+      GetArena());
+  }
+  tx_name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!from._internal_tx_name().empty()) {
+    tx_name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_tx_name(), 
+      GetArena());
+  }
+  // @@protoc_insertion_point(copy_constructor:cloudeinapi.RebootFailRequest)
+}
+
+void RebootFailRequest::SharedCtor() {
+region_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+tx_name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+}
+
+RebootFailRequest::~RebootFailRequest() {
+  // @@protoc_insertion_point(destructor:cloudeinapi.RebootFailRequest)
+  SharedDtor();
+  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+void RebootFailRequest::SharedDtor() {
+  GOOGLE_DCHECK(GetArena() == nullptr);
+  region_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  tx_name_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+}
+
+void RebootFailRequest::ArenaDtor(void* object) {
+  RebootFailRequest* _this = reinterpret_cast< RebootFailRequest* >(object);
+  (void)_this;
+}
+void RebootFailRequest::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
+void RebootFailRequest::SetCachedSize(int size) const {
+  _cached_size_.Set(size);
+}
+
+void RebootFailRequest::Clear() {
+// @@protoc_insertion_point(message_clear_start:cloudeinapi.RebootFailRequest)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  region_.ClearToEmpty();
+  tx_name_.ClearToEmpty();
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+const char* RebootFailRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    CHK_(ptr);
+    switch (tag >> 3) {
+      // string region = 1;
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
+          auto str = _internal_mutable_region();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "cloudeinapi.RebootFailRequest.region"));
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // string tx_name = 2;
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
+          auto str = _internal_mutable_tx_name();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "cloudeinapi.RebootFailRequest.tx_name"));
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      default: {
+      handle_unusual:
+        if ((tag & 7) == 4 || tag == 0) {
+          ctx->SetLastTag(tag);
+          goto success;
+        }
+        ptr = UnknownFieldParse(tag,
+            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+            ptr, ctx);
+        CHK_(ptr != nullptr);
+        continue;
+      }
+    }  // switch
+  }  // while
+success:
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto success;
+#undef CHK_
+}
+
+::PROTOBUF_NAMESPACE_ID::uint8* RebootFailRequest::_InternalSerialize(
+    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:cloudeinapi.RebootFailRequest)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // string region = 1;
+  if (this->region().size() > 0) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_region().data(), static_cast<int>(this->_internal_region().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "cloudeinapi.RebootFailRequest.region");
+    target = stream->WriteStringMaybeAliased(
+        1, this->_internal_region(), target);
+  }
+
+  // string tx_name = 2;
+  if (this->tx_name().size() > 0) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_tx_name().data(), static_cast<int>(this->_internal_tx_name().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "cloudeinapi.RebootFailRequest.tx_name");
+    target = stream->WriteStringMaybeAliased(
+        2, this->_internal_tx_name(), target);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:cloudeinapi.RebootFailRequest)
+  return target;
+}
+
+size_t RebootFailRequest::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:cloudeinapi.RebootFailRequest)
+  size_t total_size = 0;
+
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  // string region = 1;
+  if (this->region().size() > 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_region());
+  }
+
+  // string tx_name = 2;
+  if (this->tx_name().size() > 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_tx_name());
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
+        _internal_metadata_, total_size, &_cached_size_);
+  }
+  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
+  SetCachedSize(cached_size);
+  return total_size;
+}
+
+void RebootFailRequest::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:cloudeinapi.RebootFailRequest)
+  GOOGLE_DCHECK_NE(&from, this);
+  const RebootFailRequest* source =
+      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<RebootFailRequest>(
+          &from);
+  if (source == nullptr) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:cloudeinapi.RebootFailRequest)
+    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
+  } else {
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:cloudeinapi.RebootFailRequest)
+    MergeFrom(*source);
+  }
+}
+
+void RebootFailRequest::MergeFrom(const RebootFailRequest& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:cloudeinapi.RebootFailRequest)
+  GOOGLE_DCHECK_NE(&from, this);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  if (from.region().size() > 0) {
+    _internal_set_region(from._internal_region());
+  }
+  if (from.tx_name().size() > 0) {
+    _internal_set_tx_name(from._internal_tx_name());
+  }
+}
+
+void RebootFailRequest::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:cloudeinapi.RebootFailRequest)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+void RebootFailRequest::CopyFrom(const RebootFailRequest& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:cloudeinapi.RebootFailRequest)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool RebootFailRequest::IsInitialized() const {
+  return true;
+}
+
+void RebootFailRequest::InternalSwap(RebootFailRequest* other) {
+  using std::swap;
+  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
+  region_.Swap(&other->region_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+  tx_name_.Swap(&other->tx_name_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+}
+
+::PROTOBUF_NAMESPACE_ID::Metadata RebootFailRequest::GetMetadata() const {
+  return GetMetadataStatic();
+}
+
+
+// ===================================================================
+
+class RebootFailResponse::_Internal {
+ public:
+};
+
+RebootFailResponse::RebootFailResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
+  SharedCtor();
+  RegisterArenaDtor(arena);
+  // @@protoc_insertion_point(arena_constructor:cloudeinapi.RebootFailResponse)
+}
+RebootFailResponse::RebootFailResponse(const RebootFailResponse& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  region_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!from._internal_region().empty()) {
+    region_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_region(), 
+      GetArena());
+  }
+  // @@protoc_insertion_point(copy_constructor:cloudeinapi.RebootFailResponse)
+}
+
+void RebootFailResponse::SharedCtor() {
+region_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+}
+
+RebootFailResponse::~RebootFailResponse() {
+  // @@protoc_insertion_point(destructor:cloudeinapi.RebootFailResponse)
+  SharedDtor();
+  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+void RebootFailResponse::SharedDtor() {
+  GOOGLE_DCHECK(GetArena() == nullptr);
+  region_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+}
+
+void RebootFailResponse::ArenaDtor(void* object) {
+  RebootFailResponse* _this = reinterpret_cast< RebootFailResponse* >(object);
+  (void)_this;
+}
+void RebootFailResponse::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
+void RebootFailResponse::SetCachedSize(int size) const {
+  _cached_size_.Set(size);
+}
+
+void RebootFailResponse::Clear() {
+// @@protoc_insertion_point(message_clear_start:cloudeinapi.RebootFailResponse)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  region_.ClearToEmpty();
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+const char* RebootFailResponse::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    CHK_(ptr);
+    switch (tag >> 3) {
+      // string region = 1;
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
+          auto str = _internal_mutable_region();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "cloudeinapi.RebootFailResponse.region"));
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      default: {
+      handle_unusual:
+        if ((tag & 7) == 4 || tag == 0) {
+          ctx->SetLastTag(tag);
+          goto success;
+        }
+        ptr = UnknownFieldParse(tag,
+            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+            ptr, ctx);
+        CHK_(ptr != nullptr);
+        continue;
+      }
+    }  // switch
+  }  // while
+success:
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto success;
+#undef CHK_
+}
+
+::PROTOBUF_NAMESPACE_ID::uint8* RebootFailResponse::_InternalSerialize(
+    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:cloudeinapi.RebootFailResponse)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // string region = 1;
+  if (this->region().size() > 0) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_region().data(), static_cast<int>(this->_internal_region().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "cloudeinapi.RebootFailResponse.region");
+    target = stream->WriteStringMaybeAliased(
+        1, this->_internal_region(), target);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:cloudeinapi.RebootFailResponse)
+  return target;
+}
+
+size_t RebootFailResponse::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:cloudeinapi.RebootFailResponse)
+  size_t total_size = 0;
+
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  // string region = 1;
+  if (this->region().size() > 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_region());
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
+        _internal_metadata_, total_size, &_cached_size_);
+  }
+  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
+  SetCachedSize(cached_size);
+  return total_size;
+}
+
+void RebootFailResponse::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:cloudeinapi.RebootFailResponse)
+  GOOGLE_DCHECK_NE(&from, this);
+  const RebootFailResponse* source =
+      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<RebootFailResponse>(
+          &from);
+  if (source == nullptr) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:cloudeinapi.RebootFailResponse)
+    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
+  } else {
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:cloudeinapi.RebootFailResponse)
+    MergeFrom(*source);
+  }
+}
+
+void RebootFailResponse::MergeFrom(const RebootFailResponse& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:cloudeinapi.RebootFailResponse)
+  GOOGLE_DCHECK_NE(&from, this);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  if (from.region().size() > 0) {
+    _internal_set_region(from._internal_region());
+  }
+}
+
+void RebootFailResponse::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:cloudeinapi.RebootFailResponse)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+void RebootFailResponse::CopyFrom(const RebootFailResponse& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:cloudeinapi.RebootFailResponse)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool RebootFailResponse::IsInitialized() const {
+  return true;
+}
+
+void RebootFailResponse::InternalSwap(RebootFailResponse* other) {
+  using std::swap;
+  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
+  region_.Swap(&other->region_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+}
+
+::PROTOBUF_NAMESPACE_ID::Metadata RebootFailResponse::GetMetadata() const {
+  return GetMetadataStatic();
+}
+
+
+// ===================================================================
+
+class AuthFailRequest::_Internal {
+ public:
+};
+
+AuthFailRequest::AuthFailRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
+  SharedCtor();
+  RegisterArenaDtor(arena);
+  // @@protoc_insertion_point(arena_constructor:cloudeinapi.AuthFailRequest)
+}
+AuthFailRequest::AuthFailRequest(const AuthFailRequest& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  region_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!from._internal_region().empty()) {
+    region_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_region(), 
+      GetArena());
+  }
+  tx_name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!from._internal_tx_name().empty()) {
+    tx_name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_tx_name(), 
+      GetArena());
+  }
+  // @@protoc_insertion_point(copy_constructor:cloudeinapi.AuthFailRequest)
+}
+
+void AuthFailRequest::SharedCtor() {
+region_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+tx_name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+}
+
+AuthFailRequest::~AuthFailRequest() {
+  // @@protoc_insertion_point(destructor:cloudeinapi.AuthFailRequest)
+  SharedDtor();
+  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+void AuthFailRequest::SharedDtor() {
+  GOOGLE_DCHECK(GetArena() == nullptr);
+  region_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  tx_name_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+}
+
+void AuthFailRequest::ArenaDtor(void* object) {
+  AuthFailRequest* _this = reinterpret_cast< AuthFailRequest* >(object);
+  (void)_this;
+}
+void AuthFailRequest::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
+void AuthFailRequest::SetCachedSize(int size) const {
+  _cached_size_.Set(size);
+}
+
+void AuthFailRequest::Clear() {
+// @@protoc_insertion_point(message_clear_start:cloudeinapi.AuthFailRequest)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  region_.ClearToEmpty();
+  tx_name_.ClearToEmpty();
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+const char* AuthFailRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    CHK_(ptr);
+    switch (tag >> 3) {
+      // string region = 1;
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
+          auto str = _internal_mutable_region();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "cloudeinapi.AuthFailRequest.region"));
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // string tx_name = 2;
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
+          auto str = _internal_mutable_tx_name();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "cloudeinapi.AuthFailRequest.tx_name"));
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      default: {
+      handle_unusual:
+        if ((tag & 7) == 4 || tag == 0) {
+          ctx->SetLastTag(tag);
+          goto success;
+        }
+        ptr = UnknownFieldParse(tag,
+            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+            ptr, ctx);
+        CHK_(ptr != nullptr);
+        continue;
+      }
+    }  // switch
+  }  // while
+success:
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto success;
+#undef CHK_
+}
+
+::PROTOBUF_NAMESPACE_ID::uint8* AuthFailRequest::_InternalSerialize(
+    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:cloudeinapi.AuthFailRequest)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // string region = 1;
+  if (this->region().size() > 0) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_region().data(), static_cast<int>(this->_internal_region().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "cloudeinapi.AuthFailRequest.region");
+    target = stream->WriteStringMaybeAliased(
+        1, this->_internal_region(), target);
+  }
+
+  // string tx_name = 2;
+  if (this->tx_name().size() > 0) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_tx_name().data(), static_cast<int>(this->_internal_tx_name().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "cloudeinapi.AuthFailRequest.tx_name");
+    target = stream->WriteStringMaybeAliased(
+        2, this->_internal_tx_name(), target);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:cloudeinapi.AuthFailRequest)
+  return target;
+}
+
+size_t AuthFailRequest::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:cloudeinapi.AuthFailRequest)
+  size_t total_size = 0;
+
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  // string region = 1;
+  if (this->region().size() > 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_region());
+  }
+
+  // string tx_name = 2;
+  if (this->tx_name().size() > 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_tx_name());
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
+        _internal_metadata_, total_size, &_cached_size_);
+  }
+  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
+  SetCachedSize(cached_size);
+  return total_size;
+}
+
+void AuthFailRequest::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:cloudeinapi.AuthFailRequest)
+  GOOGLE_DCHECK_NE(&from, this);
+  const AuthFailRequest* source =
+      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<AuthFailRequest>(
+          &from);
+  if (source == nullptr) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:cloudeinapi.AuthFailRequest)
+    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
+  } else {
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:cloudeinapi.AuthFailRequest)
+    MergeFrom(*source);
+  }
+}
+
+void AuthFailRequest::MergeFrom(const AuthFailRequest& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:cloudeinapi.AuthFailRequest)
+  GOOGLE_DCHECK_NE(&from, this);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  if (from.region().size() > 0) {
+    _internal_set_region(from._internal_region());
+  }
+  if (from.tx_name().size() > 0) {
+    _internal_set_tx_name(from._internal_tx_name());
+  }
+}
+
+void AuthFailRequest::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:cloudeinapi.AuthFailRequest)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+void AuthFailRequest::CopyFrom(const AuthFailRequest& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:cloudeinapi.AuthFailRequest)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool AuthFailRequest::IsInitialized() const {
+  return true;
+}
+
+void AuthFailRequest::InternalSwap(AuthFailRequest* other) {
+  using std::swap;
+  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
+  region_.Swap(&other->region_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+  tx_name_.Swap(&other->tx_name_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+}
+
+::PROTOBUF_NAMESPACE_ID::Metadata AuthFailRequest::GetMetadata() const {
+  return GetMetadataStatic();
+}
+
+
+// ===================================================================
+
+class AuthFailResponse::_Internal {
+ public:
+};
+
+AuthFailResponse::AuthFailResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
+  SharedCtor();
+  RegisterArenaDtor(arena);
+  // @@protoc_insertion_point(arena_constructor:cloudeinapi.AuthFailResponse)
+}
+AuthFailResponse::AuthFailResponse(const AuthFailResponse& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  region_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!from._internal_region().empty()) {
+    region_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_region(), 
+      GetArena());
+  }
+  // @@protoc_insertion_point(copy_constructor:cloudeinapi.AuthFailResponse)
+}
+
+void AuthFailResponse::SharedCtor() {
+region_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+}
+
+AuthFailResponse::~AuthFailResponse() {
+  // @@protoc_insertion_point(destructor:cloudeinapi.AuthFailResponse)
+  SharedDtor();
+  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+void AuthFailResponse::SharedDtor() {
+  GOOGLE_DCHECK(GetArena() == nullptr);
+  region_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+}
+
+void AuthFailResponse::ArenaDtor(void* object) {
+  AuthFailResponse* _this = reinterpret_cast< AuthFailResponse* >(object);
+  (void)_this;
+}
+void AuthFailResponse::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
+void AuthFailResponse::SetCachedSize(int size) const {
+  _cached_size_.Set(size);
+}
+
+void AuthFailResponse::Clear() {
+// @@protoc_insertion_point(message_clear_start:cloudeinapi.AuthFailResponse)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  region_.ClearToEmpty();
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+const char* AuthFailResponse::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    CHK_(ptr);
+    switch (tag >> 3) {
+      // string region = 1;
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
+          auto str = _internal_mutable_region();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "cloudeinapi.AuthFailResponse.region"));
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      default: {
+      handle_unusual:
+        if ((tag & 7) == 4 || tag == 0) {
+          ctx->SetLastTag(tag);
+          goto success;
+        }
+        ptr = UnknownFieldParse(tag,
+            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+            ptr, ctx);
+        CHK_(ptr != nullptr);
+        continue;
+      }
+    }  // switch
+  }  // while
+success:
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto success;
+#undef CHK_
+}
+
+::PROTOBUF_NAMESPACE_ID::uint8* AuthFailResponse::_InternalSerialize(
+    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:cloudeinapi.AuthFailResponse)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // string region = 1;
+  if (this->region().size() > 0) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_region().data(), static_cast<int>(this->_internal_region().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "cloudeinapi.AuthFailResponse.region");
+    target = stream->WriteStringMaybeAliased(
+        1, this->_internal_region(), target);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:cloudeinapi.AuthFailResponse)
+  return target;
+}
+
+size_t AuthFailResponse::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:cloudeinapi.AuthFailResponse)
+  size_t total_size = 0;
+
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  // string region = 1;
+  if (this->region().size() > 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_region());
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
+        _internal_metadata_, total_size, &_cached_size_);
+  }
+  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
+  SetCachedSize(cached_size);
+  return total_size;
+}
+
+void AuthFailResponse::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:cloudeinapi.AuthFailResponse)
+  GOOGLE_DCHECK_NE(&from, this);
+  const AuthFailResponse* source =
+      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<AuthFailResponse>(
+          &from);
+  if (source == nullptr) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:cloudeinapi.AuthFailResponse)
+    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
+  } else {
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:cloudeinapi.AuthFailResponse)
+    MergeFrom(*source);
+  }
+}
+
+void AuthFailResponse::MergeFrom(const AuthFailResponse& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:cloudeinapi.AuthFailResponse)
+  GOOGLE_DCHECK_NE(&from, this);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  if (from.region().size() > 0) {
+    _internal_set_region(from._internal_region());
+  }
+}
+
+void AuthFailResponse::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:cloudeinapi.AuthFailResponse)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+void AuthFailResponse::CopyFrom(const AuthFailResponse& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:cloudeinapi.AuthFailResponse)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool AuthFailResponse::IsInitialized() const {
+  return true;
+}
+
+void AuthFailResponse::InternalSwap(AuthFailResponse* other) {
+  using std::swap;
+  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
+  region_.Swap(&other->region_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+}
+
+::PROTOBUF_NAMESPACE_ID::Metadata AuthFailResponse::GetMetadata() const {
+  return GetMetadataStatic();
+}
+
+
 // @@protoc_insertion_point(namespace_scope)
 }  // namespace cloudeinapi
 PROTOBUF_NAMESPACE_OPEN
@@ -2157,6 +5064,42 @@ template<> PROTOBUF_NOINLINE ::cloudeinapi::ReleaseRequest* Arena::CreateMaybeMe
 }
 template<> PROTOBUF_NOINLINE ::cloudeinapi::ReleaseResponse* Arena::CreateMaybeMessage< ::cloudeinapi::ReleaseResponse >(Arena* arena) {
   return Arena::CreateMessageInternal< ::cloudeinapi::ReleaseResponse >(arena);
+}
+template<> PROTOBUF_NOINLINE ::cloudeinapi::DisconnectRequest* Arena::CreateMaybeMessage< ::cloudeinapi::DisconnectRequest >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::cloudeinapi::DisconnectRequest >(arena);
+}
+template<> PROTOBUF_NOINLINE ::cloudeinapi::DisconnectResponse* Arena::CreateMaybeMessage< ::cloudeinapi::DisconnectResponse >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::cloudeinapi::DisconnectResponse >(arena);
+}
+template<> PROTOBUF_NOINLINE ::cloudeinapi::TimeoutRequest* Arena::CreateMaybeMessage< ::cloudeinapi::TimeoutRequest >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::cloudeinapi::TimeoutRequest >(arena);
+}
+template<> PROTOBUF_NOINLINE ::cloudeinapi::TimeoutResponse* Arena::CreateMaybeMessage< ::cloudeinapi::TimeoutResponse >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::cloudeinapi::TimeoutResponse >(arena);
+}
+template<> PROTOBUF_NOINLINE ::cloudeinapi::PrepareFailRequest* Arena::CreateMaybeMessage< ::cloudeinapi::PrepareFailRequest >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::cloudeinapi::PrepareFailRequest >(arena);
+}
+template<> PROTOBUF_NOINLINE ::cloudeinapi::PrepareFailResponse* Arena::CreateMaybeMessage< ::cloudeinapi::PrepareFailResponse >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::cloudeinapi::PrepareFailResponse >(arena);
+}
+template<> PROTOBUF_NOINLINE ::cloudeinapi::ConnectFailRequest* Arena::CreateMaybeMessage< ::cloudeinapi::ConnectFailRequest >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::cloudeinapi::ConnectFailRequest >(arena);
+}
+template<> PROTOBUF_NOINLINE ::cloudeinapi::ConnectFailResponse* Arena::CreateMaybeMessage< ::cloudeinapi::ConnectFailResponse >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::cloudeinapi::ConnectFailResponse >(arena);
+}
+template<> PROTOBUF_NOINLINE ::cloudeinapi::RebootFailRequest* Arena::CreateMaybeMessage< ::cloudeinapi::RebootFailRequest >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::cloudeinapi::RebootFailRequest >(arena);
+}
+template<> PROTOBUF_NOINLINE ::cloudeinapi::RebootFailResponse* Arena::CreateMaybeMessage< ::cloudeinapi::RebootFailResponse >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::cloudeinapi::RebootFailResponse >(arena);
+}
+template<> PROTOBUF_NOINLINE ::cloudeinapi::AuthFailRequest* Arena::CreateMaybeMessage< ::cloudeinapi::AuthFailRequest >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::cloudeinapi::AuthFailRequest >(arena);
+}
+template<> PROTOBUF_NOINLINE ::cloudeinapi::AuthFailResponse* Arena::CreateMaybeMessage< ::cloudeinapi::AuthFailResponse >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::cloudeinapi::AuthFailResponse >(arena);
 }
 PROTOBUF_NAMESPACE_CLOSE
 

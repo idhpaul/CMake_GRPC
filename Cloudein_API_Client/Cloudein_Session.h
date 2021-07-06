@@ -48,6 +48,36 @@ class StateRelease : public CloudeinState
 	void handle(CloudeinSessionContext*);
 	std::string return_handle();
 };
+class StateDisconnect : public CloudeinState
+{
+	void handle(CloudeinSessionContext*);
+	std::string return_handle();
+};
+class StateTimeout : public CloudeinState
+{
+	void handle(CloudeinSessionContext*);
+	std::string return_handle();
+};
+class StatePrepareFail : public CloudeinState
+{
+	void handle(CloudeinSessionContext*);
+	std::string return_handle();
+};
+class StateConnectFail : public CloudeinState
+{
+	void handle(CloudeinSessionContext*);
+	std::string return_handle();
+};
+class StateRebootFail : public CloudeinState
+{
+	void handle(CloudeinSessionContext*);
+	std::string return_handle();
+};
+class StateAuthFail : public CloudeinState
+{
+	void handle(CloudeinSessionContext*);
+	std::string return_handle();
+};
 
 class CloudeinSessionContext
 {
@@ -68,6 +98,12 @@ public:
 	friend class StatePrepare;
 	friend class StateConnect;
 	friend class StateRelease;
+	friend class StateDisconnect;
+	friend class StateTimeout;
+	friend class StatePrepareFail;
+	friend class StateConnectFail;
+	friend class StateRebootFail;
+	friend class StateAuthFail;
 	// .. add state class
 private:
 	std::shared_ptr<CloudeinState> state_;

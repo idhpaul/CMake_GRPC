@@ -46,7 +46,7 @@ struct TableStruct_CloudeinAPI_2eproto {
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::PROTOBUF_NAMESPACE_ID::internal::AuxiliaryParseTableField aux[]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
-  static const ::PROTOBUF_NAMESPACE_ID::internal::ParseTable schema[8]
+  static const ::PROTOBUF_NAMESPACE_ID::internal::ParseTable schema[20]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::PROTOBUF_NAMESPACE_ID::internal::FieldMetadata field_metadata[];
   static const ::PROTOBUF_NAMESPACE_ID::internal::SerializationTable serialization_table[];
@@ -61,34 +61,82 @@ extern AllocateRequestDefaultTypeInternal _AllocateRequest_default_instance_;
 class AllocateResponse;
 struct AllocateResponseDefaultTypeInternal;
 extern AllocateResponseDefaultTypeInternal _AllocateResponse_default_instance_;
+class AuthFailRequest;
+struct AuthFailRequestDefaultTypeInternal;
+extern AuthFailRequestDefaultTypeInternal _AuthFailRequest_default_instance_;
+class AuthFailResponse;
+struct AuthFailResponseDefaultTypeInternal;
+extern AuthFailResponseDefaultTypeInternal _AuthFailResponse_default_instance_;
+class ConnectFailRequest;
+struct ConnectFailRequestDefaultTypeInternal;
+extern ConnectFailRequestDefaultTypeInternal _ConnectFailRequest_default_instance_;
+class ConnectFailResponse;
+struct ConnectFailResponseDefaultTypeInternal;
+extern ConnectFailResponseDefaultTypeInternal _ConnectFailResponse_default_instance_;
 class ConnectRequest;
 struct ConnectRequestDefaultTypeInternal;
 extern ConnectRequestDefaultTypeInternal _ConnectRequest_default_instance_;
 class ConnectResponse;
 struct ConnectResponseDefaultTypeInternal;
 extern ConnectResponseDefaultTypeInternal _ConnectResponse_default_instance_;
+class DisconnectRequest;
+struct DisconnectRequestDefaultTypeInternal;
+extern DisconnectRequestDefaultTypeInternal _DisconnectRequest_default_instance_;
+class DisconnectResponse;
+struct DisconnectResponseDefaultTypeInternal;
+extern DisconnectResponseDefaultTypeInternal _DisconnectResponse_default_instance_;
+class PrepareFailRequest;
+struct PrepareFailRequestDefaultTypeInternal;
+extern PrepareFailRequestDefaultTypeInternal _PrepareFailRequest_default_instance_;
+class PrepareFailResponse;
+struct PrepareFailResponseDefaultTypeInternal;
+extern PrepareFailResponseDefaultTypeInternal _PrepareFailResponse_default_instance_;
 class PrepareRequest;
 struct PrepareRequestDefaultTypeInternal;
 extern PrepareRequestDefaultTypeInternal _PrepareRequest_default_instance_;
 class PrepareResponse;
 struct PrepareResponseDefaultTypeInternal;
 extern PrepareResponseDefaultTypeInternal _PrepareResponse_default_instance_;
+class RebootFailRequest;
+struct RebootFailRequestDefaultTypeInternal;
+extern RebootFailRequestDefaultTypeInternal _RebootFailRequest_default_instance_;
+class RebootFailResponse;
+struct RebootFailResponseDefaultTypeInternal;
+extern RebootFailResponseDefaultTypeInternal _RebootFailResponse_default_instance_;
 class ReleaseRequest;
 struct ReleaseRequestDefaultTypeInternal;
 extern ReleaseRequestDefaultTypeInternal _ReleaseRequest_default_instance_;
 class ReleaseResponse;
 struct ReleaseResponseDefaultTypeInternal;
 extern ReleaseResponseDefaultTypeInternal _ReleaseResponse_default_instance_;
+class TimeoutRequest;
+struct TimeoutRequestDefaultTypeInternal;
+extern TimeoutRequestDefaultTypeInternal _TimeoutRequest_default_instance_;
+class TimeoutResponse;
+struct TimeoutResponseDefaultTypeInternal;
+extern TimeoutResponseDefaultTypeInternal _TimeoutResponse_default_instance_;
 }  // namespace cloudeinapi
 PROTOBUF_NAMESPACE_OPEN
 template<> ::cloudeinapi::AllocateRequest* Arena::CreateMaybeMessage<::cloudeinapi::AllocateRequest>(Arena*);
 template<> ::cloudeinapi::AllocateResponse* Arena::CreateMaybeMessage<::cloudeinapi::AllocateResponse>(Arena*);
+template<> ::cloudeinapi::AuthFailRequest* Arena::CreateMaybeMessage<::cloudeinapi::AuthFailRequest>(Arena*);
+template<> ::cloudeinapi::AuthFailResponse* Arena::CreateMaybeMessage<::cloudeinapi::AuthFailResponse>(Arena*);
+template<> ::cloudeinapi::ConnectFailRequest* Arena::CreateMaybeMessage<::cloudeinapi::ConnectFailRequest>(Arena*);
+template<> ::cloudeinapi::ConnectFailResponse* Arena::CreateMaybeMessage<::cloudeinapi::ConnectFailResponse>(Arena*);
 template<> ::cloudeinapi::ConnectRequest* Arena::CreateMaybeMessage<::cloudeinapi::ConnectRequest>(Arena*);
 template<> ::cloudeinapi::ConnectResponse* Arena::CreateMaybeMessage<::cloudeinapi::ConnectResponse>(Arena*);
+template<> ::cloudeinapi::DisconnectRequest* Arena::CreateMaybeMessage<::cloudeinapi::DisconnectRequest>(Arena*);
+template<> ::cloudeinapi::DisconnectResponse* Arena::CreateMaybeMessage<::cloudeinapi::DisconnectResponse>(Arena*);
+template<> ::cloudeinapi::PrepareFailRequest* Arena::CreateMaybeMessage<::cloudeinapi::PrepareFailRequest>(Arena*);
+template<> ::cloudeinapi::PrepareFailResponse* Arena::CreateMaybeMessage<::cloudeinapi::PrepareFailResponse>(Arena*);
 template<> ::cloudeinapi::PrepareRequest* Arena::CreateMaybeMessage<::cloudeinapi::PrepareRequest>(Arena*);
 template<> ::cloudeinapi::PrepareResponse* Arena::CreateMaybeMessage<::cloudeinapi::PrepareResponse>(Arena*);
+template<> ::cloudeinapi::RebootFailRequest* Arena::CreateMaybeMessage<::cloudeinapi::RebootFailRequest>(Arena*);
+template<> ::cloudeinapi::RebootFailResponse* Arena::CreateMaybeMessage<::cloudeinapi::RebootFailResponse>(Arena*);
 template<> ::cloudeinapi::ReleaseRequest* Arena::CreateMaybeMessage<::cloudeinapi::ReleaseRequest>(Arena*);
 template<> ::cloudeinapi::ReleaseResponse* Arena::CreateMaybeMessage<::cloudeinapi::ReleaseResponse>(Arena*);
+template<> ::cloudeinapi::TimeoutRequest* Arena::CreateMaybeMessage<::cloudeinapi::TimeoutRequest>(Arena*);
+template<> ::cloudeinapi::TimeoutResponse* Arena::CreateMaybeMessage<::cloudeinapi::TimeoutResponse>(Arena*);
 PROTOBUF_NAMESPACE_CLOSE
 namespace cloudeinapi {
 
@@ -1371,6 +1419,1842 @@ class ReleaseResponse PROTOBUF_FINAL :
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_CloudeinAPI_2eproto;
 };
+// -------------------------------------------------------------------
+
+class DisconnectRequest PROTOBUF_FINAL :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:cloudeinapi.DisconnectRequest) */ {
+ public:
+  inline DisconnectRequest() : DisconnectRequest(nullptr) {}
+  virtual ~DisconnectRequest();
+  explicit constexpr DisconnectRequest(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  DisconnectRequest(const DisconnectRequest& from);
+  DisconnectRequest(DisconnectRequest&& from) noexcept
+    : DisconnectRequest() {
+    *this = ::std::move(from);
+  }
+
+  inline DisconnectRequest& operator=(const DisconnectRequest& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline DisconnectRequest& operator=(DisconnectRequest&& from) noexcept {
+    if (GetArena() == from.GetArena()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return GetMetadataStatic().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return GetMetadataStatic().reflection;
+  }
+  static const DisconnectRequest& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const DisconnectRequest* internal_default_instance() {
+    return reinterpret_cast<const DisconnectRequest*>(
+               &_DisconnectRequest_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    8;
+
+  friend void swap(DisconnectRequest& a, DisconnectRequest& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(DisconnectRequest* other) {
+    if (other == this) return;
+    if (GetArena() == other->GetArena()) {
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(DisconnectRequest* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetArena() == other->GetArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline DisconnectRequest* New() const final {
+    return CreateMaybeMessage<DisconnectRequest>(nullptr);
+  }
+
+  DisconnectRequest* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<DisconnectRequest>(arena);
+  }
+  void CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void CopyFrom(const DisconnectRequest& from);
+  void MergeFrom(const DisconnectRequest& from);
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  ::PROTOBUF_NAMESPACE_ID::uint8* _InternalSerialize(
+      ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  inline void SharedCtor();
+  inline void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(DisconnectRequest* other);
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "cloudeinapi.DisconnectRequest";
+  }
+  protected:
+  explicit DisconnectRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  private:
+  static void ArenaDtor(void* object);
+  inline void RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  public:
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+  private:
+  static ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadataStatic() {
+    return ::descriptor_table_CloudeinAPI_2eproto_metadata_getter(kIndexInFileMessages);
+  }
+
+  public:
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kRegionFieldNumber = 1,
+    kTxNameFieldNumber = 2,
+  };
+  // string region = 1;
+  void clear_region();
+  const std::string& region() const;
+  void set_region(const std::string& value);
+  void set_region(std::string&& value);
+  void set_region(const char* value);
+  void set_region(const char* value, size_t size);
+  std::string* mutable_region();
+  std::string* release_region();
+  void set_allocated_region(std::string* region);
+  private:
+  const std::string& _internal_region() const;
+  void _internal_set_region(const std::string& value);
+  std::string* _internal_mutable_region();
+  public:
+
+  // string tx_name = 2;
+  void clear_tx_name();
+  const std::string& tx_name() const;
+  void set_tx_name(const std::string& value);
+  void set_tx_name(std::string&& value);
+  void set_tx_name(const char* value);
+  void set_tx_name(const char* value, size_t size);
+  std::string* mutable_tx_name();
+  std::string* release_tx_name();
+  void set_allocated_tx_name(std::string* tx_name);
+  private:
+  const std::string& _internal_tx_name() const;
+  void _internal_set_tx_name(const std::string& value);
+  std::string* _internal_mutable_tx_name();
+  public:
+
+  // @@protoc_insertion_point(class_scope:cloudeinapi.DisconnectRequest)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr region_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr tx_name_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_CloudeinAPI_2eproto;
+};
+// -------------------------------------------------------------------
+
+class DisconnectResponse PROTOBUF_FINAL :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:cloudeinapi.DisconnectResponse) */ {
+ public:
+  inline DisconnectResponse() : DisconnectResponse(nullptr) {}
+  virtual ~DisconnectResponse();
+  explicit constexpr DisconnectResponse(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  DisconnectResponse(const DisconnectResponse& from);
+  DisconnectResponse(DisconnectResponse&& from) noexcept
+    : DisconnectResponse() {
+    *this = ::std::move(from);
+  }
+
+  inline DisconnectResponse& operator=(const DisconnectResponse& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline DisconnectResponse& operator=(DisconnectResponse&& from) noexcept {
+    if (GetArena() == from.GetArena()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return GetMetadataStatic().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return GetMetadataStatic().reflection;
+  }
+  static const DisconnectResponse& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const DisconnectResponse* internal_default_instance() {
+    return reinterpret_cast<const DisconnectResponse*>(
+               &_DisconnectResponse_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    9;
+
+  friend void swap(DisconnectResponse& a, DisconnectResponse& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(DisconnectResponse* other) {
+    if (other == this) return;
+    if (GetArena() == other->GetArena()) {
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(DisconnectResponse* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetArena() == other->GetArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline DisconnectResponse* New() const final {
+    return CreateMaybeMessage<DisconnectResponse>(nullptr);
+  }
+
+  DisconnectResponse* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<DisconnectResponse>(arena);
+  }
+  void CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void CopyFrom(const DisconnectResponse& from);
+  void MergeFrom(const DisconnectResponse& from);
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  ::PROTOBUF_NAMESPACE_ID::uint8* _InternalSerialize(
+      ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  inline void SharedCtor();
+  inline void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(DisconnectResponse* other);
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "cloudeinapi.DisconnectResponse";
+  }
+  protected:
+  explicit DisconnectResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  private:
+  static void ArenaDtor(void* object);
+  inline void RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  public:
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+  private:
+  static ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadataStatic() {
+    return ::descriptor_table_CloudeinAPI_2eproto_metadata_getter(kIndexInFileMessages);
+  }
+
+  public:
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kRegionFieldNumber = 1,
+  };
+  // string region = 1;
+  void clear_region();
+  const std::string& region() const;
+  void set_region(const std::string& value);
+  void set_region(std::string&& value);
+  void set_region(const char* value);
+  void set_region(const char* value, size_t size);
+  std::string* mutable_region();
+  std::string* release_region();
+  void set_allocated_region(std::string* region);
+  private:
+  const std::string& _internal_region() const;
+  void _internal_set_region(const std::string& value);
+  std::string* _internal_mutable_region();
+  public:
+
+  // @@protoc_insertion_point(class_scope:cloudeinapi.DisconnectResponse)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr region_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_CloudeinAPI_2eproto;
+};
+// -------------------------------------------------------------------
+
+class TimeoutRequest PROTOBUF_FINAL :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:cloudeinapi.TimeoutRequest) */ {
+ public:
+  inline TimeoutRequest() : TimeoutRequest(nullptr) {}
+  virtual ~TimeoutRequest();
+  explicit constexpr TimeoutRequest(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  TimeoutRequest(const TimeoutRequest& from);
+  TimeoutRequest(TimeoutRequest&& from) noexcept
+    : TimeoutRequest() {
+    *this = ::std::move(from);
+  }
+
+  inline TimeoutRequest& operator=(const TimeoutRequest& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline TimeoutRequest& operator=(TimeoutRequest&& from) noexcept {
+    if (GetArena() == from.GetArena()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return GetMetadataStatic().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return GetMetadataStatic().reflection;
+  }
+  static const TimeoutRequest& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const TimeoutRequest* internal_default_instance() {
+    return reinterpret_cast<const TimeoutRequest*>(
+               &_TimeoutRequest_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    10;
+
+  friend void swap(TimeoutRequest& a, TimeoutRequest& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(TimeoutRequest* other) {
+    if (other == this) return;
+    if (GetArena() == other->GetArena()) {
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(TimeoutRequest* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetArena() == other->GetArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline TimeoutRequest* New() const final {
+    return CreateMaybeMessage<TimeoutRequest>(nullptr);
+  }
+
+  TimeoutRequest* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<TimeoutRequest>(arena);
+  }
+  void CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void CopyFrom(const TimeoutRequest& from);
+  void MergeFrom(const TimeoutRequest& from);
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  ::PROTOBUF_NAMESPACE_ID::uint8* _InternalSerialize(
+      ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  inline void SharedCtor();
+  inline void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(TimeoutRequest* other);
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "cloudeinapi.TimeoutRequest";
+  }
+  protected:
+  explicit TimeoutRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  private:
+  static void ArenaDtor(void* object);
+  inline void RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  public:
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+  private:
+  static ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadataStatic() {
+    return ::descriptor_table_CloudeinAPI_2eproto_metadata_getter(kIndexInFileMessages);
+  }
+
+  public:
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kRegionFieldNumber = 1,
+    kTxNameFieldNumber = 2,
+  };
+  // string region = 1;
+  void clear_region();
+  const std::string& region() const;
+  void set_region(const std::string& value);
+  void set_region(std::string&& value);
+  void set_region(const char* value);
+  void set_region(const char* value, size_t size);
+  std::string* mutable_region();
+  std::string* release_region();
+  void set_allocated_region(std::string* region);
+  private:
+  const std::string& _internal_region() const;
+  void _internal_set_region(const std::string& value);
+  std::string* _internal_mutable_region();
+  public:
+
+  // string tx_name = 2;
+  void clear_tx_name();
+  const std::string& tx_name() const;
+  void set_tx_name(const std::string& value);
+  void set_tx_name(std::string&& value);
+  void set_tx_name(const char* value);
+  void set_tx_name(const char* value, size_t size);
+  std::string* mutable_tx_name();
+  std::string* release_tx_name();
+  void set_allocated_tx_name(std::string* tx_name);
+  private:
+  const std::string& _internal_tx_name() const;
+  void _internal_set_tx_name(const std::string& value);
+  std::string* _internal_mutable_tx_name();
+  public:
+
+  // @@protoc_insertion_point(class_scope:cloudeinapi.TimeoutRequest)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr region_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr tx_name_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_CloudeinAPI_2eproto;
+};
+// -------------------------------------------------------------------
+
+class TimeoutResponse PROTOBUF_FINAL :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:cloudeinapi.TimeoutResponse) */ {
+ public:
+  inline TimeoutResponse() : TimeoutResponse(nullptr) {}
+  virtual ~TimeoutResponse();
+  explicit constexpr TimeoutResponse(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  TimeoutResponse(const TimeoutResponse& from);
+  TimeoutResponse(TimeoutResponse&& from) noexcept
+    : TimeoutResponse() {
+    *this = ::std::move(from);
+  }
+
+  inline TimeoutResponse& operator=(const TimeoutResponse& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline TimeoutResponse& operator=(TimeoutResponse&& from) noexcept {
+    if (GetArena() == from.GetArena()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return GetMetadataStatic().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return GetMetadataStatic().reflection;
+  }
+  static const TimeoutResponse& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const TimeoutResponse* internal_default_instance() {
+    return reinterpret_cast<const TimeoutResponse*>(
+               &_TimeoutResponse_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    11;
+
+  friend void swap(TimeoutResponse& a, TimeoutResponse& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(TimeoutResponse* other) {
+    if (other == this) return;
+    if (GetArena() == other->GetArena()) {
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(TimeoutResponse* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetArena() == other->GetArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline TimeoutResponse* New() const final {
+    return CreateMaybeMessage<TimeoutResponse>(nullptr);
+  }
+
+  TimeoutResponse* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<TimeoutResponse>(arena);
+  }
+  void CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void CopyFrom(const TimeoutResponse& from);
+  void MergeFrom(const TimeoutResponse& from);
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  ::PROTOBUF_NAMESPACE_ID::uint8* _InternalSerialize(
+      ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  inline void SharedCtor();
+  inline void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(TimeoutResponse* other);
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "cloudeinapi.TimeoutResponse";
+  }
+  protected:
+  explicit TimeoutResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  private:
+  static void ArenaDtor(void* object);
+  inline void RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  public:
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+  private:
+  static ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadataStatic() {
+    return ::descriptor_table_CloudeinAPI_2eproto_metadata_getter(kIndexInFileMessages);
+  }
+
+  public:
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kRegionFieldNumber = 1,
+  };
+  // string region = 1;
+  void clear_region();
+  const std::string& region() const;
+  void set_region(const std::string& value);
+  void set_region(std::string&& value);
+  void set_region(const char* value);
+  void set_region(const char* value, size_t size);
+  std::string* mutable_region();
+  std::string* release_region();
+  void set_allocated_region(std::string* region);
+  private:
+  const std::string& _internal_region() const;
+  void _internal_set_region(const std::string& value);
+  std::string* _internal_mutable_region();
+  public:
+
+  // @@protoc_insertion_point(class_scope:cloudeinapi.TimeoutResponse)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr region_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_CloudeinAPI_2eproto;
+};
+// -------------------------------------------------------------------
+
+class PrepareFailRequest PROTOBUF_FINAL :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:cloudeinapi.PrepareFailRequest) */ {
+ public:
+  inline PrepareFailRequest() : PrepareFailRequest(nullptr) {}
+  virtual ~PrepareFailRequest();
+  explicit constexpr PrepareFailRequest(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  PrepareFailRequest(const PrepareFailRequest& from);
+  PrepareFailRequest(PrepareFailRequest&& from) noexcept
+    : PrepareFailRequest() {
+    *this = ::std::move(from);
+  }
+
+  inline PrepareFailRequest& operator=(const PrepareFailRequest& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline PrepareFailRequest& operator=(PrepareFailRequest&& from) noexcept {
+    if (GetArena() == from.GetArena()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return GetMetadataStatic().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return GetMetadataStatic().reflection;
+  }
+  static const PrepareFailRequest& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const PrepareFailRequest* internal_default_instance() {
+    return reinterpret_cast<const PrepareFailRequest*>(
+               &_PrepareFailRequest_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    12;
+
+  friend void swap(PrepareFailRequest& a, PrepareFailRequest& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(PrepareFailRequest* other) {
+    if (other == this) return;
+    if (GetArena() == other->GetArena()) {
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(PrepareFailRequest* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetArena() == other->GetArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline PrepareFailRequest* New() const final {
+    return CreateMaybeMessage<PrepareFailRequest>(nullptr);
+  }
+
+  PrepareFailRequest* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<PrepareFailRequest>(arena);
+  }
+  void CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void CopyFrom(const PrepareFailRequest& from);
+  void MergeFrom(const PrepareFailRequest& from);
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  ::PROTOBUF_NAMESPACE_ID::uint8* _InternalSerialize(
+      ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  inline void SharedCtor();
+  inline void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(PrepareFailRequest* other);
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "cloudeinapi.PrepareFailRequest";
+  }
+  protected:
+  explicit PrepareFailRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  private:
+  static void ArenaDtor(void* object);
+  inline void RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  public:
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+  private:
+  static ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadataStatic() {
+    return ::descriptor_table_CloudeinAPI_2eproto_metadata_getter(kIndexInFileMessages);
+  }
+
+  public:
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kRegionFieldNumber = 1,
+    kTxNameFieldNumber = 2,
+  };
+  // string region = 1;
+  void clear_region();
+  const std::string& region() const;
+  void set_region(const std::string& value);
+  void set_region(std::string&& value);
+  void set_region(const char* value);
+  void set_region(const char* value, size_t size);
+  std::string* mutable_region();
+  std::string* release_region();
+  void set_allocated_region(std::string* region);
+  private:
+  const std::string& _internal_region() const;
+  void _internal_set_region(const std::string& value);
+  std::string* _internal_mutable_region();
+  public:
+
+  // string tx_name = 2;
+  void clear_tx_name();
+  const std::string& tx_name() const;
+  void set_tx_name(const std::string& value);
+  void set_tx_name(std::string&& value);
+  void set_tx_name(const char* value);
+  void set_tx_name(const char* value, size_t size);
+  std::string* mutable_tx_name();
+  std::string* release_tx_name();
+  void set_allocated_tx_name(std::string* tx_name);
+  private:
+  const std::string& _internal_tx_name() const;
+  void _internal_set_tx_name(const std::string& value);
+  std::string* _internal_mutable_tx_name();
+  public:
+
+  // @@protoc_insertion_point(class_scope:cloudeinapi.PrepareFailRequest)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr region_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr tx_name_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_CloudeinAPI_2eproto;
+};
+// -------------------------------------------------------------------
+
+class PrepareFailResponse PROTOBUF_FINAL :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:cloudeinapi.PrepareFailResponse) */ {
+ public:
+  inline PrepareFailResponse() : PrepareFailResponse(nullptr) {}
+  virtual ~PrepareFailResponse();
+  explicit constexpr PrepareFailResponse(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  PrepareFailResponse(const PrepareFailResponse& from);
+  PrepareFailResponse(PrepareFailResponse&& from) noexcept
+    : PrepareFailResponse() {
+    *this = ::std::move(from);
+  }
+
+  inline PrepareFailResponse& operator=(const PrepareFailResponse& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline PrepareFailResponse& operator=(PrepareFailResponse&& from) noexcept {
+    if (GetArena() == from.GetArena()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return GetMetadataStatic().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return GetMetadataStatic().reflection;
+  }
+  static const PrepareFailResponse& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const PrepareFailResponse* internal_default_instance() {
+    return reinterpret_cast<const PrepareFailResponse*>(
+               &_PrepareFailResponse_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    13;
+
+  friend void swap(PrepareFailResponse& a, PrepareFailResponse& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(PrepareFailResponse* other) {
+    if (other == this) return;
+    if (GetArena() == other->GetArena()) {
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(PrepareFailResponse* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetArena() == other->GetArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline PrepareFailResponse* New() const final {
+    return CreateMaybeMessage<PrepareFailResponse>(nullptr);
+  }
+
+  PrepareFailResponse* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<PrepareFailResponse>(arena);
+  }
+  void CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void CopyFrom(const PrepareFailResponse& from);
+  void MergeFrom(const PrepareFailResponse& from);
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  ::PROTOBUF_NAMESPACE_ID::uint8* _InternalSerialize(
+      ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  inline void SharedCtor();
+  inline void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(PrepareFailResponse* other);
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "cloudeinapi.PrepareFailResponse";
+  }
+  protected:
+  explicit PrepareFailResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  private:
+  static void ArenaDtor(void* object);
+  inline void RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  public:
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+  private:
+  static ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadataStatic() {
+    return ::descriptor_table_CloudeinAPI_2eproto_metadata_getter(kIndexInFileMessages);
+  }
+
+  public:
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kRegionFieldNumber = 1,
+  };
+  // string region = 1;
+  void clear_region();
+  const std::string& region() const;
+  void set_region(const std::string& value);
+  void set_region(std::string&& value);
+  void set_region(const char* value);
+  void set_region(const char* value, size_t size);
+  std::string* mutable_region();
+  std::string* release_region();
+  void set_allocated_region(std::string* region);
+  private:
+  const std::string& _internal_region() const;
+  void _internal_set_region(const std::string& value);
+  std::string* _internal_mutable_region();
+  public:
+
+  // @@protoc_insertion_point(class_scope:cloudeinapi.PrepareFailResponse)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr region_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_CloudeinAPI_2eproto;
+};
+// -------------------------------------------------------------------
+
+class ConnectFailRequest PROTOBUF_FINAL :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:cloudeinapi.ConnectFailRequest) */ {
+ public:
+  inline ConnectFailRequest() : ConnectFailRequest(nullptr) {}
+  virtual ~ConnectFailRequest();
+  explicit constexpr ConnectFailRequest(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  ConnectFailRequest(const ConnectFailRequest& from);
+  ConnectFailRequest(ConnectFailRequest&& from) noexcept
+    : ConnectFailRequest() {
+    *this = ::std::move(from);
+  }
+
+  inline ConnectFailRequest& operator=(const ConnectFailRequest& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline ConnectFailRequest& operator=(ConnectFailRequest&& from) noexcept {
+    if (GetArena() == from.GetArena()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return GetMetadataStatic().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return GetMetadataStatic().reflection;
+  }
+  static const ConnectFailRequest& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const ConnectFailRequest* internal_default_instance() {
+    return reinterpret_cast<const ConnectFailRequest*>(
+               &_ConnectFailRequest_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    14;
+
+  friend void swap(ConnectFailRequest& a, ConnectFailRequest& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(ConnectFailRequest* other) {
+    if (other == this) return;
+    if (GetArena() == other->GetArena()) {
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(ConnectFailRequest* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetArena() == other->GetArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline ConnectFailRequest* New() const final {
+    return CreateMaybeMessage<ConnectFailRequest>(nullptr);
+  }
+
+  ConnectFailRequest* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<ConnectFailRequest>(arena);
+  }
+  void CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void CopyFrom(const ConnectFailRequest& from);
+  void MergeFrom(const ConnectFailRequest& from);
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  ::PROTOBUF_NAMESPACE_ID::uint8* _InternalSerialize(
+      ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  inline void SharedCtor();
+  inline void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(ConnectFailRequest* other);
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "cloudeinapi.ConnectFailRequest";
+  }
+  protected:
+  explicit ConnectFailRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  private:
+  static void ArenaDtor(void* object);
+  inline void RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  public:
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+  private:
+  static ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadataStatic() {
+    return ::descriptor_table_CloudeinAPI_2eproto_metadata_getter(kIndexInFileMessages);
+  }
+
+  public:
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kRegionFieldNumber = 1,
+    kTxNameFieldNumber = 2,
+  };
+  // string region = 1;
+  void clear_region();
+  const std::string& region() const;
+  void set_region(const std::string& value);
+  void set_region(std::string&& value);
+  void set_region(const char* value);
+  void set_region(const char* value, size_t size);
+  std::string* mutable_region();
+  std::string* release_region();
+  void set_allocated_region(std::string* region);
+  private:
+  const std::string& _internal_region() const;
+  void _internal_set_region(const std::string& value);
+  std::string* _internal_mutable_region();
+  public:
+
+  // string tx_name = 2;
+  void clear_tx_name();
+  const std::string& tx_name() const;
+  void set_tx_name(const std::string& value);
+  void set_tx_name(std::string&& value);
+  void set_tx_name(const char* value);
+  void set_tx_name(const char* value, size_t size);
+  std::string* mutable_tx_name();
+  std::string* release_tx_name();
+  void set_allocated_tx_name(std::string* tx_name);
+  private:
+  const std::string& _internal_tx_name() const;
+  void _internal_set_tx_name(const std::string& value);
+  std::string* _internal_mutable_tx_name();
+  public:
+
+  // @@protoc_insertion_point(class_scope:cloudeinapi.ConnectFailRequest)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr region_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr tx_name_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_CloudeinAPI_2eproto;
+};
+// -------------------------------------------------------------------
+
+class ConnectFailResponse PROTOBUF_FINAL :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:cloudeinapi.ConnectFailResponse) */ {
+ public:
+  inline ConnectFailResponse() : ConnectFailResponse(nullptr) {}
+  virtual ~ConnectFailResponse();
+  explicit constexpr ConnectFailResponse(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  ConnectFailResponse(const ConnectFailResponse& from);
+  ConnectFailResponse(ConnectFailResponse&& from) noexcept
+    : ConnectFailResponse() {
+    *this = ::std::move(from);
+  }
+
+  inline ConnectFailResponse& operator=(const ConnectFailResponse& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline ConnectFailResponse& operator=(ConnectFailResponse&& from) noexcept {
+    if (GetArena() == from.GetArena()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return GetMetadataStatic().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return GetMetadataStatic().reflection;
+  }
+  static const ConnectFailResponse& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const ConnectFailResponse* internal_default_instance() {
+    return reinterpret_cast<const ConnectFailResponse*>(
+               &_ConnectFailResponse_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    15;
+
+  friend void swap(ConnectFailResponse& a, ConnectFailResponse& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(ConnectFailResponse* other) {
+    if (other == this) return;
+    if (GetArena() == other->GetArena()) {
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(ConnectFailResponse* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetArena() == other->GetArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline ConnectFailResponse* New() const final {
+    return CreateMaybeMessage<ConnectFailResponse>(nullptr);
+  }
+
+  ConnectFailResponse* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<ConnectFailResponse>(arena);
+  }
+  void CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void CopyFrom(const ConnectFailResponse& from);
+  void MergeFrom(const ConnectFailResponse& from);
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  ::PROTOBUF_NAMESPACE_ID::uint8* _InternalSerialize(
+      ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  inline void SharedCtor();
+  inline void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(ConnectFailResponse* other);
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "cloudeinapi.ConnectFailResponse";
+  }
+  protected:
+  explicit ConnectFailResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  private:
+  static void ArenaDtor(void* object);
+  inline void RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  public:
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+  private:
+  static ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadataStatic() {
+    return ::descriptor_table_CloudeinAPI_2eproto_metadata_getter(kIndexInFileMessages);
+  }
+
+  public:
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kRegionFieldNumber = 1,
+  };
+  // string region = 1;
+  void clear_region();
+  const std::string& region() const;
+  void set_region(const std::string& value);
+  void set_region(std::string&& value);
+  void set_region(const char* value);
+  void set_region(const char* value, size_t size);
+  std::string* mutable_region();
+  std::string* release_region();
+  void set_allocated_region(std::string* region);
+  private:
+  const std::string& _internal_region() const;
+  void _internal_set_region(const std::string& value);
+  std::string* _internal_mutable_region();
+  public:
+
+  // @@protoc_insertion_point(class_scope:cloudeinapi.ConnectFailResponse)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr region_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_CloudeinAPI_2eproto;
+};
+// -------------------------------------------------------------------
+
+class RebootFailRequest PROTOBUF_FINAL :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:cloudeinapi.RebootFailRequest) */ {
+ public:
+  inline RebootFailRequest() : RebootFailRequest(nullptr) {}
+  virtual ~RebootFailRequest();
+  explicit constexpr RebootFailRequest(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  RebootFailRequest(const RebootFailRequest& from);
+  RebootFailRequest(RebootFailRequest&& from) noexcept
+    : RebootFailRequest() {
+    *this = ::std::move(from);
+  }
+
+  inline RebootFailRequest& operator=(const RebootFailRequest& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline RebootFailRequest& operator=(RebootFailRequest&& from) noexcept {
+    if (GetArena() == from.GetArena()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return GetMetadataStatic().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return GetMetadataStatic().reflection;
+  }
+  static const RebootFailRequest& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const RebootFailRequest* internal_default_instance() {
+    return reinterpret_cast<const RebootFailRequest*>(
+               &_RebootFailRequest_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    16;
+
+  friend void swap(RebootFailRequest& a, RebootFailRequest& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(RebootFailRequest* other) {
+    if (other == this) return;
+    if (GetArena() == other->GetArena()) {
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(RebootFailRequest* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetArena() == other->GetArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline RebootFailRequest* New() const final {
+    return CreateMaybeMessage<RebootFailRequest>(nullptr);
+  }
+
+  RebootFailRequest* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<RebootFailRequest>(arena);
+  }
+  void CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void CopyFrom(const RebootFailRequest& from);
+  void MergeFrom(const RebootFailRequest& from);
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  ::PROTOBUF_NAMESPACE_ID::uint8* _InternalSerialize(
+      ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  inline void SharedCtor();
+  inline void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(RebootFailRequest* other);
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "cloudeinapi.RebootFailRequest";
+  }
+  protected:
+  explicit RebootFailRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  private:
+  static void ArenaDtor(void* object);
+  inline void RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  public:
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+  private:
+  static ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadataStatic() {
+    return ::descriptor_table_CloudeinAPI_2eproto_metadata_getter(kIndexInFileMessages);
+  }
+
+  public:
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kRegionFieldNumber = 1,
+    kTxNameFieldNumber = 2,
+  };
+  // string region = 1;
+  void clear_region();
+  const std::string& region() const;
+  void set_region(const std::string& value);
+  void set_region(std::string&& value);
+  void set_region(const char* value);
+  void set_region(const char* value, size_t size);
+  std::string* mutable_region();
+  std::string* release_region();
+  void set_allocated_region(std::string* region);
+  private:
+  const std::string& _internal_region() const;
+  void _internal_set_region(const std::string& value);
+  std::string* _internal_mutable_region();
+  public:
+
+  // string tx_name = 2;
+  void clear_tx_name();
+  const std::string& tx_name() const;
+  void set_tx_name(const std::string& value);
+  void set_tx_name(std::string&& value);
+  void set_tx_name(const char* value);
+  void set_tx_name(const char* value, size_t size);
+  std::string* mutable_tx_name();
+  std::string* release_tx_name();
+  void set_allocated_tx_name(std::string* tx_name);
+  private:
+  const std::string& _internal_tx_name() const;
+  void _internal_set_tx_name(const std::string& value);
+  std::string* _internal_mutable_tx_name();
+  public:
+
+  // @@protoc_insertion_point(class_scope:cloudeinapi.RebootFailRequest)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr region_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr tx_name_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_CloudeinAPI_2eproto;
+};
+// -------------------------------------------------------------------
+
+class RebootFailResponse PROTOBUF_FINAL :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:cloudeinapi.RebootFailResponse) */ {
+ public:
+  inline RebootFailResponse() : RebootFailResponse(nullptr) {}
+  virtual ~RebootFailResponse();
+  explicit constexpr RebootFailResponse(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  RebootFailResponse(const RebootFailResponse& from);
+  RebootFailResponse(RebootFailResponse&& from) noexcept
+    : RebootFailResponse() {
+    *this = ::std::move(from);
+  }
+
+  inline RebootFailResponse& operator=(const RebootFailResponse& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline RebootFailResponse& operator=(RebootFailResponse&& from) noexcept {
+    if (GetArena() == from.GetArena()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return GetMetadataStatic().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return GetMetadataStatic().reflection;
+  }
+  static const RebootFailResponse& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const RebootFailResponse* internal_default_instance() {
+    return reinterpret_cast<const RebootFailResponse*>(
+               &_RebootFailResponse_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    17;
+
+  friend void swap(RebootFailResponse& a, RebootFailResponse& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(RebootFailResponse* other) {
+    if (other == this) return;
+    if (GetArena() == other->GetArena()) {
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(RebootFailResponse* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetArena() == other->GetArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline RebootFailResponse* New() const final {
+    return CreateMaybeMessage<RebootFailResponse>(nullptr);
+  }
+
+  RebootFailResponse* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<RebootFailResponse>(arena);
+  }
+  void CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void CopyFrom(const RebootFailResponse& from);
+  void MergeFrom(const RebootFailResponse& from);
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  ::PROTOBUF_NAMESPACE_ID::uint8* _InternalSerialize(
+      ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  inline void SharedCtor();
+  inline void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(RebootFailResponse* other);
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "cloudeinapi.RebootFailResponse";
+  }
+  protected:
+  explicit RebootFailResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  private:
+  static void ArenaDtor(void* object);
+  inline void RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  public:
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+  private:
+  static ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadataStatic() {
+    return ::descriptor_table_CloudeinAPI_2eproto_metadata_getter(kIndexInFileMessages);
+  }
+
+  public:
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kRegionFieldNumber = 1,
+  };
+  // string region = 1;
+  void clear_region();
+  const std::string& region() const;
+  void set_region(const std::string& value);
+  void set_region(std::string&& value);
+  void set_region(const char* value);
+  void set_region(const char* value, size_t size);
+  std::string* mutable_region();
+  std::string* release_region();
+  void set_allocated_region(std::string* region);
+  private:
+  const std::string& _internal_region() const;
+  void _internal_set_region(const std::string& value);
+  std::string* _internal_mutable_region();
+  public:
+
+  // @@protoc_insertion_point(class_scope:cloudeinapi.RebootFailResponse)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr region_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_CloudeinAPI_2eproto;
+};
+// -------------------------------------------------------------------
+
+class AuthFailRequest PROTOBUF_FINAL :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:cloudeinapi.AuthFailRequest) */ {
+ public:
+  inline AuthFailRequest() : AuthFailRequest(nullptr) {}
+  virtual ~AuthFailRequest();
+  explicit constexpr AuthFailRequest(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  AuthFailRequest(const AuthFailRequest& from);
+  AuthFailRequest(AuthFailRequest&& from) noexcept
+    : AuthFailRequest() {
+    *this = ::std::move(from);
+  }
+
+  inline AuthFailRequest& operator=(const AuthFailRequest& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline AuthFailRequest& operator=(AuthFailRequest&& from) noexcept {
+    if (GetArena() == from.GetArena()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return GetMetadataStatic().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return GetMetadataStatic().reflection;
+  }
+  static const AuthFailRequest& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const AuthFailRequest* internal_default_instance() {
+    return reinterpret_cast<const AuthFailRequest*>(
+               &_AuthFailRequest_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    18;
+
+  friend void swap(AuthFailRequest& a, AuthFailRequest& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(AuthFailRequest* other) {
+    if (other == this) return;
+    if (GetArena() == other->GetArena()) {
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(AuthFailRequest* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetArena() == other->GetArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline AuthFailRequest* New() const final {
+    return CreateMaybeMessage<AuthFailRequest>(nullptr);
+  }
+
+  AuthFailRequest* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<AuthFailRequest>(arena);
+  }
+  void CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void CopyFrom(const AuthFailRequest& from);
+  void MergeFrom(const AuthFailRequest& from);
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  ::PROTOBUF_NAMESPACE_ID::uint8* _InternalSerialize(
+      ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  inline void SharedCtor();
+  inline void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(AuthFailRequest* other);
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "cloudeinapi.AuthFailRequest";
+  }
+  protected:
+  explicit AuthFailRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  private:
+  static void ArenaDtor(void* object);
+  inline void RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  public:
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+  private:
+  static ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadataStatic() {
+    return ::descriptor_table_CloudeinAPI_2eproto_metadata_getter(kIndexInFileMessages);
+  }
+
+  public:
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kRegionFieldNumber = 1,
+    kTxNameFieldNumber = 2,
+  };
+  // string region = 1;
+  void clear_region();
+  const std::string& region() const;
+  void set_region(const std::string& value);
+  void set_region(std::string&& value);
+  void set_region(const char* value);
+  void set_region(const char* value, size_t size);
+  std::string* mutable_region();
+  std::string* release_region();
+  void set_allocated_region(std::string* region);
+  private:
+  const std::string& _internal_region() const;
+  void _internal_set_region(const std::string& value);
+  std::string* _internal_mutable_region();
+  public:
+
+  // string tx_name = 2;
+  void clear_tx_name();
+  const std::string& tx_name() const;
+  void set_tx_name(const std::string& value);
+  void set_tx_name(std::string&& value);
+  void set_tx_name(const char* value);
+  void set_tx_name(const char* value, size_t size);
+  std::string* mutable_tx_name();
+  std::string* release_tx_name();
+  void set_allocated_tx_name(std::string* tx_name);
+  private:
+  const std::string& _internal_tx_name() const;
+  void _internal_set_tx_name(const std::string& value);
+  std::string* _internal_mutable_tx_name();
+  public:
+
+  // @@protoc_insertion_point(class_scope:cloudeinapi.AuthFailRequest)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr region_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr tx_name_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_CloudeinAPI_2eproto;
+};
+// -------------------------------------------------------------------
+
+class AuthFailResponse PROTOBUF_FINAL :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:cloudeinapi.AuthFailResponse) */ {
+ public:
+  inline AuthFailResponse() : AuthFailResponse(nullptr) {}
+  virtual ~AuthFailResponse();
+  explicit constexpr AuthFailResponse(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  AuthFailResponse(const AuthFailResponse& from);
+  AuthFailResponse(AuthFailResponse&& from) noexcept
+    : AuthFailResponse() {
+    *this = ::std::move(from);
+  }
+
+  inline AuthFailResponse& operator=(const AuthFailResponse& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline AuthFailResponse& operator=(AuthFailResponse&& from) noexcept {
+    if (GetArena() == from.GetArena()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return GetMetadataStatic().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return GetMetadataStatic().reflection;
+  }
+  static const AuthFailResponse& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const AuthFailResponse* internal_default_instance() {
+    return reinterpret_cast<const AuthFailResponse*>(
+               &_AuthFailResponse_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    19;
+
+  friend void swap(AuthFailResponse& a, AuthFailResponse& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(AuthFailResponse* other) {
+    if (other == this) return;
+    if (GetArena() == other->GetArena()) {
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(AuthFailResponse* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetArena() == other->GetArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline AuthFailResponse* New() const final {
+    return CreateMaybeMessage<AuthFailResponse>(nullptr);
+  }
+
+  AuthFailResponse* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<AuthFailResponse>(arena);
+  }
+  void CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void CopyFrom(const AuthFailResponse& from);
+  void MergeFrom(const AuthFailResponse& from);
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  ::PROTOBUF_NAMESPACE_ID::uint8* _InternalSerialize(
+      ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  inline void SharedCtor();
+  inline void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(AuthFailResponse* other);
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "cloudeinapi.AuthFailResponse";
+  }
+  protected:
+  explicit AuthFailResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  private:
+  static void ArenaDtor(void* object);
+  inline void RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  public:
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+  private:
+  static ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadataStatic() {
+    return ::descriptor_table_CloudeinAPI_2eproto_metadata_getter(kIndexInFileMessages);
+  }
+
+  public:
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kRegionFieldNumber = 1,
+  };
+  // string region = 1;
+  void clear_region();
+  const std::string& region() const;
+  void set_region(const std::string& value);
+  void set_region(std::string&& value);
+  void set_region(const char* value);
+  void set_region(const char* value, size_t size);
+  std::string* mutable_region();
+  std::string* release_region();
+  void set_allocated_region(std::string* region);
+  private:
+  const std::string& _internal_region() const;
+  void _internal_set_region(const std::string& value);
+  std::string* _internal_mutable_region();
+  public:
+
+  // @@protoc_insertion_point(class_scope:cloudeinapi.AuthFailResponse)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr region_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_CloudeinAPI_2eproto;
+};
 // ===================================================================
 
 
@@ -2242,9 +4126,1179 @@ inline void ReleaseResponse::set_allocated_region(std::string* region) {
   // @@protoc_insertion_point(field_set_allocated:cloudeinapi.ReleaseResponse.region)
 }
 
+// -------------------------------------------------------------------
+
+// DisconnectRequest
+
+// string region = 1;
+inline void DisconnectRequest::clear_region() {
+  region_.ClearToEmpty();
+}
+inline const std::string& DisconnectRequest::region() const {
+  // @@protoc_insertion_point(field_get:cloudeinapi.DisconnectRequest.region)
+  return _internal_region();
+}
+inline void DisconnectRequest::set_region(const std::string& value) {
+  _internal_set_region(value);
+  // @@protoc_insertion_point(field_set:cloudeinapi.DisconnectRequest.region)
+}
+inline std::string* DisconnectRequest::mutable_region() {
+  // @@protoc_insertion_point(field_mutable:cloudeinapi.DisconnectRequest.region)
+  return _internal_mutable_region();
+}
+inline const std::string& DisconnectRequest::_internal_region() const {
+  return region_.Get();
+}
+inline void DisconnectRequest::_internal_set_region(const std::string& value) {
+  
+  region_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArena());
+}
+inline void DisconnectRequest::set_region(std::string&& value) {
+  
+  region_.Set(
+    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::move(value), GetArena());
+  // @@protoc_insertion_point(field_set_rvalue:cloudeinapi.DisconnectRequest.region)
+}
+inline void DisconnectRequest::set_region(const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+  
+  region_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(value), GetArena());
+  // @@protoc_insertion_point(field_set_char:cloudeinapi.DisconnectRequest.region)
+}
+inline void DisconnectRequest::set_region(const char* value,
+    size_t size) {
+  
+  region_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(
+      reinterpret_cast<const char*>(value), size), GetArena());
+  // @@protoc_insertion_point(field_set_pointer:cloudeinapi.DisconnectRequest.region)
+}
+inline std::string* DisconnectRequest::_internal_mutable_region() {
+  
+  return region_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArena());
+}
+inline std::string* DisconnectRequest::release_region() {
+  // @@protoc_insertion_point(field_release:cloudeinapi.DisconnectRequest.region)
+  return region_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+}
+inline void DisconnectRequest::set_allocated_region(std::string* region) {
+  if (region != nullptr) {
+    
+  } else {
+    
+  }
+  region_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), region,
+      GetArena());
+  // @@protoc_insertion_point(field_set_allocated:cloudeinapi.DisconnectRequest.region)
+}
+
+// string tx_name = 2;
+inline void DisconnectRequest::clear_tx_name() {
+  tx_name_.ClearToEmpty();
+}
+inline const std::string& DisconnectRequest::tx_name() const {
+  // @@protoc_insertion_point(field_get:cloudeinapi.DisconnectRequest.tx_name)
+  return _internal_tx_name();
+}
+inline void DisconnectRequest::set_tx_name(const std::string& value) {
+  _internal_set_tx_name(value);
+  // @@protoc_insertion_point(field_set:cloudeinapi.DisconnectRequest.tx_name)
+}
+inline std::string* DisconnectRequest::mutable_tx_name() {
+  // @@protoc_insertion_point(field_mutable:cloudeinapi.DisconnectRequest.tx_name)
+  return _internal_mutable_tx_name();
+}
+inline const std::string& DisconnectRequest::_internal_tx_name() const {
+  return tx_name_.Get();
+}
+inline void DisconnectRequest::_internal_set_tx_name(const std::string& value) {
+  
+  tx_name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArena());
+}
+inline void DisconnectRequest::set_tx_name(std::string&& value) {
+  
+  tx_name_.Set(
+    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::move(value), GetArena());
+  // @@protoc_insertion_point(field_set_rvalue:cloudeinapi.DisconnectRequest.tx_name)
+}
+inline void DisconnectRequest::set_tx_name(const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+  
+  tx_name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(value), GetArena());
+  // @@protoc_insertion_point(field_set_char:cloudeinapi.DisconnectRequest.tx_name)
+}
+inline void DisconnectRequest::set_tx_name(const char* value,
+    size_t size) {
+  
+  tx_name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(
+      reinterpret_cast<const char*>(value), size), GetArena());
+  // @@protoc_insertion_point(field_set_pointer:cloudeinapi.DisconnectRequest.tx_name)
+}
+inline std::string* DisconnectRequest::_internal_mutable_tx_name() {
+  
+  return tx_name_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArena());
+}
+inline std::string* DisconnectRequest::release_tx_name() {
+  // @@protoc_insertion_point(field_release:cloudeinapi.DisconnectRequest.tx_name)
+  return tx_name_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+}
+inline void DisconnectRequest::set_allocated_tx_name(std::string* tx_name) {
+  if (tx_name != nullptr) {
+    
+  } else {
+    
+  }
+  tx_name_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), tx_name,
+      GetArena());
+  // @@protoc_insertion_point(field_set_allocated:cloudeinapi.DisconnectRequest.tx_name)
+}
+
+// -------------------------------------------------------------------
+
+// DisconnectResponse
+
+// string region = 1;
+inline void DisconnectResponse::clear_region() {
+  region_.ClearToEmpty();
+}
+inline const std::string& DisconnectResponse::region() const {
+  // @@protoc_insertion_point(field_get:cloudeinapi.DisconnectResponse.region)
+  return _internal_region();
+}
+inline void DisconnectResponse::set_region(const std::string& value) {
+  _internal_set_region(value);
+  // @@protoc_insertion_point(field_set:cloudeinapi.DisconnectResponse.region)
+}
+inline std::string* DisconnectResponse::mutable_region() {
+  // @@protoc_insertion_point(field_mutable:cloudeinapi.DisconnectResponse.region)
+  return _internal_mutable_region();
+}
+inline const std::string& DisconnectResponse::_internal_region() const {
+  return region_.Get();
+}
+inline void DisconnectResponse::_internal_set_region(const std::string& value) {
+  
+  region_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArena());
+}
+inline void DisconnectResponse::set_region(std::string&& value) {
+  
+  region_.Set(
+    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::move(value), GetArena());
+  // @@protoc_insertion_point(field_set_rvalue:cloudeinapi.DisconnectResponse.region)
+}
+inline void DisconnectResponse::set_region(const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+  
+  region_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(value), GetArena());
+  // @@protoc_insertion_point(field_set_char:cloudeinapi.DisconnectResponse.region)
+}
+inline void DisconnectResponse::set_region(const char* value,
+    size_t size) {
+  
+  region_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(
+      reinterpret_cast<const char*>(value), size), GetArena());
+  // @@protoc_insertion_point(field_set_pointer:cloudeinapi.DisconnectResponse.region)
+}
+inline std::string* DisconnectResponse::_internal_mutable_region() {
+  
+  return region_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArena());
+}
+inline std::string* DisconnectResponse::release_region() {
+  // @@protoc_insertion_point(field_release:cloudeinapi.DisconnectResponse.region)
+  return region_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+}
+inline void DisconnectResponse::set_allocated_region(std::string* region) {
+  if (region != nullptr) {
+    
+  } else {
+    
+  }
+  region_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), region,
+      GetArena());
+  // @@protoc_insertion_point(field_set_allocated:cloudeinapi.DisconnectResponse.region)
+}
+
+// -------------------------------------------------------------------
+
+// TimeoutRequest
+
+// string region = 1;
+inline void TimeoutRequest::clear_region() {
+  region_.ClearToEmpty();
+}
+inline const std::string& TimeoutRequest::region() const {
+  // @@protoc_insertion_point(field_get:cloudeinapi.TimeoutRequest.region)
+  return _internal_region();
+}
+inline void TimeoutRequest::set_region(const std::string& value) {
+  _internal_set_region(value);
+  // @@protoc_insertion_point(field_set:cloudeinapi.TimeoutRequest.region)
+}
+inline std::string* TimeoutRequest::mutable_region() {
+  // @@protoc_insertion_point(field_mutable:cloudeinapi.TimeoutRequest.region)
+  return _internal_mutable_region();
+}
+inline const std::string& TimeoutRequest::_internal_region() const {
+  return region_.Get();
+}
+inline void TimeoutRequest::_internal_set_region(const std::string& value) {
+  
+  region_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArena());
+}
+inline void TimeoutRequest::set_region(std::string&& value) {
+  
+  region_.Set(
+    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::move(value), GetArena());
+  // @@protoc_insertion_point(field_set_rvalue:cloudeinapi.TimeoutRequest.region)
+}
+inline void TimeoutRequest::set_region(const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+  
+  region_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(value), GetArena());
+  // @@protoc_insertion_point(field_set_char:cloudeinapi.TimeoutRequest.region)
+}
+inline void TimeoutRequest::set_region(const char* value,
+    size_t size) {
+  
+  region_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(
+      reinterpret_cast<const char*>(value), size), GetArena());
+  // @@protoc_insertion_point(field_set_pointer:cloudeinapi.TimeoutRequest.region)
+}
+inline std::string* TimeoutRequest::_internal_mutable_region() {
+  
+  return region_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArena());
+}
+inline std::string* TimeoutRequest::release_region() {
+  // @@protoc_insertion_point(field_release:cloudeinapi.TimeoutRequest.region)
+  return region_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+}
+inline void TimeoutRequest::set_allocated_region(std::string* region) {
+  if (region != nullptr) {
+    
+  } else {
+    
+  }
+  region_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), region,
+      GetArena());
+  // @@protoc_insertion_point(field_set_allocated:cloudeinapi.TimeoutRequest.region)
+}
+
+// string tx_name = 2;
+inline void TimeoutRequest::clear_tx_name() {
+  tx_name_.ClearToEmpty();
+}
+inline const std::string& TimeoutRequest::tx_name() const {
+  // @@protoc_insertion_point(field_get:cloudeinapi.TimeoutRequest.tx_name)
+  return _internal_tx_name();
+}
+inline void TimeoutRequest::set_tx_name(const std::string& value) {
+  _internal_set_tx_name(value);
+  // @@protoc_insertion_point(field_set:cloudeinapi.TimeoutRequest.tx_name)
+}
+inline std::string* TimeoutRequest::mutable_tx_name() {
+  // @@protoc_insertion_point(field_mutable:cloudeinapi.TimeoutRequest.tx_name)
+  return _internal_mutable_tx_name();
+}
+inline const std::string& TimeoutRequest::_internal_tx_name() const {
+  return tx_name_.Get();
+}
+inline void TimeoutRequest::_internal_set_tx_name(const std::string& value) {
+  
+  tx_name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArena());
+}
+inline void TimeoutRequest::set_tx_name(std::string&& value) {
+  
+  tx_name_.Set(
+    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::move(value), GetArena());
+  // @@protoc_insertion_point(field_set_rvalue:cloudeinapi.TimeoutRequest.tx_name)
+}
+inline void TimeoutRequest::set_tx_name(const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+  
+  tx_name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(value), GetArena());
+  // @@protoc_insertion_point(field_set_char:cloudeinapi.TimeoutRequest.tx_name)
+}
+inline void TimeoutRequest::set_tx_name(const char* value,
+    size_t size) {
+  
+  tx_name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(
+      reinterpret_cast<const char*>(value), size), GetArena());
+  // @@protoc_insertion_point(field_set_pointer:cloudeinapi.TimeoutRequest.tx_name)
+}
+inline std::string* TimeoutRequest::_internal_mutable_tx_name() {
+  
+  return tx_name_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArena());
+}
+inline std::string* TimeoutRequest::release_tx_name() {
+  // @@protoc_insertion_point(field_release:cloudeinapi.TimeoutRequest.tx_name)
+  return tx_name_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+}
+inline void TimeoutRequest::set_allocated_tx_name(std::string* tx_name) {
+  if (tx_name != nullptr) {
+    
+  } else {
+    
+  }
+  tx_name_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), tx_name,
+      GetArena());
+  // @@protoc_insertion_point(field_set_allocated:cloudeinapi.TimeoutRequest.tx_name)
+}
+
+// -------------------------------------------------------------------
+
+// TimeoutResponse
+
+// string region = 1;
+inline void TimeoutResponse::clear_region() {
+  region_.ClearToEmpty();
+}
+inline const std::string& TimeoutResponse::region() const {
+  // @@protoc_insertion_point(field_get:cloudeinapi.TimeoutResponse.region)
+  return _internal_region();
+}
+inline void TimeoutResponse::set_region(const std::string& value) {
+  _internal_set_region(value);
+  // @@protoc_insertion_point(field_set:cloudeinapi.TimeoutResponse.region)
+}
+inline std::string* TimeoutResponse::mutable_region() {
+  // @@protoc_insertion_point(field_mutable:cloudeinapi.TimeoutResponse.region)
+  return _internal_mutable_region();
+}
+inline const std::string& TimeoutResponse::_internal_region() const {
+  return region_.Get();
+}
+inline void TimeoutResponse::_internal_set_region(const std::string& value) {
+  
+  region_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArena());
+}
+inline void TimeoutResponse::set_region(std::string&& value) {
+  
+  region_.Set(
+    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::move(value), GetArena());
+  // @@protoc_insertion_point(field_set_rvalue:cloudeinapi.TimeoutResponse.region)
+}
+inline void TimeoutResponse::set_region(const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+  
+  region_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(value), GetArena());
+  // @@protoc_insertion_point(field_set_char:cloudeinapi.TimeoutResponse.region)
+}
+inline void TimeoutResponse::set_region(const char* value,
+    size_t size) {
+  
+  region_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(
+      reinterpret_cast<const char*>(value), size), GetArena());
+  // @@protoc_insertion_point(field_set_pointer:cloudeinapi.TimeoutResponse.region)
+}
+inline std::string* TimeoutResponse::_internal_mutable_region() {
+  
+  return region_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArena());
+}
+inline std::string* TimeoutResponse::release_region() {
+  // @@protoc_insertion_point(field_release:cloudeinapi.TimeoutResponse.region)
+  return region_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+}
+inline void TimeoutResponse::set_allocated_region(std::string* region) {
+  if (region != nullptr) {
+    
+  } else {
+    
+  }
+  region_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), region,
+      GetArena());
+  // @@protoc_insertion_point(field_set_allocated:cloudeinapi.TimeoutResponse.region)
+}
+
+// -------------------------------------------------------------------
+
+// PrepareFailRequest
+
+// string region = 1;
+inline void PrepareFailRequest::clear_region() {
+  region_.ClearToEmpty();
+}
+inline const std::string& PrepareFailRequest::region() const {
+  // @@protoc_insertion_point(field_get:cloudeinapi.PrepareFailRequest.region)
+  return _internal_region();
+}
+inline void PrepareFailRequest::set_region(const std::string& value) {
+  _internal_set_region(value);
+  // @@protoc_insertion_point(field_set:cloudeinapi.PrepareFailRequest.region)
+}
+inline std::string* PrepareFailRequest::mutable_region() {
+  // @@protoc_insertion_point(field_mutable:cloudeinapi.PrepareFailRequest.region)
+  return _internal_mutable_region();
+}
+inline const std::string& PrepareFailRequest::_internal_region() const {
+  return region_.Get();
+}
+inline void PrepareFailRequest::_internal_set_region(const std::string& value) {
+  
+  region_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArena());
+}
+inline void PrepareFailRequest::set_region(std::string&& value) {
+  
+  region_.Set(
+    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::move(value), GetArena());
+  // @@protoc_insertion_point(field_set_rvalue:cloudeinapi.PrepareFailRequest.region)
+}
+inline void PrepareFailRequest::set_region(const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+  
+  region_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(value), GetArena());
+  // @@protoc_insertion_point(field_set_char:cloudeinapi.PrepareFailRequest.region)
+}
+inline void PrepareFailRequest::set_region(const char* value,
+    size_t size) {
+  
+  region_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(
+      reinterpret_cast<const char*>(value), size), GetArena());
+  // @@protoc_insertion_point(field_set_pointer:cloudeinapi.PrepareFailRequest.region)
+}
+inline std::string* PrepareFailRequest::_internal_mutable_region() {
+  
+  return region_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArena());
+}
+inline std::string* PrepareFailRequest::release_region() {
+  // @@protoc_insertion_point(field_release:cloudeinapi.PrepareFailRequest.region)
+  return region_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+}
+inline void PrepareFailRequest::set_allocated_region(std::string* region) {
+  if (region != nullptr) {
+    
+  } else {
+    
+  }
+  region_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), region,
+      GetArena());
+  // @@protoc_insertion_point(field_set_allocated:cloudeinapi.PrepareFailRequest.region)
+}
+
+// string tx_name = 2;
+inline void PrepareFailRequest::clear_tx_name() {
+  tx_name_.ClearToEmpty();
+}
+inline const std::string& PrepareFailRequest::tx_name() const {
+  // @@protoc_insertion_point(field_get:cloudeinapi.PrepareFailRequest.tx_name)
+  return _internal_tx_name();
+}
+inline void PrepareFailRequest::set_tx_name(const std::string& value) {
+  _internal_set_tx_name(value);
+  // @@protoc_insertion_point(field_set:cloudeinapi.PrepareFailRequest.tx_name)
+}
+inline std::string* PrepareFailRequest::mutable_tx_name() {
+  // @@protoc_insertion_point(field_mutable:cloudeinapi.PrepareFailRequest.tx_name)
+  return _internal_mutable_tx_name();
+}
+inline const std::string& PrepareFailRequest::_internal_tx_name() const {
+  return tx_name_.Get();
+}
+inline void PrepareFailRequest::_internal_set_tx_name(const std::string& value) {
+  
+  tx_name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArena());
+}
+inline void PrepareFailRequest::set_tx_name(std::string&& value) {
+  
+  tx_name_.Set(
+    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::move(value), GetArena());
+  // @@protoc_insertion_point(field_set_rvalue:cloudeinapi.PrepareFailRequest.tx_name)
+}
+inline void PrepareFailRequest::set_tx_name(const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+  
+  tx_name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(value), GetArena());
+  // @@protoc_insertion_point(field_set_char:cloudeinapi.PrepareFailRequest.tx_name)
+}
+inline void PrepareFailRequest::set_tx_name(const char* value,
+    size_t size) {
+  
+  tx_name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(
+      reinterpret_cast<const char*>(value), size), GetArena());
+  // @@protoc_insertion_point(field_set_pointer:cloudeinapi.PrepareFailRequest.tx_name)
+}
+inline std::string* PrepareFailRequest::_internal_mutable_tx_name() {
+  
+  return tx_name_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArena());
+}
+inline std::string* PrepareFailRequest::release_tx_name() {
+  // @@protoc_insertion_point(field_release:cloudeinapi.PrepareFailRequest.tx_name)
+  return tx_name_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+}
+inline void PrepareFailRequest::set_allocated_tx_name(std::string* tx_name) {
+  if (tx_name != nullptr) {
+    
+  } else {
+    
+  }
+  tx_name_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), tx_name,
+      GetArena());
+  // @@protoc_insertion_point(field_set_allocated:cloudeinapi.PrepareFailRequest.tx_name)
+}
+
+// -------------------------------------------------------------------
+
+// PrepareFailResponse
+
+// string region = 1;
+inline void PrepareFailResponse::clear_region() {
+  region_.ClearToEmpty();
+}
+inline const std::string& PrepareFailResponse::region() const {
+  // @@protoc_insertion_point(field_get:cloudeinapi.PrepareFailResponse.region)
+  return _internal_region();
+}
+inline void PrepareFailResponse::set_region(const std::string& value) {
+  _internal_set_region(value);
+  // @@protoc_insertion_point(field_set:cloudeinapi.PrepareFailResponse.region)
+}
+inline std::string* PrepareFailResponse::mutable_region() {
+  // @@protoc_insertion_point(field_mutable:cloudeinapi.PrepareFailResponse.region)
+  return _internal_mutable_region();
+}
+inline const std::string& PrepareFailResponse::_internal_region() const {
+  return region_.Get();
+}
+inline void PrepareFailResponse::_internal_set_region(const std::string& value) {
+  
+  region_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArena());
+}
+inline void PrepareFailResponse::set_region(std::string&& value) {
+  
+  region_.Set(
+    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::move(value), GetArena());
+  // @@protoc_insertion_point(field_set_rvalue:cloudeinapi.PrepareFailResponse.region)
+}
+inline void PrepareFailResponse::set_region(const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+  
+  region_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(value), GetArena());
+  // @@protoc_insertion_point(field_set_char:cloudeinapi.PrepareFailResponse.region)
+}
+inline void PrepareFailResponse::set_region(const char* value,
+    size_t size) {
+  
+  region_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(
+      reinterpret_cast<const char*>(value), size), GetArena());
+  // @@protoc_insertion_point(field_set_pointer:cloudeinapi.PrepareFailResponse.region)
+}
+inline std::string* PrepareFailResponse::_internal_mutable_region() {
+  
+  return region_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArena());
+}
+inline std::string* PrepareFailResponse::release_region() {
+  // @@protoc_insertion_point(field_release:cloudeinapi.PrepareFailResponse.region)
+  return region_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+}
+inline void PrepareFailResponse::set_allocated_region(std::string* region) {
+  if (region != nullptr) {
+    
+  } else {
+    
+  }
+  region_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), region,
+      GetArena());
+  // @@protoc_insertion_point(field_set_allocated:cloudeinapi.PrepareFailResponse.region)
+}
+
+// -------------------------------------------------------------------
+
+// ConnectFailRequest
+
+// string region = 1;
+inline void ConnectFailRequest::clear_region() {
+  region_.ClearToEmpty();
+}
+inline const std::string& ConnectFailRequest::region() const {
+  // @@protoc_insertion_point(field_get:cloudeinapi.ConnectFailRequest.region)
+  return _internal_region();
+}
+inline void ConnectFailRequest::set_region(const std::string& value) {
+  _internal_set_region(value);
+  // @@protoc_insertion_point(field_set:cloudeinapi.ConnectFailRequest.region)
+}
+inline std::string* ConnectFailRequest::mutable_region() {
+  // @@protoc_insertion_point(field_mutable:cloudeinapi.ConnectFailRequest.region)
+  return _internal_mutable_region();
+}
+inline const std::string& ConnectFailRequest::_internal_region() const {
+  return region_.Get();
+}
+inline void ConnectFailRequest::_internal_set_region(const std::string& value) {
+  
+  region_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArena());
+}
+inline void ConnectFailRequest::set_region(std::string&& value) {
+  
+  region_.Set(
+    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::move(value), GetArena());
+  // @@protoc_insertion_point(field_set_rvalue:cloudeinapi.ConnectFailRequest.region)
+}
+inline void ConnectFailRequest::set_region(const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+  
+  region_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(value), GetArena());
+  // @@protoc_insertion_point(field_set_char:cloudeinapi.ConnectFailRequest.region)
+}
+inline void ConnectFailRequest::set_region(const char* value,
+    size_t size) {
+  
+  region_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(
+      reinterpret_cast<const char*>(value), size), GetArena());
+  // @@protoc_insertion_point(field_set_pointer:cloudeinapi.ConnectFailRequest.region)
+}
+inline std::string* ConnectFailRequest::_internal_mutable_region() {
+  
+  return region_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArena());
+}
+inline std::string* ConnectFailRequest::release_region() {
+  // @@protoc_insertion_point(field_release:cloudeinapi.ConnectFailRequest.region)
+  return region_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+}
+inline void ConnectFailRequest::set_allocated_region(std::string* region) {
+  if (region != nullptr) {
+    
+  } else {
+    
+  }
+  region_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), region,
+      GetArena());
+  // @@protoc_insertion_point(field_set_allocated:cloudeinapi.ConnectFailRequest.region)
+}
+
+// string tx_name = 2;
+inline void ConnectFailRequest::clear_tx_name() {
+  tx_name_.ClearToEmpty();
+}
+inline const std::string& ConnectFailRequest::tx_name() const {
+  // @@protoc_insertion_point(field_get:cloudeinapi.ConnectFailRequest.tx_name)
+  return _internal_tx_name();
+}
+inline void ConnectFailRequest::set_tx_name(const std::string& value) {
+  _internal_set_tx_name(value);
+  // @@protoc_insertion_point(field_set:cloudeinapi.ConnectFailRequest.tx_name)
+}
+inline std::string* ConnectFailRequest::mutable_tx_name() {
+  // @@protoc_insertion_point(field_mutable:cloudeinapi.ConnectFailRequest.tx_name)
+  return _internal_mutable_tx_name();
+}
+inline const std::string& ConnectFailRequest::_internal_tx_name() const {
+  return tx_name_.Get();
+}
+inline void ConnectFailRequest::_internal_set_tx_name(const std::string& value) {
+  
+  tx_name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArena());
+}
+inline void ConnectFailRequest::set_tx_name(std::string&& value) {
+  
+  tx_name_.Set(
+    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::move(value), GetArena());
+  // @@protoc_insertion_point(field_set_rvalue:cloudeinapi.ConnectFailRequest.tx_name)
+}
+inline void ConnectFailRequest::set_tx_name(const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+  
+  tx_name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(value), GetArena());
+  // @@protoc_insertion_point(field_set_char:cloudeinapi.ConnectFailRequest.tx_name)
+}
+inline void ConnectFailRequest::set_tx_name(const char* value,
+    size_t size) {
+  
+  tx_name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(
+      reinterpret_cast<const char*>(value), size), GetArena());
+  // @@protoc_insertion_point(field_set_pointer:cloudeinapi.ConnectFailRequest.tx_name)
+}
+inline std::string* ConnectFailRequest::_internal_mutable_tx_name() {
+  
+  return tx_name_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArena());
+}
+inline std::string* ConnectFailRequest::release_tx_name() {
+  // @@protoc_insertion_point(field_release:cloudeinapi.ConnectFailRequest.tx_name)
+  return tx_name_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+}
+inline void ConnectFailRequest::set_allocated_tx_name(std::string* tx_name) {
+  if (tx_name != nullptr) {
+    
+  } else {
+    
+  }
+  tx_name_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), tx_name,
+      GetArena());
+  // @@protoc_insertion_point(field_set_allocated:cloudeinapi.ConnectFailRequest.tx_name)
+}
+
+// -------------------------------------------------------------------
+
+// ConnectFailResponse
+
+// string region = 1;
+inline void ConnectFailResponse::clear_region() {
+  region_.ClearToEmpty();
+}
+inline const std::string& ConnectFailResponse::region() const {
+  // @@protoc_insertion_point(field_get:cloudeinapi.ConnectFailResponse.region)
+  return _internal_region();
+}
+inline void ConnectFailResponse::set_region(const std::string& value) {
+  _internal_set_region(value);
+  // @@protoc_insertion_point(field_set:cloudeinapi.ConnectFailResponse.region)
+}
+inline std::string* ConnectFailResponse::mutable_region() {
+  // @@protoc_insertion_point(field_mutable:cloudeinapi.ConnectFailResponse.region)
+  return _internal_mutable_region();
+}
+inline const std::string& ConnectFailResponse::_internal_region() const {
+  return region_.Get();
+}
+inline void ConnectFailResponse::_internal_set_region(const std::string& value) {
+  
+  region_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArena());
+}
+inline void ConnectFailResponse::set_region(std::string&& value) {
+  
+  region_.Set(
+    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::move(value), GetArena());
+  // @@protoc_insertion_point(field_set_rvalue:cloudeinapi.ConnectFailResponse.region)
+}
+inline void ConnectFailResponse::set_region(const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+  
+  region_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(value), GetArena());
+  // @@protoc_insertion_point(field_set_char:cloudeinapi.ConnectFailResponse.region)
+}
+inline void ConnectFailResponse::set_region(const char* value,
+    size_t size) {
+  
+  region_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(
+      reinterpret_cast<const char*>(value), size), GetArena());
+  // @@protoc_insertion_point(field_set_pointer:cloudeinapi.ConnectFailResponse.region)
+}
+inline std::string* ConnectFailResponse::_internal_mutable_region() {
+  
+  return region_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArena());
+}
+inline std::string* ConnectFailResponse::release_region() {
+  // @@protoc_insertion_point(field_release:cloudeinapi.ConnectFailResponse.region)
+  return region_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+}
+inline void ConnectFailResponse::set_allocated_region(std::string* region) {
+  if (region != nullptr) {
+    
+  } else {
+    
+  }
+  region_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), region,
+      GetArena());
+  // @@protoc_insertion_point(field_set_allocated:cloudeinapi.ConnectFailResponse.region)
+}
+
+// -------------------------------------------------------------------
+
+// RebootFailRequest
+
+// string region = 1;
+inline void RebootFailRequest::clear_region() {
+  region_.ClearToEmpty();
+}
+inline const std::string& RebootFailRequest::region() const {
+  // @@protoc_insertion_point(field_get:cloudeinapi.RebootFailRequest.region)
+  return _internal_region();
+}
+inline void RebootFailRequest::set_region(const std::string& value) {
+  _internal_set_region(value);
+  // @@protoc_insertion_point(field_set:cloudeinapi.RebootFailRequest.region)
+}
+inline std::string* RebootFailRequest::mutable_region() {
+  // @@protoc_insertion_point(field_mutable:cloudeinapi.RebootFailRequest.region)
+  return _internal_mutable_region();
+}
+inline const std::string& RebootFailRequest::_internal_region() const {
+  return region_.Get();
+}
+inline void RebootFailRequest::_internal_set_region(const std::string& value) {
+  
+  region_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArena());
+}
+inline void RebootFailRequest::set_region(std::string&& value) {
+  
+  region_.Set(
+    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::move(value), GetArena());
+  // @@protoc_insertion_point(field_set_rvalue:cloudeinapi.RebootFailRequest.region)
+}
+inline void RebootFailRequest::set_region(const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+  
+  region_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(value), GetArena());
+  // @@protoc_insertion_point(field_set_char:cloudeinapi.RebootFailRequest.region)
+}
+inline void RebootFailRequest::set_region(const char* value,
+    size_t size) {
+  
+  region_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(
+      reinterpret_cast<const char*>(value), size), GetArena());
+  // @@protoc_insertion_point(field_set_pointer:cloudeinapi.RebootFailRequest.region)
+}
+inline std::string* RebootFailRequest::_internal_mutable_region() {
+  
+  return region_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArena());
+}
+inline std::string* RebootFailRequest::release_region() {
+  // @@protoc_insertion_point(field_release:cloudeinapi.RebootFailRequest.region)
+  return region_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+}
+inline void RebootFailRequest::set_allocated_region(std::string* region) {
+  if (region != nullptr) {
+    
+  } else {
+    
+  }
+  region_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), region,
+      GetArena());
+  // @@protoc_insertion_point(field_set_allocated:cloudeinapi.RebootFailRequest.region)
+}
+
+// string tx_name = 2;
+inline void RebootFailRequest::clear_tx_name() {
+  tx_name_.ClearToEmpty();
+}
+inline const std::string& RebootFailRequest::tx_name() const {
+  // @@protoc_insertion_point(field_get:cloudeinapi.RebootFailRequest.tx_name)
+  return _internal_tx_name();
+}
+inline void RebootFailRequest::set_tx_name(const std::string& value) {
+  _internal_set_tx_name(value);
+  // @@protoc_insertion_point(field_set:cloudeinapi.RebootFailRequest.tx_name)
+}
+inline std::string* RebootFailRequest::mutable_tx_name() {
+  // @@protoc_insertion_point(field_mutable:cloudeinapi.RebootFailRequest.tx_name)
+  return _internal_mutable_tx_name();
+}
+inline const std::string& RebootFailRequest::_internal_tx_name() const {
+  return tx_name_.Get();
+}
+inline void RebootFailRequest::_internal_set_tx_name(const std::string& value) {
+  
+  tx_name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArena());
+}
+inline void RebootFailRequest::set_tx_name(std::string&& value) {
+  
+  tx_name_.Set(
+    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::move(value), GetArena());
+  // @@protoc_insertion_point(field_set_rvalue:cloudeinapi.RebootFailRequest.tx_name)
+}
+inline void RebootFailRequest::set_tx_name(const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+  
+  tx_name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(value), GetArena());
+  // @@protoc_insertion_point(field_set_char:cloudeinapi.RebootFailRequest.tx_name)
+}
+inline void RebootFailRequest::set_tx_name(const char* value,
+    size_t size) {
+  
+  tx_name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(
+      reinterpret_cast<const char*>(value), size), GetArena());
+  // @@protoc_insertion_point(field_set_pointer:cloudeinapi.RebootFailRequest.tx_name)
+}
+inline std::string* RebootFailRequest::_internal_mutable_tx_name() {
+  
+  return tx_name_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArena());
+}
+inline std::string* RebootFailRequest::release_tx_name() {
+  // @@protoc_insertion_point(field_release:cloudeinapi.RebootFailRequest.tx_name)
+  return tx_name_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+}
+inline void RebootFailRequest::set_allocated_tx_name(std::string* tx_name) {
+  if (tx_name != nullptr) {
+    
+  } else {
+    
+  }
+  tx_name_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), tx_name,
+      GetArena());
+  // @@protoc_insertion_point(field_set_allocated:cloudeinapi.RebootFailRequest.tx_name)
+}
+
+// -------------------------------------------------------------------
+
+// RebootFailResponse
+
+// string region = 1;
+inline void RebootFailResponse::clear_region() {
+  region_.ClearToEmpty();
+}
+inline const std::string& RebootFailResponse::region() const {
+  // @@protoc_insertion_point(field_get:cloudeinapi.RebootFailResponse.region)
+  return _internal_region();
+}
+inline void RebootFailResponse::set_region(const std::string& value) {
+  _internal_set_region(value);
+  // @@protoc_insertion_point(field_set:cloudeinapi.RebootFailResponse.region)
+}
+inline std::string* RebootFailResponse::mutable_region() {
+  // @@protoc_insertion_point(field_mutable:cloudeinapi.RebootFailResponse.region)
+  return _internal_mutable_region();
+}
+inline const std::string& RebootFailResponse::_internal_region() const {
+  return region_.Get();
+}
+inline void RebootFailResponse::_internal_set_region(const std::string& value) {
+  
+  region_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArena());
+}
+inline void RebootFailResponse::set_region(std::string&& value) {
+  
+  region_.Set(
+    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::move(value), GetArena());
+  // @@protoc_insertion_point(field_set_rvalue:cloudeinapi.RebootFailResponse.region)
+}
+inline void RebootFailResponse::set_region(const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+  
+  region_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(value), GetArena());
+  // @@protoc_insertion_point(field_set_char:cloudeinapi.RebootFailResponse.region)
+}
+inline void RebootFailResponse::set_region(const char* value,
+    size_t size) {
+  
+  region_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(
+      reinterpret_cast<const char*>(value), size), GetArena());
+  // @@protoc_insertion_point(field_set_pointer:cloudeinapi.RebootFailResponse.region)
+}
+inline std::string* RebootFailResponse::_internal_mutable_region() {
+  
+  return region_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArena());
+}
+inline std::string* RebootFailResponse::release_region() {
+  // @@protoc_insertion_point(field_release:cloudeinapi.RebootFailResponse.region)
+  return region_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+}
+inline void RebootFailResponse::set_allocated_region(std::string* region) {
+  if (region != nullptr) {
+    
+  } else {
+    
+  }
+  region_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), region,
+      GetArena());
+  // @@protoc_insertion_point(field_set_allocated:cloudeinapi.RebootFailResponse.region)
+}
+
+// -------------------------------------------------------------------
+
+// AuthFailRequest
+
+// string region = 1;
+inline void AuthFailRequest::clear_region() {
+  region_.ClearToEmpty();
+}
+inline const std::string& AuthFailRequest::region() const {
+  // @@protoc_insertion_point(field_get:cloudeinapi.AuthFailRequest.region)
+  return _internal_region();
+}
+inline void AuthFailRequest::set_region(const std::string& value) {
+  _internal_set_region(value);
+  // @@protoc_insertion_point(field_set:cloudeinapi.AuthFailRequest.region)
+}
+inline std::string* AuthFailRequest::mutable_region() {
+  // @@protoc_insertion_point(field_mutable:cloudeinapi.AuthFailRequest.region)
+  return _internal_mutable_region();
+}
+inline const std::string& AuthFailRequest::_internal_region() const {
+  return region_.Get();
+}
+inline void AuthFailRequest::_internal_set_region(const std::string& value) {
+  
+  region_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArena());
+}
+inline void AuthFailRequest::set_region(std::string&& value) {
+  
+  region_.Set(
+    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::move(value), GetArena());
+  // @@protoc_insertion_point(field_set_rvalue:cloudeinapi.AuthFailRequest.region)
+}
+inline void AuthFailRequest::set_region(const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+  
+  region_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(value), GetArena());
+  // @@protoc_insertion_point(field_set_char:cloudeinapi.AuthFailRequest.region)
+}
+inline void AuthFailRequest::set_region(const char* value,
+    size_t size) {
+  
+  region_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(
+      reinterpret_cast<const char*>(value), size), GetArena());
+  // @@protoc_insertion_point(field_set_pointer:cloudeinapi.AuthFailRequest.region)
+}
+inline std::string* AuthFailRequest::_internal_mutable_region() {
+  
+  return region_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArena());
+}
+inline std::string* AuthFailRequest::release_region() {
+  // @@protoc_insertion_point(field_release:cloudeinapi.AuthFailRequest.region)
+  return region_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+}
+inline void AuthFailRequest::set_allocated_region(std::string* region) {
+  if (region != nullptr) {
+    
+  } else {
+    
+  }
+  region_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), region,
+      GetArena());
+  // @@protoc_insertion_point(field_set_allocated:cloudeinapi.AuthFailRequest.region)
+}
+
+// string tx_name = 2;
+inline void AuthFailRequest::clear_tx_name() {
+  tx_name_.ClearToEmpty();
+}
+inline const std::string& AuthFailRequest::tx_name() const {
+  // @@protoc_insertion_point(field_get:cloudeinapi.AuthFailRequest.tx_name)
+  return _internal_tx_name();
+}
+inline void AuthFailRequest::set_tx_name(const std::string& value) {
+  _internal_set_tx_name(value);
+  // @@protoc_insertion_point(field_set:cloudeinapi.AuthFailRequest.tx_name)
+}
+inline std::string* AuthFailRequest::mutable_tx_name() {
+  // @@protoc_insertion_point(field_mutable:cloudeinapi.AuthFailRequest.tx_name)
+  return _internal_mutable_tx_name();
+}
+inline const std::string& AuthFailRequest::_internal_tx_name() const {
+  return tx_name_.Get();
+}
+inline void AuthFailRequest::_internal_set_tx_name(const std::string& value) {
+  
+  tx_name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArena());
+}
+inline void AuthFailRequest::set_tx_name(std::string&& value) {
+  
+  tx_name_.Set(
+    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::move(value), GetArena());
+  // @@protoc_insertion_point(field_set_rvalue:cloudeinapi.AuthFailRequest.tx_name)
+}
+inline void AuthFailRequest::set_tx_name(const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+  
+  tx_name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(value), GetArena());
+  // @@protoc_insertion_point(field_set_char:cloudeinapi.AuthFailRequest.tx_name)
+}
+inline void AuthFailRequest::set_tx_name(const char* value,
+    size_t size) {
+  
+  tx_name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(
+      reinterpret_cast<const char*>(value), size), GetArena());
+  // @@protoc_insertion_point(field_set_pointer:cloudeinapi.AuthFailRequest.tx_name)
+}
+inline std::string* AuthFailRequest::_internal_mutable_tx_name() {
+  
+  return tx_name_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArena());
+}
+inline std::string* AuthFailRequest::release_tx_name() {
+  // @@protoc_insertion_point(field_release:cloudeinapi.AuthFailRequest.tx_name)
+  return tx_name_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+}
+inline void AuthFailRequest::set_allocated_tx_name(std::string* tx_name) {
+  if (tx_name != nullptr) {
+    
+  } else {
+    
+  }
+  tx_name_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), tx_name,
+      GetArena());
+  // @@protoc_insertion_point(field_set_allocated:cloudeinapi.AuthFailRequest.tx_name)
+}
+
+// -------------------------------------------------------------------
+
+// AuthFailResponse
+
+// string region = 1;
+inline void AuthFailResponse::clear_region() {
+  region_.ClearToEmpty();
+}
+inline const std::string& AuthFailResponse::region() const {
+  // @@protoc_insertion_point(field_get:cloudeinapi.AuthFailResponse.region)
+  return _internal_region();
+}
+inline void AuthFailResponse::set_region(const std::string& value) {
+  _internal_set_region(value);
+  // @@protoc_insertion_point(field_set:cloudeinapi.AuthFailResponse.region)
+}
+inline std::string* AuthFailResponse::mutable_region() {
+  // @@protoc_insertion_point(field_mutable:cloudeinapi.AuthFailResponse.region)
+  return _internal_mutable_region();
+}
+inline const std::string& AuthFailResponse::_internal_region() const {
+  return region_.Get();
+}
+inline void AuthFailResponse::_internal_set_region(const std::string& value) {
+  
+  region_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArena());
+}
+inline void AuthFailResponse::set_region(std::string&& value) {
+  
+  region_.Set(
+    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::move(value), GetArena());
+  // @@protoc_insertion_point(field_set_rvalue:cloudeinapi.AuthFailResponse.region)
+}
+inline void AuthFailResponse::set_region(const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+  
+  region_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(value), GetArena());
+  // @@protoc_insertion_point(field_set_char:cloudeinapi.AuthFailResponse.region)
+}
+inline void AuthFailResponse::set_region(const char* value,
+    size_t size) {
+  
+  region_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(
+      reinterpret_cast<const char*>(value), size), GetArena());
+  // @@protoc_insertion_point(field_set_pointer:cloudeinapi.AuthFailResponse.region)
+}
+inline std::string* AuthFailResponse::_internal_mutable_region() {
+  
+  return region_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArena());
+}
+inline std::string* AuthFailResponse::release_region() {
+  // @@protoc_insertion_point(field_release:cloudeinapi.AuthFailResponse.region)
+  return region_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+}
+inline void AuthFailResponse::set_allocated_region(std::string* region) {
+  if (region != nullptr) {
+    
+  } else {
+    
+  }
+  region_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), region,
+      GetArena());
+  // @@protoc_insertion_point(field_set_allocated:cloudeinapi.AuthFailResponse.region)
+}
+
 #ifdef __GNUC__
   #pragma GCC diagnostic pop
 #endif  // __GNUC__
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
 // -------------------------------------------------------------------
 
 // -------------------------------------------------------------------

@@ -35,6 +35,18 @@ using cloudeinapi::ConnectRequest;
 using cloudeinapi::ConnectResponse;
 using cloudeinapi::ReleaseRequest;
 using cloudeinapi::ReleaseResponse;
+using cloudeinapi::DisconnectRequest;
+using cloudeinapi::DisconnectResponse;
+using cloudeinapi::TimeoutRequest;
+using cloudeinapi::TimeoutResponse;
+using cloudeinapi::PrepareFailRequest;
+using cloudeinapi::PrepareFailResponse;
+using cloudeinapi::ConnectFailRequest;
+using cloudeinapi::ConnectFailResponse;
+using cloudeinapi::RebootFailRequest;
+using cloudeinapi::RebootFailResponse;
+using cloudeinapi::AuthFailRequest;
+using cloudeinapi::AuthFailResponse;
 
 class CloudeinSessionClient {
 public:
@@ -47,6 +59,12 @@ public:
 	void DoPrepare(const SessionInfo session_info);
 	void DoConnect(const SessionInfo session_info);
 	void DoRelease(const SessionInfo session_info);
+	void DoDisconnect(const SessionInfo session_info);
+	void DoTimeout(const SessionInfo session_info);
+	void DoPrepareFail(const SessionInfo session_info);
+	void DoConnectFail(const SessionInfo session_info);
+	void DoRebootFail(const SessionInfo session_info);
+	void DoAuthFail(const SessionInfo session_info);
 	// .. add gRPC calls based on state
 
 
@@ -84,6 +102,54 @@ private:
 		std::chrono::system_clock::time_point deadline_;
 		Status status;
 		std::unique_ptr<ClientAsyncResponseReader<ReleaseResponse>> response_reader_release;
+	};
+	struct AsyncClientCall_DoDisconnect
+	{
+		DisconnectResponse resp;
+		ClientContext context;
+		std::chrono::system_clock::time_point deadline_;
+		Status status;
+		std::unique_ptr<ClientAsyncResponseReader<DisconnectResponse>> response_reader_disconnect;
+	};
+	struct AsyncClientCall_DoTimeout
+	{
+		TimeoutResponse resp;
+		ClientContext context;
+		std::chrono::system_clock::time_point deadline_;
+		Status status;
+		std::unique_ptr<ClientAsyncResponseReader<TimeoutResponse>> response_reader_timeout;
+	};
+	struct AsyncClientCall_DoPrepareFail
+	{
+		PrepareFailResponse resp;
+		ClientContext context;
+		std::chrono::system_clock::time_point deadline_;
+		Status status;
+		std::unique_ptr<ClientAsyncResponseReader<PrepareFailResponse>> response_reader_preparefail;
+	};
+	struct AsyncClientCall_DoConnectFail
+	{
+		ConnectFailResponse resp;
+		ClientContext context;
+		std::chrono::system_clock::time_point deadline_;
+		Status status;
+		std::unique_ptr<ClientAsyncResponseReader<ConnectFailResponse>> response_reader_connectfail;
+	};
+	struct AsyncClientCall_DoRebootFail
+	{
+		RebootFailResponse resp;
+		ClientContext context;
+		std::chrono::system_clock::time_point deadline_;
+		Status status;
+		std::unique_ptr<ClientAsyncResponseReader<RebootFailResponse>> response_reader_rebootfail;
+	};
+	struct AsyncClientCall_DoAuthFail
+	{
+		AuthFailResponse resp;
+		ClientContext context;
+		std::chrono::system_clock::time_point deadline_;
+		Status status;
+		std::unique_ptr<ClientAsyncResponseReader<AuthFailResponse>> response_reader_authfail;
 	};
 	// .. add gRPC calls based on state
 

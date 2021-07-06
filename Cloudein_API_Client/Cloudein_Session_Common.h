@@ -54,10 +54,16 @@ struct SessionInfo
 
 enum CLOUDEIN_GRPC_TAG
 {
-	DoAllocateAPI = 1,
-	DoPrepareAPI = 2,
-	DoConnectAPI = 3,
-	DoReleaseAPI = 4
+	DoAllocate_API = 1,
+	DoPrepare_API = 2,
+	DoConnect_API = 3,
+	DoRelease_API = 4,
+	DoDisconnect_API = 5,
+	DoTimeout_API = 6,
+	DoPrepareFail_API = 7,
+	DoConnectFail_API = 8,
+	DoRebootFail_API = 9,
+	DoAuthFail_API = 10
 };
 #endif
 

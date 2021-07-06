@@ -7,7 +7,6 @@ message(STATUS "CmakeList at ${CMAKE_CURRENT_SOURCE_DIR}")
 # Add include directories & libraries
 if (WIN32)   
 
-
     # OPENSSL
     include_directories("C:\\mslmlib\\OpenSSL\\include")
     link_directories("C:\\mslmlib\\OpenSSL\\lib")
@@ -46,5 +45,5 @@ endif()
 
 
 # Add to linker
-target_link_libraries(cpprest_client ${PROJECT_LINK_LIBS} )
+target_link_libraries(cpprest_client ${PROJECT_LINK_LIBS})
 

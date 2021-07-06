@@ -48,10 +48,10 @@ using cloudeinapi::ReleaseResponse;
 
 enum CLOUDEIN_GRPC_TAG
 {
-    DoAllocateAPI = 1,
-    DoPrepareAPI = 2,
-    DoConnectAPI = 3,
-    DoReleaseAPI = 4
+    DoAllocate_API = 1,
+    DoPrepare_API = 2,
+    DoConnect_API = 3,
+    DoRelease_API = 4
 };
 
 class ServerImpl final {
@@ -99,7 +99,7 @@ private:
                 std::cout << "##  Allocate-PROCESS call" << std::endl;
 
                 auto register_allocate_data = new AllocateData(service_, cq_, list_push_func, list_erase_func);
-                list_push_func(CLOUDEIN_GRPC_TAG::DoAllocateAPI, (void*)register_allocate_data);
+                list_push_func(CLOUDEIN_GRPC_TAG::DoAllocate_API, (void*)register_allocate_data);
 
                 auto ip = [](std::string uri) {
                     std::string::size_type first_idx, second_idx;
@@ -177,7 +177,7 @@ private:
                 std::cout << "##  Prepare-process call" << std::endl;
 
                 auto register_prepare_data = new PrepareData(service_, cq_, list_push_func, list_erase_func);
-                list_push_func(CLOUDEIN_GRPC_TAG::DoPrepareAPI, (void*)register_prepare_data);
+                list_push_func(CLOUDEIN_GRPC_TAG::DoPrepare_API, (void*)register_prepare_data);
 
                 auto ip = [](std::string uri) {
                     std::string::size_type first_idx, second_idx;
@@ -248,7 +248,7 @@ private:
                 std::cout << "##  Connect-Process call" << std::endl;
 
                 auto register_connect_data = new ConnectData(service_, cq_, list_push_func, list_erase_func);
-                list_push_func(CLOUDEIN_GRPC_TAG::DoConnectAPI, (void*)register_connect_data);
+                list_push_func(CLOUDEIN_GRPC_TAG::DoConnect_API, (void*)register_connect_data);
 
                 auto ip = [](std::string uri) {
                     std::string::size_type first_idx, second_idx;
@@ -320,7 +320,7 @@ private:
                 std::cout << "##  Release-Process call" << std::endl;
 
                 auto register_release_data = new ReleaseData(service_, cq_, list_push_func, list_erase_func);
-                list_push_func(CLOUDEIN_GRPC_TAG::DoReleaseAPI, (void*)register_release_data);
+                list_push_func(CLOUDEIN_GRPC_TAG::DoRelease_API, (void*)register_release_data);
 
                 auto ip = [](std::string uri) {
                     std::string::size_type first_idx, second_idx;
@@ -377,22 +377,22 @@ private:
         auto register_allocate_data = new AllocateData(&service_, cq_.get(), 
             [=](CLOUDEIN_GRPC_TAG tag_idx, void* objAddr) {this->tag_push(tag_idx, objAddr);},
             [=](void* objAddr) {this->tag_erase(objAddr); });
-        tag_push(CLOUDEIN_GRPC_TAG::DoAllocateAPI, (void*)register_allocate_data);
+        tag_push(CLOUDEIN_GRPC_TAG::DoAllocate_API, (void*)register_allocate_data);
 
         auto register_prepare_data = new PrepareData(&service_, cq_.get(), 
             [=](CLOUDEIN_GRPC_TAG tag_idx, void* objAddr) {this->tag_push(tag_idx, objAddr); },
             [=](void* objAddr) {this->tag_erase(objAddr); });
-        tag_push(CLOUDEIN_GRPC_TAG::DoPrepareAPI, (void*)register_prepare_data);
+        tag_push(CLOUDEIN_GRPC_TAG::DoPrepare_API, (void*)register_prepare_data);
 
         auto register_connect_data = new ConnectData(&service_, cq_.get(), 
             [=](CLOUDEIN_GRPC_TAG tag_idx, void* objAddr) {this->tag_push(tag_idx, objAddr); },
             [=](void* objAddr) {this->tag_erase(objAddr); });
-        tag_push(CLOUDEIN_GRPC_TAG::DoConnectAPI, (void*)register_connect_data);
+        tag_push(CLOUDEIN_GRPC_TAG::DoConnect_API, (void*)register_connect_data);
 
         auto register_release_data = new ReleaseData(&service_, cq_.get(), 
             [=](CLOUDEIN_GRPC_TAG tag_idx, void* objAddr) {this->tag_push(tag_idx, objAddr); },
             [=](void* objAddr) {this->tag_erase(objAddr); });
-        tag_push(CLOUDEIN_GRPC_TAG::DoReleaseAPI, (void*)register_release_data);
+        tag_push(CLOUDEIN_GRPC_TAG::DoRelease_API, (void*)register_release_data);
 
 
         void* tag;
@@ -406,22 +406,22 @@ private:
 
             switch (grpc_tag)
             {
-            case DoAllocateAPI:
+            case DoAllocate_API:
             {
                 static_cast<AllocateData*>(tag)->Proceed();
             }
             break;
-            case DoPrepareAPI:
+            case DoPrepare_API:
             {
                 static_cast<PrepareData*>(tag)->Proceed();
             }
             break;
-            case DoConnectAPI:
+            case DoConnect_API:
             {
                 static_cast<ConnectData*>(tag)->Proceed();
             }
             break;
-            case DoReleaseAPI:
+            case DoRelease_API:
             {
                 static_cast<ReleaseData*>(tag)->Proceed();
             }
