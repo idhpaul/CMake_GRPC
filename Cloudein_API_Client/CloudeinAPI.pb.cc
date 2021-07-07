@@ -17,6 +17,33 @@
 
 PROTOBUF_PRAGMA_INIT_SEG
 namespace cloudeinapi {
+constexpr OperationRequest::OperationRequest(
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
+  : region_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , tx_ip_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , operation_type_(0)
+{}
+struct OperationRequestDefaultTypeInternal {
+  constexpr OperationRequestDefaultTypeInternal()
+    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  ~OperationRequestDefaultTypeInternal() {}
+  union {
+    OperationRequest _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT OperationRequestDefaultTypeInternal _OperationRequest_default_instance_;
+constexpr OperationResponse::OperationResponse(
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
+  : region_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string){}
+struct OperationResponseDefaultTypeInternal {
+  constexpr OperationResponseDefaultTypeInternal()
+    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  ~OperationResponseDefaultTypeInternal() {}
+  union {
+    OperationResponse _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT OperationResponseDefaultTypeInternal _OperationResponse_default_instance_;
 constexpr AllocateRequest::AllocateRequest(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
   : region_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
@@ -273,11 +300,25 @@ struct AuthFailResponseDefaultTypeInternal {
 };
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT AuthFailResponseDefaultTypeInternal _AuthFailResponse_default_instance_;
 }  // namespace cloudeinapi
-static ::PROTOBUF_NAMESPACE_ID::Metadata file_level_metadata_CloudeinAPI_2eproto[20];
-static constexpr ::PROTOBUF_NAMESPACE_ID::EnumDescriptor const** file_level_enum_descriptors_CloudeinAPI_2eproto = nullptr;
+static ::PROTOBUF_NAMESPACE_ID::Metadata file_level_metadata_CloudeinAPI_2eproto[22];
+static const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* file_level_enum_descriptors_CloudeinAPI_2eproto[1];
 static constexpr ::PROTOBUF_NAMESPACE_ID::ServiceDescriptor const** file_level_service_descriptors_CloudeinAPI_2eproto = nullptr;
 
 const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_CloudeinAPI_2eproto::offsets[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::cloudeinapi::OperationRequest, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::cloudeinapi::OperationRequest, region_),
+  PROTOBUF_FIELD_OFFSET(::cloudeinapi::OperationRequest, tx_ip_),
+  PROTOBUF_FIELD_OFFSET(::cloudeinapi::OperationRequest, operation_type_),
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::cloudeinapi::OperationResponse, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::cloudeinapi::OperationResponse, region_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::cloudeinapi::AllocateRequest, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -415,29 +456,33 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_CloudeinAPI_2eproto::offsets[]
   PROTOBUF_FIELD_OFFSET(::cloudeinapi::AuthFailResponse, region_),
 };
 static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
-  { 0, -1, sizeof(::cloudeinapi::AllocateRequest)},
-  { 7, -1, sizeof(::cloudeinapi::AllocateResponse)},
-  { 18, -1, sizeof(::cloudeinapi::PrepareRequest)},
-  { 25, -1, sizeof(::cloudeinapi::PrepareResponse)},
-  { 31, -1, sizeof(::cloudeinapi::ConnectRequest)},
-  { 38, -1, sizeof(::cloudeinapi::ConnectResponse)},
-  { 44, -1, sizeof(::cloudeinapi::ReleaseRequest)},
-  { 51, -1, sizeof(::cloudeinapi::ReleaseResponse)},
-  { 57, -1, sizeof(::cloudeinapi::DisconnectRequest)},
-  { 64, -1, sizeof(::cloudeinapi::DisconnectResponse)},
-  { 70, -1, sizeof(::cloudeinapi::TimeoutRequest)},
-  { 77, -1, sizeof(::cloudeinapi::TimeoutResponse)},
-  { 83, -1, sizeof(::cloudeinapi::PrepareFailRequest)},
-  { 90, -1, sizeof(::cloudeinapi::PrepareFailResponse)},
-  { 96, -1, sizeof(::cloudeinapi::ConnectFailRequest)},
-  { 103, -1, sizeof(::cloudeinapi::ConnectFailResponse)},
-  { 109, -1, sizeof(::cloudeinapi::RebootFailRequest)},
-  { 116, -1, sizeof(::cloudeinapi::RebootFailResponse)},
-  { 122, -1, sizeof(::cloudeinapi::AuthFailRequest)},
-  { 129, -1, sizeof(::cloudeinapi::AuthFailResponse)},
+  { 0, -1, sizeof(::cloudeinapi::OperationRequest)},
+  { 8, -1, sizeof(::cloudeinapi::OperationResponse)},
+  { 14, -1, sizeof(::cloudeinapi::AllocateRequest)},
+  { 21, -1, sizeof(::cloudeinapi::AllocateResponse)},
+  { 32, -1, sizeof(::cloudeinapi::PrepareRequest)},
+  { 39, -1, sizeof(::cloudeinapi::PrepareResponse)},
+  { 45, -1, sizeof(::cloudeinapi::ConnectRequest)},
+  { 52, -1, sizeof(::cloudeinapi::ConnectResponse)},
+  { 58, -1, sizeof(::cloudeinapi::ReleaseRequest)},
+  { 65, -1, sizeof(::cloudeinapi::ReleaseResponse)},
+  { 71, -1, sizeof(::cloudeinapi::DisconnectRequest)},
+  { 78, -1, sizeof(::cloudeinapi::DisconnectResponse)},
+  { 84, -1, sizeof(::cloudeinapi::TimeoutRequest)},
+  { 91, -1, sizeof(::cloudeinapi::TimeoutResponse)},
+  { 97, -1, sizeof(::cloudeinapi::PrepareFailRequest)},
+  { 104, -1, sizeof(::cloudeinapi::PrepareFailResponse)},
+  { 110, -1, sizeof(::cloudeinapi::ConnectFailRequest)},
+  { 117, -1, sizeof(::cloudeinapi::ConnectFailResponse)},
+  { 123, -1, sizeof(::cloudeinapi::RebootFailRequest)},
+  { 130, -1, sizeof(::cloudeinapi::RebootFailResponse)},
+  { 136, -1, sizeof(::cloudeinapi::AuthFailRequest)},
+  { 143, -1, sizeof(::cloudeinapi::AuthFailResponse)},
 };
 
 static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] = {
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::cloudeinapi::_OperationRequest_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::cloudeinapi::_OperationResponse_default_instance_),
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::cloudeinapi::_AllocateRequest_default_instance_),
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::cloudeinapi::_AllocateResponse_default_instance_),
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::cloudeinapi::_PrepareRequest_default_instance_),
@@ -461,59 +506,66 @@ static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] =
 };
 
 const char descriptor_table_protodef_CloudeinAPI_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) =
-  "\n\021CloudeinAPI.proto\022\013cloudeinapi\"2\n\017Allo"
-  "cateRequest\022\016\n\006region\030\001 \001(\t\022\017\n\007tx_name\030\002"
-  " \001(\t\"\232\001\n\020AllocateResponse\022\016\n\006region\030\001 \001("
-  "\t\022\026\n\016allocate_port1\030\013 \001(\004\022\026\n\016allocate_po"
-  "rt2\030\014 \001(\004\022\026\n\016allocate_port3\030\r \001(\004\022\026\n\016all"
-  "ocate_port4\030\016 \001(\004\022\026\n\016allocate_port5\030\017 \001("
-  "\004\"1\n\016PrepareRequest\022\016\n\006region\030\001 \001(\t\022\017\n\007t"
-  "x_name\030\002 \001(\t\"!\n\017PrepareResponse\022\016\n\006regio"
-  "n\030\001 \001(\t\"1\n\016ConnectRequest\022\016\n\006region\030\001 \001("
-  "\t\022\017\n\007tx_name\030\002 \001(\t\"!\n\017ConnectResponse\022\016\n"
-  "\006region\030\001 \001(\t\"1\n\016ReleaseRequest\022\016\n\006regio"
-  "n\030\001 \001(\t\022\017\n\007tx_name\030\002 \001(\t\"!\n\017ReleaseRespo"
-  "nse\022\016\n\006region\030\001 \001(\t\"4\n\021DisconnectRequest"
-  "\022\016\n\006region\030\001 \001(\t\022\017\n\007tx_name\030\002 \001(\t\"$\n\022Dis"
-  "connectResponse\022\016\n\006region\030\001 \001(\t\"1\n\016Timeo"
-  "utRequest\022\016\n\006region\030\001 \001(\t\022\017\n\007tx_name\030\002 \001"
-  "(\t\"!\n\017TimeoutResponse\022\016\n\006region\030\001 \001(\t\"5\n"
-  "\022PrepareFailRequest\022\016\n\006region\030\001 \001(\t\022\017\n\007t"
-  "x_name\030\002 \001(\t\"%\n\023PrepareFailResponse\022\016\n\006r"
-  "egion\030\001 \001(\t\"5\n\022ConnectFailRequest\022\016\n\006reg"
-  "ion\030\001 \001(\t\022\017\n\007tx_name\030\002 \001(\t\"%\n\023ConnectFai"
-  "lResponse\022\016\n\006region\030\001 \001(\t\"4\n\021RebootFailR"
-  "equest\022\016\n\006region\030\001 \001(\t\022\017\n\007tx_name\030\002 \001(\t\""
-  "$\n\022RebootFailResponse\022\016\n\006region\030\001 \001(\t\"2\n"
-  "\017AuthFailRequest\022\016\n\006region\030\001 \001(\t\022\017\n\007tx_n"
-  "ame\030\002 \001(\t\"\"\n\020AuthFailResponse\022\016\n\006region\030"
-  "\001 \001(\t2\303\006\n\017CloudeinSession\022N\n\rDoAllocateA"
-  "PI\022\034.cloudeinapi.AllocateRequest\032\035.cloud"
-  "einapi.AllocateResponse\"\000\022K\n\014DoPrepareAP"
-  "I\022\033.cloudeinapi.PrepareRequest\032\034.cloudei"
-  "napi.PrepareResponse\"\000\022K\n\014DoConnectAPI\022\033"
-  ".cloudeinapi.ConnectRequest\032\034.cloudeinap"
-  "i.ConnectResponse\"\000\022K\n\014DoReleaseAPI\022\033.cl"
-  "oudeinapi.ReleaseRequest\032\034.cloudeinapi.R"
-  "eleaseResponse\"\000\022T\n\017DoDisconnectAPI\022\036.cl"
-  "oudeinapi.DisconnectRequest\032\037.cloudeinap"
-  "i.DisconnectResponse\"\000\022K\n\014DoTimeoutAPI\022\033"
-  ".cloudeinapi.TimeoutRequest\032\034.cloudeinap"
-  "i.TimeoutResponse\"\000\022W\n\020DoPrepareFailAPI\022"
-  "\037.cloudeinapi.PrepareFailRequest\032 .cloud"
-  "einapi.PrepareFailResponse\"\000\022W\n\020DoConnec"
-  "tFailAPI\022\037.cloudeinapi.ConnectFailReques"
-  "t\032 .cloudeinapi.ConnectFailResponse\"\000\022T\n"
-  "\017DoRebootFailAPI\022\036.cloudeinapi.RebootFai"
-  "lRequest\032\037.cloudeinapi.RebootFailRespons"
-  "e\"\000\022N\n\rDoAuthFailAPI\022\034.cloudeinapi.AuthF"
-  "ailRequest\032\035.cloudeinapi.AuthFailRespons"
-  "e\"\000b\006proto3"
+  "\n\021CloudeinAPI.proto\022\013cloudeinapi\"e\n\020Oper"
+  "ationRequest\022\016\n\006region\030\001 \001(\t\022\r\n\005tx_ip\030\002 "
+  "\001(\t\0222\n\016operation_type\030\003 \001(\0162\032.cloudeinap"
+  "i.OperationType\"#\n\021OperationResponse\022\016\n\006"
+  "region\030\001 \001(\t\"2\n\017AllocateRequest\022\016\n\006regio"
+  "n\030\001 \001(\t\022\017\n\007tx_name\030\002 \001(\t\"\232\001\n\020AllocateRes"
+  "ponse\022\016\n\006region\030\001 \001(\t\022\026\n\016allocate_port1\030"
+  "\013 \001(\004\022\026\n\016allocate_port2\030\014 \001(\004\022\026\n\016allocat"
+  "e_port3\030\r \001(\004\022\026\n\016allocate_port4\030\016 \001(\004\022\026\n"
+  "\016allocate_port5\030\017 \001(\004\"1\n\016PrepareRequest\022"
+  "\016\n\006region\030\001 \001(\t\022\017\n\007tx_name\030\002 \001(\t\"!\n\017Prep"
+  "areResponse\022\016\n\006region\030\001 \001(\t\"1\n\016ConnectRe"
+  "quest\022\016\n\006region\030\001 \001(\t\022\017\n\007tx_name\030\002 \001(\t\"!"
+  "\n\017ConnectResponse\022\016\n\006region\030\001 \001(\t\"1\n\016Rel"
+  "easeRequest\022\016\n\006region\030\001 \001(\t\022\017\n\007tx_name\030\002"
+  " \001(\t\"!\n\017ReleaseResponse\022\016\n\006region\030\001 \001(\t\""
+  "4\n\021DisconnectRequest\022\016\n\006region\030\001 \001(\t\022\017\n\007"
+  "tx_name\030\002 \001(\t\"$\n\022DisconnectResponse\022\016\n\006r"
+  "egion\030\001 \001(\t\"1\n\016TimeoutRequest\022\016\n\006region\030"
+  "\001 \001(\t\022\017\n\007tx_name\030\002 \001(\t\"!\n\017TimeoutRespons"
+  "e\022\016\n\006region\030\001 \001(\t\"5\n\022PrepareFailRequest\022"
+  "\016\n\006region\030\001 \001(\t\022\017\n\007tx_name\030\002 \001(\t\"%\n\023Prep"
+  "areFailResponse\022\016\n\006region\030\001 \001(\t\"5\n\022Conne"
+  "ctFailRequest\022\016\n\006region\030\001 \001(\t\022\017\n\007tx_name"
+  "\030\002 \001(\t\"%\n\023ConnectFailResponse\022\016\n\006region\030"
+  "\001 \001(\t\"4\n\021RebootFailRequest\022\016\n\006region\030\001 \001"
+  "(\t\022\017\n\007tx_name\030\002 \001(\t\"$\n\022RebootFailRespons"
+  "e\022\016\n\006region\030\001 \001(\t\"2\n\017AuthFailRequest\022\016\n\006"
+  "region\030\001 \001(\t\022\017\n\007tx_name\030\002 \001(\t\"\"\n\020AuthFai"
+  "lResponse\022\016\n\006region\030\001 \001(\t*9\n\rOperationTy"
+  "pe\022\n\n\006OS_OFF\020\000\022\r\n\tOS_REBOOT\020\001\022\r\n\tOS_LOGO"
+  "FF\020\0022j\n\030CloudeinSessionOperation\022N\n\013DoOp"
+  "eration\022\035.cloudeinapi.OperationRequest\032\036"
+  ".cloudeinapi.OperationResponse\"\0002\303\006\n\017Clo"
+  "udeinSession\022N\n\rDoAllocateAPI\022\034.cloudein"
+  "api.AllocateRequest\032\035.cloudeinapi.Alloca"
+  "teResponse\"\000\022K\n\014DoPrepareAPI\022\033.cloudeina"
+  "pi.PrepareRequest\032\034.cloudeinapi.PrepareR"
+  "esponse\"\000\022K\n\014DoConnectAPI\022\033.cloudeinapi."
+  "ConnectRequest\032\034.cloudeinapi.ConnectResp"
+  "onse\"\000\022K\n\014DoReleaseAPI\022\033.cloudeinapi.Rel"
+  "easeRequest\032\034.cloudeinapi.ReleaseRespons"
+  "e\"\000\022T\n\017DoDisconnectAPI\022\036.cloudeinapi.Dis"
+  "connectRequest\032\037.cloudeinapi.DisconnectR"
+  "esponse\"\000\022K\n\014DoTimeoutAPI\022\033.cloudeinapi."
+  "TimeoutRequest\032\034.cloudeinapi.TimeoutResp"
+  "onse\"\000\022W\n\020DoPrepareFailAPI\022\037.cloudeinapi"
+  ".PrepareFailRequest\032 .cloudeinapi.Prepar"
+  "eFailResponse\"\000\022W\n\020DoConnectFailAPI\022\037.cl"
+  "oudeinapi.ConnectFailRequest\032 .cloudeina"
+  "pi.ConnectFailResponse\"\000\022T\n\017DoRebootFail"
+  "API\022\036.cloudeinapi.RebootFailRequest\032\037.cl"
+  "oudeinapi.RebootFailResponse\"\000\022N\n\rDoAuth"
+  "FailAPI\022\034.cloudeinapi.AuthFailRequest\032\035."
+  "cloudeinapi.AuthFailResponse\"\000b\006proto3"
   ;
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_CloudeinAPI_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_CloudeinAPI_2eproto = {
-  false, false, 1891, descriptor_table_protodef_CloudeinAPI_2eproto, "CloudeinAPI.proto", 
-  &descriptor_table_CloudeinAPI_2eproto_once, nullptr, 0, 20,
+  false, false, 2198, descriptor_table_protodef_CloudeinAPI_2eproto, "CloudeinAPI.proto", 
+  &descriptor_table_CloudeinAPI_2eproto_once, nullptr, 0, 22,
   schemas, file_default_instances, TableStruct_CloudeinAPI_2eproto::offsets,
   file_level_metadata_CloudeinAPI_2eproto, file_level_enum_descriptors_CloudeinAPI_2eproto, file_level_service_descriptors_CloudeinAPI_2eproto,
 };
@@ -526,6 +578,487 @@ descriptor_table_CloudeinAPI_2eproto_metadata_getter(int index) {
 // Force running AddDescriptors() at dynamic initialization time.
 PROTOBUF_ATTRIBUTE_INIT_PRIORITY static ::PROTOBUF_NAMESPACE_ID::internal::AddDescriptorsRunner dynamic_init_dummy_CloudeinAPI_2eproto(&descriptor_table_CloudeinAPI_2eproto);
 namespace cloudeinapi {
+const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* OperationType_descriptor() {
+  ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(&descriptor_table_CloudeinAPI_2eproto);
+  return file_level_enum_descriptors_CloudeinAPI_2eproto[0];
+}
+bool OperationType_IsValid(int value) {
+  switch (value) {
+    case 0:
+    case 1:
+    case 2:
+      return true;
+    default:
+      return false;
+  }
+}
+
+
+// ===================================================================
+
+class OperationRequest::_Internal {
+ public:
+};
+
+OperationRequest::OperationRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
+  SharedCtor();
+  RegisterArenaDtor(arena);
+  // @@protoc_insertion_point(arena_constructor:cloudeinapi.OperationRequest)
+}
+OperationRequest::OperationRequest(const OperationRequest& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  region_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!from._internal_region().empty()) {
+    region_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_region(), 
+      GetArena());
+  }
+  tx_ip_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!from._internal_tx_ip().empty()) {
+    tx_ip_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_tx_ip(), 
+      GetArena());
+  }
+  operation_type_ = from.operation_type_;
+  // @@protoc_insertion_point(copy_constructor:cloudeinapi.OperationRequest)
+}
+
+void OperationRequest::SharedCtor() {
+region_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+tx_ip_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+operation_type_ = 0;
+}
+
+OperationRequest::~OperationRequest() {
+  // @@protoc_insertion_point(destructor:cloudeinapi.OperationRequest)
+  SharedDtor();
+  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+void OperationRequest::SharedDtor() {
+  GOOGLE_DCHECK(GetArena() == nullptr);
+  region_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  tx_ip_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+}
+
+void OperationRequest::ArenaDtor(void* object) {
+  OperationRequest* _this = reinterpret_cast< OperationRequest* >(object);
+  (void)_this;
+}
+void OperationRequest::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
+void OperationRequest::SetCachedSize(int size) const {
+  _cached_size_.Set(size);
+}
+
+void OperationRequest::Clear() {
+// @@protoc_insertion_point(message_clear_start:cloudeinapi.OperationRequest)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  region_.ClearToEmpty();
+  tx_ip_.ClearToEmpty();
+  operation_type_ = 0;
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+const char* OperationRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    CHK_(ptr);
+    switch (tag >> 3) {
+      // string region = 1;
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
+          auto str = _internal_mutable_region();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "cloudeinapi.OperationRequest.region"));
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // string tx_ip = 2;
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
+          auto str = _internal_mutable_tx_ip();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "cloudeinapi.OperationRequest.tx_ip"));
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // .cloudeinapi.OperationType operation_type = 3;
+      case 3:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 24)) {
+          ::PROTOBUF_NAMESPACE_ID::uint64 val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+          _internal_set_operation_type(static_cast<::cloudeinapi::OperationType>(val));
+        } else goto handle_unusual;
+        continue;
+      default: {
+      handle_unusual:
+        if ((tag & 7) == 4 || tag == 0) {
+          ctx->SetLastTag(tag);
+          goto success;
+        }
+        ptr = UnknownFieldParse(tag,
+            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+            ptr, ctx);
+        CHK_(ptr != nullptr);
+        continue;
+      }
+    }  // switch
+  }  // while
+success:
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto success;
+#undef CHK_
+}
+
+::PROTOBUF_NAMESPACE_ID::uint8* OperationRequest::_InternalSerialize(
+    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:cloudeinapi.OperationRequest)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // string region = 1;
+  if (this->region().size() > 0) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_region().data(), static_cast<int>(this->_internal_region().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "cloudeinapi.OperationRequest.region");
+    target = stream->WriteStringMaybeAliased(
+        1, this->_internal_region(), target);
+  }
+
+  // string tx_ip = 2;
+  if (this->tx_ip().size() > 0) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_tx_ip().data(), static_cast<int>(this->_internal_tx_ip().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "cloudeinapi.OperationRequest.tx_ip");
+    target = stream->WriteStringMaybeAliased(
+        2, this->_internal_tx_ip(), target);
+  }
+
+  // .cloudeinapi.OperationType operation_type = 3;
+  if (this->operation_type() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteEnumToArray(
+      3, this->_internal_operation_type(), target);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:cloudeinapi.OperationRequest)
+  return target;
+}
+
+size_t OperationRequest::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:cloudeinapi.OperationRequest)
+  size_t total_size = 0;
+
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  // string region = 1;
+  if (this->region().size() > 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_region());
+  }
+
+  // string tx_ip = 2;
+  if (this->tx_ip().size() > 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_tx_ip());
+  }
+
+  // .cloudeinapi.OperationType operation_type = 3;
+  if (this->operation_type() != 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::EnumSize(this->_internal_operation_type());
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
+        _internal_metadata_, total_size, &_cached_size_);
+  }
+  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
+  SetCachedSize(cached_size);
+  return total_size;
+}
+
+void OperationRequest::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:cloudeinapi.OperationRequest)
+  GOOGLE_DCHECK_NE(&from, this);
+  const OperationRequest* source =
+      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<OperationRequest>(
+          &from);
+  if (source == nullptr) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:cloudeinapi.OperationRequest)
+    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
+  } else {
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:cloudeinapi.OperationRequest)
+    MergeFrom(*source);
+  }
+}
+
+void OperationRequest::MergeFrom(const OperationRequest& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:cloudeinapi.OperationRequest)
+  GOOGLE_DCHECK_NE(&from, this);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  if (from.region().size() > 0) {
+    _internal_set_region(from._internal_region());
+  }
+  if (from.tx_ip().size() > 0) {
+    _internal_set_tx_ip(from._internal_tx_ip());
+  }
+  if (from.operation_type() != 0) {
+    _internal_set_operation_type(from._internal_operation_type());
+  }
+}
+
+void OperationRequest::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:cloudeinapi.OperationRequest)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+void OperationRequest::CopyFrom(const OperationRequest& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:cloudeinapi.OperationRequest)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool OperationRequest::IsInitialized() const {
+  return true;
+}
+
+void OperationRequest::InternalSwap(OperationRequest* other) {
+  using std::swap;
+  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
+  region_.Swap(&other->region_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+  tx_ip_.Swap(&other->tx_ip_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+  swap(operation_type_, other->operation_type_);
+}
+
+::PROTOBUF_NAMESPACE_ID::Metadata OperationRequest::GetMetadata() const {
+  return GetMetadataStatic();
+}
+
+
+// ===================================================================
+
+class OperationResponse::_Internal {
+ public:
+};
+
+OperationResponse::OperationResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
+  SharedCtor();
+  RegisterArenaDtor(arena);
+  // @@protoc_insertion_point(arena_constructor:cloudeinapi.OperationResponse)
+}
+OperationResponse::OperationResponse(const OperationResponse& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  region_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!from._internal_region().empty()) {
+    region_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_region(), 
+      GetArena());
+  }
+  // @@protoc_insertion_point(copy_constructor:cloudeinapi.OperationResponse)
+}
+
+void OperationResponse::SharedCtor() {
+region_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+}
+
+OperationResponse::~OperationResponse() {
+  // @@protoc_insertion_point(destructor:cloudeinapi.OperationResponse)
+  SharedDtor();
+  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+void OperationResponse::SharedDtor() {
+  GOOGLE_DCHECK(GetArena() == nullptr);
+  region_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+}
+
+void OperationResponse::ArenaDtor(void* object) {
+  OperationResponse* _this = reinterpret_cast< OperationResponse* >(object);
+  (void)_this;
+}
+void OperationResponse::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
+void OperationResponse::SetCachedSize(int size) const {
+  _cached_size_.Set(size);
+}
+
+void OperationResponse::Clear() {
+// @@protoc_insertion_point(message_clear_start:cloudeinapi.OperationResponse)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  region_.ClearToEmpty();
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+const char* OperationResponse::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    CHK_(ptr);
+    switch (tag >> 3) {
+      // string region = 1;
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
+          auto str = _internal_mutable_region();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "cloudeinapi.OperationResponse.region"));
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      default: {
+      handle_unusual:
+        if ((tag & 7) == 4 || tag == 0) {
+          ctx->SetLastTag(tag);
+          goto success;
+        }
+        ptr = UnknownFieldParse(tag,
+            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+            ptr, ctx);
+        CHK_(ptr != nullptr);
+        continue;
+      }
+    }  // switch
+  }  // while
+success:
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto success;
+#undef CHK_
+}
+
+::PROTOBUF_NAMESPACE_ID::uint8* OperationResponse::_InternalSerialize(
+    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:cloudeinapi.OperationResponse)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // string region = 1;
+  if (this->region().size() > 0) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_region().data(), static_cast<int>(this->_internal_region().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "cloudeinapi.OperationResponse.region");
+    target = stream->WriteStringMaybeAliased(
+        1, this->_internal_region(), target);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:cloudeinapi.OperationResponse)
+  return target;
+}
+
+size_t OperationResponse::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:cloudeinapi.OperationResponse)
+  size_t total_size = 0;
+
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  // string region = 1;
+  if (this->region().size() > 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_region());
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
+        _internal_metadata_, total_size, &_cached_size_);
+  }
+  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
+  SetCachedSize(cached_size);
+  return total_size;
+}
+
+void OperationResponse::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:cloudeinapi.OperationResponse)
+  GOOGLE_DCHECK_NE(&from, this);
+  const OperationResponse* source =
+      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<OperationResponse>(
+          &from);
+  if (source == nullptr) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:cloudeinapi.OperationResponse)
+    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
+  } else {
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:cloudeinapi.OperationResponse)
+    MergeFrom(*source);
+  }
+}
+
+void OperationResponse::MergeFrom(const OperationResponse& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:cloudeinapi.OperationResponse)
+  GOOGLE_DCHECK_NE(&from, this);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  if (from.region().size() > 0) {
+    _internal_set_region(from._internal_region());
+  }
+}
+
+void OperationResponse::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:cloudeinapi.OperationResponse)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+void OperationResponse::CopyFrom(const OperationResponse& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:cloudeinapi.OperationResponse)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool OperationResponse::IsInitialized() const {
+  return true;
+}
+
+void OperationResponse::InternalSwap(OperationResponse* other) {
+  using std::swap;
+  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
+  region_.Swap(&other->region_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+}
+
+::PROTOBUF_NAMESPACE_ID::Metadata OperationResponse::GetMetadata() const {
+  return GetMetadataStatic();
+}
+
 
 // ===================================================================
 
@@ -5041,6 +5574,12 @@ void AuthFailResponse::InternalSwap(AuthFailResponse* other) {
 // @@protoc_insertion_point(namespace_scope)
 }  // namespace cloudeinapi
 PROTOBUF_NAMESPACE_OPEN
+template<> PROTOBUF_NOINLINE ::cloudeinapi::OperationRequest* Arena::CreateMaybeMessage< ::cloudeinapi::OperationRequest >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::cloudeinapi::OperationRequest >(arena);
+}
+template<> PROTOBUF_NOINLINE ::cloudeinapi::OperationResponse* Arena::CreateMaybeMessage< ::cloudeinapi::OperationResponse >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::cloudeinapi::OperationResponse >(arena);
+}
 template<> PROTOBUF_NOINLINE ::cloudeinapi::AllocateRequest* Arena::CreateMaybeMessage< ::cloudeinapi::AllocateRequest >(Arena* arena) {
   return Arena::CreateMessageInternal< ::cloudeinapi::AllocateRequest >(arena);
 }

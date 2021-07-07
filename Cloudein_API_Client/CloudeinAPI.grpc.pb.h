@@ -4,8 +4,8 @@
 // Original file comments:
 // ******************************************************************************
 // Created  				Jun 23, 2021
-// Modified				Jul 05, 2021
-// Version				1.0.0.1
+// Modified				Jul 07, 2021
+// Version				1.0.0.2
 //
 // FILE:					CloudeinAPI.proto
 // Author:				dhimm@mslm.kr
@@ -39,6 +39,264 @@
 #include <grpcpp/impl/codegen/sync_stream.h>
 
 namespace cloudeinapi {
+
+class CloudeinSessionOperation final {
+ public:
+  static constexpr char const* service_full_name() {
+    return "cloudeinapi.CloudeinSessionOperation";
+  }
+  class StubInterface {
+   public:
+    virtual ~StubInterface() {}
+    virtual ::grpc::Status DoOperation(::grpc::ClientContext* context, const ::cloudeinapi::OperationRequest& request, ::cloudeinapi::OperationResponse* response) = 0;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::cloudeinapi::OperationResponse>> AsyncDoOperation(::grpc::ClientContext* context, const ::cloudeinapi::OperationRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::cloudeinapi::OperationResponse>>(AsyncDoOperationRaw(context, request, cq));
+    }
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::cloudeinapi::OperationResponse>> PrepareAsyncDoOperation(::grpc::ClientContext* context, const ::cloudeinapi::OperationRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::cloudeinapi::OperationResponse>>(PrepareAsyncDoOperationRaw(context, request, cq));
+    }
+    class experimental_async_interface {
+     public:
+      virtual ~experimental_async_interface() {}
+      virtual void DoOperation(::grpc::ClientContext* context, const ::cloudeinapi::OperationRequest* request, ::cloudeinapi::OperationResponse* response, std::function<void(::grpc::Status)>) = 0;
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      virtual void DoOperation(::grpc::ClientContext* context, const ::cloudeinapi::OperationRequest* request, ::cloudeinapi::OperationResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      #else
+      virtual void DoOperation(::grpc::ClientContext* context, const ::cloudeinapi::OperationRequest* request, ::cloudeinapi::OperationResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
+      #endif
+    };
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+    typedef class experimental_async_interface async_interface;
+    #endif
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+    async_interface* async() { return experimental_async(); }
+    #endif
+    virtual class experimental_async_interface* experimental_async() { return nullptr; }
+  private:
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::cloudeinapi::OperationResponse>* AsyncDoOperationRaw(::grpc::ClientContext* context, const ::cloudeinapi::OperationRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::cloudeinapi::OperationResponse>* PrepareAsyncDoOperationRaw(::grpc::ClientContext* context, const ::cloudeinapi::OperationRequest& request, ::grpc::CompletionQueue* cq) = 0;
+  };
+  class Stub final : public StubInterface {
+   public:
+    Stub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options = ::grpc::StubOptions());
+    ::grpc::Status DoOperation(::grpc::ClientContext* context, const ::cloudeinapi::OperationRequest& request, ::cloudeinapi::OperationResponse* response) override;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::cloudeinapi::OperationResponse>> AsyncDoOperation(::grpc::ClientContext* context, const ::cloudeinapi::OperationRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::cloudeinapi::OperationResponse>>(AsyncDoOperationRaw(context, request, cq));
+    }
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::cloudeinapi::OperationResponse>> PrepareAsyncDoOperation(::grpc::ClientContext* context, const ::cloudeinapi::OperationRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::cloudeinapi::OperationResponse>>(PrepareAsyncDoOperationRaw(context, request, cq));
+    }
+    class experimental_async final :
+      public StubInterface::experimental_async_interface {
+     public:
+      void DoOperation(::grpc::ClientContext* context, const ::cloudeinapi::OperationRequest* request, ::cloudeinapi::OperationResponse* response, std::function<void(::grpc::Status)>) override;
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      void DoOperation(::grpc::ClientContext* context, const ::cloudeinapi::OperationRequest* request, ::cloudeinapi::OperationResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
+      #else
+      void DoOperation(::grpc::ClientContext* context, const ::cloudeinapi::OperationRequest* request, ::cloudeinapi::OperationResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
+      #endif
+     private:
+      friend class Stub;
+      explicit experimental_async(Stub* stub): stub_(stub) { }
+      Stub* stub() { return stub_; }
+      Stub* stub_;
+    };
+    class experimental_async_interface* experimental_async() override { return &async_stub_; }
+
+   private:
+    std::shared_ptr< ::grpc::ChannelInterface> channel_;
+    class experimental_async async_stub_{this};
+    ::grpc::ClientAsyncResponseReader< ::cloudeinapi::OperationResponse>* AsyncDoOperationRaw(::grpc::ClientContext* context, const ::cloudeinapi::OperationRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::cloudeinapi::OperationResponse>* PrepareAsyncDoOperationRaw(::grpc::ClientContext* context, const ::cloudeinapi::OperationRequest& request, ::grpc::CompletionQueue* cq) override;
+    const ::grpc::internal::RpcMethod rpcmethod_DoOperation_;
+  };
+  static std::unique_ptr<Stub> NewStub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options = ::grpc::StubOptions());
+
+  class Service : public ::grpc::Service {
+   public:
+    Service();
+    virtual ~Service();
+    virtual ::grpc::Status DoOperation(::grpc::ServerContext* context, const ::cloudeinapi::OperationRequest* request, ::cloudeinapi::OperationResponse* response);
+  };
+  template <class BaseClass>
+  class WithAsyncMethod_DoOperation : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithAsyncMethod_DoOperation() {
+      ::grpc::Service::MarkMethodAsync(0);
+    }
+    ~WithAsyncMethod_DoOperation() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status DoOperation(::grpc::ServerContext* /*context*/, const ::cloudeinapi::OperationRequest* /*request*/, ::cloudeinapi::OperationResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    void RequestDoOperation(::grpc::ServerContext* context, ::cloudeinapi::OperationRequest* request, ::grpc::ServerAsyncResponseWriter< ::cloudeinapi::OperationResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+      ::grpc::Service::RequestAsyncUnary(0, context, request, response, new_call_cq, notification_cq, tag);
+    }
+  };
+  typedef WithAsyncMethod_DoOperation<Service > AsyncService;
+  template <class BaseClass>
+  class ExperimentalWithCallbackMethod_DoOperation : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    ExperimentalWithCallbackMethod_DoOperation() {
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      ::grpc::Service::
+    #else
+      ::grpc::Service::experimental().
+    #endif
+        MarkMethodCallback(0,
+          new ::grpc::internal::CallbackUnaryHandler< ::cloudeinapi::OperationRequest, ::cloudeinapi::OperationResponse>(
+            [this](
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+                   ::grpc::CallbackServerContext*
+    #else
+                   ::grpc::experimental::CallbackServerContext*
+    #endif
+                     context, const ::cloudeinapi::OperationRequest* request, ::cloudeinapi::OperationResponse* response) { return this->DoOperation(context, request, response); }));}
+    void SetMessageAllocatorFor_DoOperation(
+        ::grpc::experimental::MessageAllocator< ::cloudeinapi::OperationRequest, ::cloudeinapi::OperationResponse>* allocator) {
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(0);
+    #else
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(0);
+    #endif
+      static_cast<::grpc::internal::CallbackUnaryHandler< ::cloudeinapi::OperationRequest, ::cloudeinapi::OperationResponse>*>(handler)
+              ->SetMessageAllocator(allocator);
+    }
+    ~ExperimentalWithCallbackMethod_DoOperation() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status DoOperation(::grpc::ServerContext* /*context*/, const ::cloudeinapi::OperationRequest* /*request*/, ::cloudeinapi::OperationResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+    virtual ::grpc::ServerUnaryReactor* DoOperation(
+      ::grpc::CallbackServerContext* /*context*/, const ::cloudeinapi::OperationRequest* /*request*/, ::cloudeinapi::OperationResponse* /*response*/)
+    #else
+    virtual ::grpc::experimental::ServerUnaryReactor* DoOperation(
+      ::grpc::experimental::CallbackServerContext* /*context*/, const ::cloudeinapi::OperationRequest* /*request*/, ::cloudeinapi::OperationResponse* /*response*/)
+    #endif
+      { return nullptr; }
+  };
+  #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+  typedef ExperimentalWithCallbackMethod_DoOperation<Service > CallbackService;
+  #endif
+
+  typedef ExperimentalWithCallbackMethod_DoOperation<Service > ExperimentalCallbackService;
+  template <class BaseClass>
+  class WithGenericMethod_DoOperation : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithGenericMethod_DoOperation() {
+      ::grpc::Service::MarkMethodGeneric(0);
+    }
+    ~WithGenericMethod_DoOperation() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status DoOperation(::grpc::ServerContext* /*context*/, const ::cloudeinapi::OperationRequest* /*request*/, ::cloudeinapi::OperationResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+  };
+  template <class BaseClass>
+  class WithRawMethod_DoOperation : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithRawMethod_DoOperation() {
+      ::grpc::Service::MarkMethodRaw(0);
+    }
+    ~WithRawMethod_DoOperation() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status DoOperation(::grpc::ServerContext* /*context*/, const ::cloudeinapi::OperationRequest* /*request*/, ::cloudeinapi::OperationResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    void RequestDoOperation(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+      ::grpc::Service::RequestAsyncUnary(0, context, request, response, new_call_cq, notification_cq, tag);
+    }
+  };
+  template <class BaseClass>
+  class ExperimentalWithRawCallbackMethod_DoOperation : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    ExperimentalWithRawCallbackMethod_DoOperation() {
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      ::grpc::Service::
+    #else
+      ::grpc::Service::experimental().
+    #endif
+        MarkMethodRawCallback(0,
+          new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
+            [this](
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+                   ::grpc::CallbackServerContext*
+    #else
+                   ::grpc::experimental::CallbackServerContext*
+    #endif
+                     context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->DoOperation(context, request, response); }));
+    }
+    ~ExperimentalWithRawCallbackMethod_DoOperation() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status DoOperation(::grpc::ServerContext* /*context*/, const ::cloudeinapi::OperationRequest* /*request*/, ::cloudeinapi::OperationResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+    virtual ::grpc::ServerUnaryReactor* DoOperation(
+      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
+    #else
+    virtual ::grpc::experimental::ServerUnaryReactor* DoOperation(
+      ::grpc::experimental::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
+    #endif
+      { return nullptr; }
+  };
+  template <class BaseClass>
+  class WithStreamedUnaryMethod_DoOperation : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithStreamedUnaryMethod_DoOperation() {
+      ::grpc::Service::MarkMethodStreamed(0,
+        new ::grpc::internal::StreamedUnaryHandler<
+          ::cloudeinapi::OperationRequest, ::cloudeinapi::OperationResponse>(
+            [this](::grpc::ServerContext* context,
+                   ::grpc::ServerUnaryStreamer<
+                     ::cloudeinapi::OperationRequest, ::cloudeinapi::OperationResponse>* streamer) {
+                       return this->StreamedDoOperation(context,
+                         streamer);
+                  }));
+    }
+    ~WithStreamedUnaryMethod_DoOperation() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable regular version of this method
+    ::grpc::Status DoOperation(::grpc::ServerContext* /*context*/, const ::cloudeinapi::OperationRequest* /*request*/, ::cloudeinapi::OperationResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    // replace default version of method with streamed unary
+    virtual ::grpc::Status StreamedDoOperation(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::cloudeinapi::OperationRequest,::cloudeinapi::OperationResponse>* server_unary_streamer) = 0;
+  };
+  typedef WithStreamedUnaryMethod_DoOperation<Service > StreamedUnaryService;
+  typedef Service SplitStreamedService;
+  typedef WithStreamedUnaryMethod_DoOperation<Service > StreamedService;
+};
 
 class CloudeinSession final {
  public:

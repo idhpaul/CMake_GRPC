@@ -30,6 +30,7 @@
 #include <google/protobuf/message.h>
 #include <google/protobuf/repeated_field.h>  // IWYU pragma: export
 #include <google/protobuf/extension_set.h>  // IWYU pragma: export
+#include <google/protobuf/generated_enum_reflection.h>
 #include <google/protobuf/unknown_field_set.h>
 // @@protoc_insertion_point(includes)
 #include <google/protobuf/port_def.inc>
@@ -46,7 +47,7 @@ struct TableStruct_CloudeinAPI_2eproto {
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::PROTOBUF_NAMESPACE_ID::internal::AuxiliaryParseTableField aux[]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
-  static const ::PROTOBUF_NAMESPACE_ID::internal::ParseTable schema[20]
+  static const ::PROTOBUF_NAMESPACE_ID::internal::ParseTable schema[22]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::PROTOBUF_NAMESPACE_ID::internal::FieldMetadata field_metadata[];
   static const ::PROTOBUF_NAMESPACE_ID::internal::SerializationTable serialization_table[];
@@ -85,6 +86,12 @@ extern DisconnectRequestDefaultTypeInternal _DisconnectRequest_default_instance_
 class DisconnectResponse;
 struct DisconnectResponseDefaultTypeInternal;
 extern DisconnectResponseDefaultTypeInternal _DisconnectResponse_default_instance_;
+class OperationRequest;
+struct OperationRequestDefaultTypeInternal;
+extern OperationRequestDefaultTypeInternal _OperationRequest_default_instance_;
+class OperationResponse;
+struct OperationResponseDefaultTypeInternal;
+extern OperationResponseDefaultTypeInternal _OperationResponse_default_instance_;
 class PrepareFailRequest;
 struct PrepareFailRequestDefaultTypeInternal;
 extern PrepareFailRequestDefaultTypeInternal _PrepareFailRequest_default_instance_;
@@ -127,6 +134,8 @@ template<> ::cloudeinapi::ConnectRequest* Arena::CreateMaybeMessage<::cloudeinap
 template<> ::cloudeinapi::ConnectResponse* Arena::CreateMaybeMessage<::cloudeinapi::ConnectResponse>(Arena*);
 template<> ::cloudeinapi::DisconnectRequest* Arena::CreateMaybeMessage<::cloudeinapi::DisconnectRequest>(Arena*);
 template<> ::cloudeinapi::DisconnectResponse* Arena::CreateMaybeMessage<::cloudeinapi::DisconnectResponse>(Arena*);
+template<> ::cloudeinapi::OperationRequest* Arena::CreateMaybeMessage<::cloudeinapi::OperationRequest>(Arena*);
+template<> ::cloudeinapi::OperationResponse* Arena::CreateMaybeMessage<::cloudeinapi::OperationResponse>(Arena*);
 template<> ::cloudeinapi::PrepareFailRequest* Arena::CreateMaybeMessage<::cloudeinapi::PrepareFailRequest>(Arena*);
 template<> ::cloudeinapi::PrepareFailResponse* Arena::CreateMaybeMessage<::cloudeinapi::PrepareFailResponse>(Arena*);
 template<> ::cloudeinapi::PrepareRequest* Arena::CreateMaybeMessage<::cloudeinapi::PrepareRequest>(Arena*);
@@ -140,7 +149,350 @@ template<> ::cloudeinapi::TimeoutResponse* Arena::CreateMaybeMessage<::cloudeina
 PROTOBUF_NAMESPACE_CLOSE
 namespace cloudeinapi {
 
+enum OperationType : int {
+  OS_OFF = 0,
+  OS_REBOOT = 1,
+  OS_LOGOFF = 2,
+  OperationType_INT_MIN_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::PROTOBUF_NAMESPACE_ID::int32>::min(),
+  OperationType_INT_MAX_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::PROTOBUF_NAMESPACE_ID::int32>::max()
+};
+bool OperationType_IsValid(int value);
+constexpr OperationType OperationType_MIN = OS_OFF;
+constexpr OperationType OperationType_MAX = OS_LOGOFF;
+constexpr int OperationType_ARRAYSIZE = OperationType_MAX + 1;
+
+const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* OperationType_descriptor();
+template<typename T>
+inline const std::string& OperationType_Name(T enum_t_value) {
+  static_assert(::std::is_same<T, OperationType>::value ||
+    ::std::is_integral<T>::value,
+    "Incorrect type passed to function OperationType_Name.");
+  return ::PROTOBUF_NAMESPACE_ID::internal::NameOfEnum(
+    OperationType_descriptor(), enum_t_value);
+}
+inline bool OperationType_Parse(
+    ::PROTOBUF_NAMESPACE_ID::ConstStringParam name, OperationType* value) {
+  return ::PROTOBUF_NAMESPACE_ID::internal::ParseNamedEnum<OperationType>(
+    OperationType_descriptor(), name, value);
+}
 // ===================================================================
+
+class OperationRequest PROTOBUF_FINAL :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:cloudeinapi.OperationRequest) */ {
+ public:
+  inline OperationRequest() : OperationRequest(nullptr) {}
+  virtual ~OperationRequest();
+  explicit constexpr OperationRequest(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  OperationRequest(const OperationRequest& from);
+  OperationRequest(OperationRequest&& from) noexcept
+    : OperationRequest() {
+    *this = ::std::move(from);
+  }
+
+  inline OperationRequest& operator=(const OperationRequest& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline OperationRequest& operator=(OperationRequest&& from) noexcept {
+    if (GetArena() == from.GetArena()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return GetMetadataStatic().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return GetMetadataStatic().reflection;
+  }
+  static const OperationRequest& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const OperationRequest* internal_default_instance() {
+    return reinterpret_cast<const OperationRequest*>(
+               &_OperationRequest_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    0;
+
+  friend void swap(OperationRequest& a, OperationRequest& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(OperationRequest* other) {
+    if (other == this) return;
+    if (GetArena() == other->GetArena()) {
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(OperationRequest* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetArena() == other->GetArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline OperationRequest* New() const final {
+    return CreateMaybeMessage<OperationRequest>(nullptr);
+  }
+
+  OperationRequest* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<OperationRequest>(arena);
+  }
+  void CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void CopyFrom(const OperationRequest& from);
+  void MergeFrom(const OperationRequest& from);
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  ::PROTOBUF_NAMESPACE_ID::uint8* _InternalSerialize(
+      ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  inline void SharedCtor();
+  inline void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(OperationRequest* other);
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "cloudeinapi.OperationRequest";
+  }
+  protected:
+  explicit OperationRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  private:
+  static void ArenaDtor(void* object);
+  inline void RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  public:
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+  private:
+  static ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadataStatic() {
+    return ::descriptor_table_CloudeinAPI_2eproto_metadata_getter(kIndexInFileMessages);
+  }
+
+  public:
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kRegionFieldNumber = 1,
+    kTxIpFieldNumber = 2,
+    kOperationTypeFieldNumber = 3,
+  };
+  // string region = 1;
+  void clear_region();
+  const std::string& region() const;
+  void set_region(const std::string& value);
+  void set_region(std::string&& value);
+  void set_region(const char* value);
+  void set_region(const char* value, size_t size);
+  std::string* mutable_region();
+  std::string* release_region();
+  void set_allocated_region(std::string* region);
+  private:
+  const std::string& _internal_region() const;
+  void _internal_set_region(const std::string& value);
+  std::string* _internal_mutable_region();
+  public:
+
+  // string tx_ip = 2;
+  void clear_tx_ip();
+  const std::string& tx_ip() const;
+  void set_tx_ip(const std::string& value);
+  void set_tx_ip(std::string&& value);
+  void set_tx_ip(const char* value);
+  void set_tx_ip(const char* value, size_t size);
+  std::string* mutable_tx_ip();
+  std::string* release_tx_ip();
+  void set_allocated_tx_ip(std::string* tx_ip);
+  private:
+  const std::string& _internal_tx_ip() const;
+  void _internal_set_tx_ip(const std::string& value);
+  std::string* _internal_mutable_tx_ip();
+  public:
+
+  // .cloudeinapi.OperationType operation_type = 3;
+  void clear_operation_type();
+  ::cloudeinapi::OperationType operation_type() const;
+  void set_operation_type(::cloudeinapi::OperationType value);
+  private:
+  ::cloudeinapi::OperationType _internal_operation_type() const;
+  void _internal_set_operation_type(::cloudeinapi::OperationType value);
+  public:
+
+  // @@protoc_insertion_point(class_scope:cloudeinapi.OperationRequest)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr region_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr tx_ip_;
+  int operation_type_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_CloudeinAPI_2eproto;
+};
+// -------------------------------------------------------------------
+
+class OperationResponse PROTOBUF_FINAL :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:cloudeinapi.OperationResponse) */ {
+ public:
+  inline OperationResponse() : OperationResponse(nullptr) {}
+  virtual ~OperationResponse();
+  explicit constexpr OperationResponse(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  OperationResponse(const OperationResponse& from);
+  OperationResponse(OperationResponse&& from) noexcept
+    : OperationResponse() {
+    *this = ::std::move(from);
+  }
+
+  inline OperationResponse& operator=(const OperationResponse& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline OperationResponse& operator=(OperationResponse&& from) noexcept {
+    if (GetArena() == from.GetArena()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return GetMetadataStatic().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return GetMetadataStatic().reflection;
+  }
+  static const OperationResponse& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const OperationResponse* internal_default_instance() {
+    return reinterpret_cast<const OperationResponse*>(
+               &_OperationResponse_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    1;
+
+  friend void swap(OperationResponse& a, OperationResponse& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(OperationResponse* other) {
+    if (other == this) return;
+    if (GetArena() == other->GetArena()) {
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(OperationResponse* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetArena() == other->GetArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline OperationResponse* New() const final {
+    return CreateMaybeMessage<OperationResponse>(nullptr);
+  }
+
+  OperationResponse* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<OperationResponse>(arena);
+  }
+  void CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void CopyFrom(const OperationResponse& from);
+  void MergeFrom(const OperationResponse& from);
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  ::PROTOBUF_NAMESPACE_ID::uint8* _InternalSerialize(
+      ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  inline void SharedCtor();
+  inline void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(OperationResponse* other);
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "cloudeinapi.OperationResponse";
+  }
+  protected:
+  explicit OperationResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  private:
+  static void ArenaDtor(void* object);
+  inline void RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  public:
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+  private:
+  static ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadataStatic() {
+    return ::descriptor_table_CloudeinAPI_2eproto_metadata_getter(kIndexInFileMessages);
+  }
+
+  public:
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kRegionFieldNumber = 1,
+  };
+  // string region = 1;
+  void clear_region();
+  const std::string& region() const;
+  void set_region(const std::string& value);
+  void set_region(std::string&& value);
+  void set_region(const char* value);
+  void set_region(const char* value, size_t size);
+  std::string* mutable_region();
+  std::string* release_region();
+  void set_allocated_region(std::string* region);
+  private:
+  const std::string& _internal_region() const;
+  void _internal_set_region(const std::string& value);
+  std::string* _internal_mutable_region();
+  public:
+
+  // @@protoc_insertion_point(class_scope:cloudeinapi.OperationResponse)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr region_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_CloudeinAPI_2eproto;
+};
+// -------------------------------------------------------------------
 
 class AllocateRequest PROTOBUF_FINAL :
     public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:cloudeinapi.AllocateRequest) */ {
@@ -185,7 +537,7 @@ class AllocateRequest PROTOBUF_FINAL :
                &_AllocateRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    0;
+    2;
 
   friend void swap(AllocateRequest& a, AllocateRequest& b) {
     a.Swap(&b);
@@ -347,7 +699,7 @@ class AllocateResponse PROTOBUF_FINAL :
                &_AllocateResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    1;
+    3;
 
   friend void swap(AllocateResponse& a, AllocateResponse& b) {
     a.Swap(&b);
@@ -546,7 +898,7 @@ class PrepareRequest PROTOBUF_FINAL :
                &_PrepareRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    2;
+    4;
 
   friend void swap(PrepareRequest& a, PrepareRequest& b) {
     a.Swap(&b);
@@ -708,7 +1060,7 @@ class PrepareResponse PROTOBUF_FINAL :
                &_PrepareResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    3;
+    5;
 
   friend void swap(PrepareResponse& a, PrepareResponse& b) {
     a.Swap(&b);
@@ -852,7 +1204,7 @@ class ConnectRequest PROTOBUF_FINAL :
                &_ConnectRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    4;
+    6;
 
   friend void swap(ConnectRequest& a, ConnectRequest& b) {
     a.Swap(&b);
@@ -1014,7 +1366,7 @@ class ConnectResponse PROTOBUF_FINAL :
                &_ConnectResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    5;
+    7;
 
   friend void swap(ConnectResponse& a, ConnectResponse& b) {
     a.Swap(&b);
@@ -1158,7 +1510,7 @@ class ReleaseRequest PROTOBUF_FINAL :
                &_ReleaseRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    6;
+    8;
 
   friend void swap(ReleaseRequest& a, ReleaseRequest& b) {
     a.Swap(&b);
@@ -1320,7 +1672,7 @@ class ReleaseResponse PROTOBUF_FINAL :
                &_ReleaseResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    7;
+    9;
 
   friend void swap(ReleaseResponse& a, ReleaseResponse& b) {
     a.Swap(&b);
@@ -1464,7 +1816,7 @@ class DisconnectRequest PROTOBUF_FINAL :
                &_DisconnectRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    8;
+    10;
 
   friend void swap(DisconnectRequest& a, DisconnectRequest& b) {
     a.Swap(&b);
@@ -1626,7 +1978,7 @@ class DisconnectResponse PROTOBUF_FINAL :
                &_DisconnectResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    9;
+    11;
 
   friend void swap(DisconnectResponse& a, DisconnectResponse& b) {
     a.Swap(&b);
@@ -1770,7 +2122,7 @@ class TimeoutRequest PROTOBUF_FINAL :
                &_TimeoutRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    10;
+    12;
 
   friend void swap(TimeoutRequest& a, TimeoutRequest& b) {
     a.Swap(&b);
@@ -1932,7 +2284,7 @@ class TimeoutResponse PROTOBUF_FINAL :
                &_TimeoutResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    11;
+    13;
 
   friend void swap(TimeoutResponse& a, TimeoutResponse& b) {
     a.Swap(&b);
@@ -2076,7 +2428,7 @@ class PrepareFailRequest PROTOBUF_FINAL :
                &_PrepareFailRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    12;
+    14;
 
   friend void swap(PrepareFailRequest& a, PrepareFailRequest& b) {
     a.Swap(&b);
@@ -2238,7 +2590,7 @@ class PrepareFailResponse PROTOBUF_FINAL :
                &_PrepareFailResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    13;
+    15;
 
   friend void swap(PrepareFailResponse& a, PrepareFailResponse& b) {
     a.Swap(&b);
@@ -2382,7 +2734,7 @@ class ConnectFailRequest PROTOBUF_FINAL :
                &_ConnectFailRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    14;
+    16;
 
   friend void swap(ConnectFailRequest& a, ConnectFailRequest& b) {
     a.Swap(&b);
@@ -2544,7 +2896,7 @@ class ConnectFailResponse PROTOBUF_FINAL :
                &_ConnectFailResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    15;
+    17;
 
   friend void swap(ConnectFailResponse& a, ConnectFailResponse& b) {
     a.Swap(&b);
@@ -2688,7 +3040,7 @@ class RebootFailRequest PROTOBUF_FINAL :
                &_RebootFailRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    16;
+    18;
 
   friend void swap(RebootFailRequest& a, RebootFailRequest& b) {
     a.Swap(&b);
@@ -2850,7 +3202,7 @@ class RebootFailResponse PROTOBUF_FINAL :
                &_RebootFailResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    17;
+    19;
 
   friend void swap(RebootFailResponse& a, RebootFailResponse& b) {
     a.Swap(&b);
@@ -2994,7 +3346,7 @@ class AuthFailRequest PROTOBUF_FINAL :
                &_AuthFailRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    18;
+    20;
 
   friend void swap(AuthFailRequest& a, AuthFailRequest& b) {
     a.Swap(&b);
@@ -3156,7 +3508,7 @@ class AuthFailResponse PROTOBUF_FINAL :
                &_AuthFailResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    19;
+    21;
 
   friend void swap(AuthFailResponse& a, AuthFailResponse& b) {
     a.Swap(&b);
@@ -3264,6 +3616,217 @@ class AuthFailResponse PROTOBUF_FINAL :
   #pragma GCC diagnostic push
   #pragma GCC diagnostic ignored "-Wstrict-aliasing"
 #endif  // __GNUC__
+// OperationRequest
+
+// string region = 1;
+inline void OperationRequest::clear_region() {
+  region_.ClearToEmpty();
+}
+inline const std::string& OperationRequest::region() const {
+  // @@protoc_insertion_point(field_get:cloudeinapi.OperationRequest.region)
+  return _internal_region();
+}
+inline void OperationRequest::set_region(const std::string& value) {
+  _internal_set_region(value);
+  // @@protoc_insertion_point(field_set:cloudeinapi.OperationRequest.region)
+}
+inline std::string* OperationRequest::mutable_region() {
+  // @@protoc_insertion_point(field_mutable:cloudeinapi.OperationRequest.region)
+  return _internal_mutable_region();
+}
+inline const std::string& OperationRequest::_internal_region() const {
+  return region_.Get();
+}
+inline void OperationRequest::_internal_set_region(const std::string& value) {
+  
+  region_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArena());
+}
+inline void OperationRequest::set_region(std::string&& value) {
+  
+  region_.Set(
+    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::move(value), GetArena());
+  // @@protoc_insertion_point(field_set_rvalue:cloudeinapi.OperationRequest.region)
+}
+inline void OperationRequest::set_region(const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+  
+  region_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(value), GetArena());
+  // @@protoc_insertion_point(field_set_char:cloudeinapi.OperationRequest.region)
+}
+inline void OperationRequest::set_region(const char* value,
+    size_t size) {
+  
+  region_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(
+      reinterpret_cast<const char*>(value), size), GetArena());
+  // @@protoc_insertion_point(field_set_pointer:cloudeinapi.OperationRequest.region)
+}
+inline std::string* OperationRequest::_internal_mutable_region() {
+  
+  return region_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArena());
+}
+inline std::string* OperationRequest::release_region() {
+  // @@protoc_insertion_point(field_release:cloudeinapi.OperationRequest.region)
+  return region_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+}
+inline void OperationRequest::set_allocated_region(std::string* region) {
+  if (region != nullptr) {
+    
+  } else {
+    
+  }
+  region_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), region,
+      GetArena());
+  // @@protoc_insertion_point(field_set_allocated:cloudeinapi.OperationRequest.region)
+}
+
+// string tx_ip = 2;
+inline void OperationRequest::clear_tx_ip() {
+  tx_ip_.ClearToEmpty();
+}
+inline const std::string& OperationRequest::tx_ip() const {
+  // @@protoc_insertion_point(field_get:cloudeinapi.OperationRequest.tx_ip)
+  return _internal_tx_ip();
+}
+inline void OperationRequest::set_tx_ip(const std::string& value) {
+  _internal_set_tx_ip(value);
+  // @@protoc_insertion_point(field_set:cloudeinapi.OperationRequest.tx_ip)
+}
+inline std::string* OperationRequest::mutable_tx_ip() {
+  // @@protoc_insertion_point(field_mutable:cloudeinapi.OperationRequest.tx_ip)
+  return _internal_mutable_tx_ip();
+}
+inline const std::string& OperationRequest::_internal_tx_ip() const {
+  return tx_ip_.Get();
+}
+inline void OperationRequest::_internal_set_tx_ip(const std::string& value) {
+  
+  tx_ip_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArena());
+}
+inline void OperationRequest::set_tx_ip(std::string&& value) {
+  
+  tx_ip_.Set(
+    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::move(value), GetArena());
+  // @@protoc_insertion_point(field_set_rvalue:cloudeinapi.OperationRequest.tx_ip)
+}
+inline void OperationRequest::set_tx_ip(const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+  
+  tx_ip_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(value), GetArena());
+  // @@protoc_insertion_point(field_set_char:cloudeinapi.OperationRequest.tx_ip)
+}
+inline void OperationRequest::set_tx_ip(const char* value,
+    size_t size) {
+  
+  tx_ip_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(
+      reinterpret_cast<const char*>(value), size), GetArena());
+  // @@protoc_insertion_point(field_set_pointer:cloudeinapi.OperationRequest.tx_ip)
+}
+inline std::string* OperationRequest::_internal_mutable_tx_ip() {
+  
+  return tx_ip_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArena());
+}
+inline std::string* OperationRequest::release_tx_ip() {
+  // @@protoc_insertion_point(field_release:cloudeinapi.OperationRequest.tx_ip)
+  return tx_ip_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+}
+inline void OperationRequest::set_allocated_tx_ip(std::string* tx_ip) {
+  if (tx_ip != nullptr) {
+    
+  } else {
+    
+  }
+  tx_ip_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), tx_ip,
+      GetArena());
+  // @@protoc_insertion_point(field_set_allocated:cloudeinapi.OperationRequest.tx_ip)
+}
+
+// .cloudeinapi.OperationType operation_type = 3;
+inline void OperationRequest::clear_operation_type() {
+  operation_type_ = 0;
+}
+inline ::cloudeinapi::OperationType OperationRequest::_internal_operation_type() const {
+  return static_cast< ::cloudeinapi::OperationType >(operation_type_);
+}
+inline ::cloudeinapi::OperationType OperationRequest::operation_type() const {
+  // @@protoc_insertion_point(field_get:cloudeinapi.OperationRequest.operation_type)
+  return _internal_operation_type();
+}
+inline void OperationRequest::_internal_set_operation_type(::cloudeinapi::OperationType value) {
+  
+  operation_type_ = value;
+}
+inline void OperationRequest::set_operation_type(::cloudeinapi::OperationType value) {
+  _internal_set_operation_type(value);
+  // @@protoc_insertion_point(field_set:cloudeinapi.OperationRequest.operation_type)
+}
+
+// -------------------------------------------------------------------
+
+// OperationResponse
+
+// string region = 1;
+inline void OperationResponse::clear_region() {
+  region_.ClearToEmpty();
+}
+inline const std::string& OperationResponse::region() const {
+  // @@protoc_insertion_point(field_get:cloudeinapi.OperationResponse.region)
+  return _internal_region();
+}
+inline void OperationResponse::set_region(const std::string& value) {
+  _internal_set_region(value);
+  // @@protoc_insertion_point(field_set:cloudeinapi.OperationResponse.region)
+}
+inline std::string* OperationResponse::mutable_region() {
+  // @@protoc_insertion_point(field_mutable:cloudeinapi.OperationResponse.region)
+  return _internal_mutable_region();
+}
+inline const std::string& OperationResponse::_internal_region() const {
+  return region_.Get();
+}
+inline void OperationResponse::_internal_set_region(const std::string& value) {
+  
+  region_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArena());
+}
+inline void OperationResponse::set_region(std::string&& value) {
+  
+  region_.Set(
+    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::move(value), GetArena());
+  // @@protoc_insertion_point(field_set_rvalue:cloudeinapi.OperationResponse.region)
+}
+inline void OperationResponse::set_region(const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+  
+  region_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(value), GetArena());
+  // @@protoc_insertion_point(field_set_char:cloudeinapi.OperationResponse.region)
+}
+inline void OperationResponse::set_region(const char* value,
+    size_t size) {
+  
+  region_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(
+      reinterpret_cast<const char*>(value), size), GetArena());
+  // @@protoc_insertion_point(field_set_pointer:cloudeinapi.OperationResponse.region)
+}
+inline std::string* OperationResponse::_internal_mutable_region() {
+  
+  return region_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArena());
+}
+inline std::string* OperationResponse::release_region() {
+  // @@protoc_insertion_point(field_release:cloudeinapi.OperationResponse.region)
+  return region_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+}
+inline void OperationResponse::set_allocated_region(std::string* region) {
+  if (region != nullptr) {
+    
+  } else {
+    
+  }
+  region_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), region,
+      GetArena());
+  // @@protoc_insertion_point(field_set_allocated:cloudeinapi.OperationResponse.region)
+}
+
+// -------------------------------------------------------------------
+
 // AllocateRequest
 
 // string region = 1;
@@ -5313,10 +5876,24 @@ inline void AuthFailResponse::set_allocated_region(std::string* region) {
 
 // -------------------------------------------------------------------
 
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
 
 // @@protoc_insertion_point(namespace_scope)
 
 }  // namespace cloudeinapi
+
+PROTOBUF_NAMESPACE_OPEN
+
+template <> struct is_proto_enum< ::cloudeinapi::OperationType> : ::std::true_type {};
+template <>
+inline const EnumDescriptor* GetEnumDescriptor< ::cloudeinapi::OperationType>() {
+  return ::cloudeinapi::OperationType_descriptor();
+}
+
+PROTOBUF_NAMESPACE_CLOSE
 
 // @@protoc_insertion_point(global_scope)
 

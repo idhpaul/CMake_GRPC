@@ -1,5 +1,5 @@
 /*****************************************************************//**
- * \file   CloudeinSessionCommon.h
+ * \file   Cloudein_Session_Common.h
  * \brief  Cloudein Session Common eum and struct
  * 
  * \author idh

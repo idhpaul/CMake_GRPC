@@ -1,13 +1,13 @@
 /*****************************************************************//**
- * \file   CloudeinSessionClient.h
+ * \file   Cloudein_Session_gRPC_Client.h
  * \brief  Cloudein Session gRPC Client(async) with state pattern
  * 
  * \author idh
  * \date   June 2021
  *********************************************************************/
 
-#ifndef CLOUDEIN_SESSION_CLIENT_H
-#define CLOUDEIN_SESSION_CLIENT_H
+#ifndef CLOUDEIN_SESSION_GRPC_CLIENT_H
+#define CLOUDEIN_SESSION_GRPC_CLIENT_H
 
 #include "Cloudein_Session_Common.h"
 

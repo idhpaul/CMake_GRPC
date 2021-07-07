@@ -14,6 +14,7 @@
 
 #include "Cloudein_Session_Common.h"
 #include "Cloudein_Session_gRPC_Client.h"
+#include "Cloudein_Session_gRPC_Server_Operation.h"
 
 class CloudeinSessionContext;
 
@@ -86,7 +87,8 @@ public:
 	CloudeinSessionContext(SessionInfo info);
 	~CloudeinSessionContext();
 
-	void setGRPC(const std::string ip, const std::string port);
+	void set_TS_gRPC(const std::string ip, const std::string port);
+	void set_ST_gRPC(const std::string ip, const std::string port);
 	void unsetGRPC();
 
 	void setState(std::shared_ptr<CloudeinState> state);
@@ -109,8 +111,10 @@ private:
 	std::shared_ptr<CloudeinState> state_;
 
 	std::shared_ptr<CloudeinSessionClient>grpcClient_;
+	std::shared_ptr<CloudeinSessionOperationServer>grpcServer_;
 
-	std::thread thread_grpc_resp_cq;
+	std::thread t_TS_gRPC_process;
+	std::thread t_ST_gRPC_process;
 };
 
 #endif

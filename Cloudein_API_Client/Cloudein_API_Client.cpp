@@ -21,7 +21,8 @@ int main()
 	auto state_rebootfail(std::make_shared<StateRebootFail>());
 	auto state_authfail(std::make_shared<StateAuthFail>());
 
-	context->setGRPC("192.168.0.102", "50051");
+	context->set_TS_gRPC("192.168.0.202", "50051");
+	context->set_ST_gRPC("0.0.0.0", "52550");
 
 	bool run = true;
 	int num;

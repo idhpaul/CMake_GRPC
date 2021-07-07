@@ -4,10 +4,6 @@
 cmake_minimum_required (VERSION 3.8)
 message(STATUS "CmakeList at ${CMAKE_CURRENT_SOURCE_DIR}")
 
-add_custom_target(graphviz ALL
-                  "${CMAKE_COMMAND}" "--graphviz=foo" .
-                  WORKING_DIRECTORY "${CMAKE_BINARY_DIR}")
-
 # Add include directories & libraries
 if (WIN32)   
 
@@ -47,6 +43,7 @@ add_executable(Cloudein_API_Client
     "Cloudein_API_Client.cpp" "Cloudein_API_Client.h" 
     "Cloudein_Session_Common.h" "Cloudein_Session.cpp" "Cloudein_Session.h" 
     "Cloudein_Session_gRPC_Client.h" "Cloudein_Session_gRPC_Client.cpp"
+    "Cloudein_Session_gRPC_Server_Operation.h" "Cloudein_Session_gRPC_Server_Operation.cpp"
     "CloudeinAPI.grpc.pb.cc" "CloudeinAPI.grpc.pb.h" "CloudeinAPI.pb.cc" "CloudeinAPI.pb.h"
     )
 

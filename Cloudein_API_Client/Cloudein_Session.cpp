@@ -23,27 +23,44 @@ CloudeinSessionContext::~CloudeinSessionContext()
     }
 }
 
-void CloudeinSessionContext::setGRPC(const std::string ip, const std::string port)
+void CloudeinSessionContext::set_TS_gRPC(const std::string ip, const std::string port)
 {
-    std::cout << "[front]Call SetGPC" << std::endl;
+    std::cout << "[front]Call Set TS_gRPC" << std::endl;
     std::string connectinfo = ip + ":" + port;
 
     grpcClient_ = std::make_shared<CloudeinSessionClient>(grpc::CreateChannel(connectinfo, grpc::InsecureChannelCredentials()));
 
-    thread_grpc_resp_cq = std::thread(&CloudeinSessionClient::StartAsyncCompleteRpc, grpcClient_.get());
-    std::cout << "[end]Call SetGPC" << std::endl;
+    t_TS_gRPC_process = std::thread(&CloudeinSessionClient::StartAsyncCompleteRpc, grpcClient_.get());
+    std::cout << "[end]Call Set TS_gRPC" << std::endl;
 
+}
+
+void CloudeinSessionContext::set_ST_gRPC(const std::string ip, const std::string port)
+{
+    std::cout << "[front]Call Set ST_gRPC" << std::endl;
+
+    grpcServer_ = std::make_shared<CloudeinSessionOperationServer>(ip, port);
+
+    t_ST_gRPC_process = std::thread(&CloudeinSessionOperationServer::StartSyncSingleRPC, grpcServer_.get());
+    std::cout << "[end]Call Set ST_gRPC" << std::endl;
 }
 
 void CloudeinSessionContext::unsetGRPC()
 {
     std::cout << "[front]Call unsetGRPC" << std::endl;
 
+    grpcServer_->StopSyncSingleRPC();
+
+    if (t_ST_gRPC_process.joinable())
+    {
+        t_ST_gRPC_process.join();
+    }
+
     grpcClient_->StopAsyncCompleteRpc();
 
-    if (thread_grpc_resp_cq.joinable())
+    if (t_TS_gRPC_process.joinable())
     {
-        thread_grpc_resp_cq.join();
+        t_TS_gRPC_process.join();
     }
 
     std::cout << "[end]Call unsetGRPC" << std::endl;

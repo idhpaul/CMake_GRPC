@@ -1,7 +1,7 @@
 /*******************************************************************************
 * Created  				Jun 23, 2021
-* Modified				Jul 05, 2021
-* Version				1.0.0.1
+* Modified				Jul 07, 2021
+* Version				1.0.0.2
 
 * FILE:					CloudeinAPI.proto
 * Author:				dhimm@mslm.kr
@@ -12,6 +12,26 @@
 syntax = "proto3";
 
 package cloudeinapi;
+
+service CloudeinSessionOperation {
+  rpc DoOperation (OperationRequest) returns (OperationResponse) {}
+}
+
+enum OperationType {
+    OS_OFF = 0;
+    OS_REBOOT = 1;
+    OS_LOGOFF = 2;
+  }
+
+message OperationRequest {
+  string region = 1;
+  string tx_ip = 2;
+  OperationType operation_type = 3;
+  
+}
+message OperationResponse {
+  string region = 1;
+}
 
 service CloudeinSession {
   rpc DoAllocateAPI (AllocateRequest) returns (AllocateResponse) {}

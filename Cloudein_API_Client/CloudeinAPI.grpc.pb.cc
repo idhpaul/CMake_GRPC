@@ -21,6 +21,67 @@
 #include <grpcpp/impl/codegen/sync_stream.h>
 namespace cloudeinapi {
 
+static const char* CloudeinSessionOperation_method_names[] = {
+  "/cloudeinapi.CloudeinSessionOperation/DoOperation",
+};
+
+std::unique_ptr< CloudeinSessionOperation::Stub> CloudeinSessionOperation::NewStub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options) {
+  (void)options;
+  std::unique_ptr< CloudeinSessionOperation::Stub> stub(new CloudeinSessionOperation::Stub(channel, options));
+  return stub;
+}
+
+CloudeinSessionOperation::Stub::Stub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options)
+  : channel_(channel), rpcmethod_DoOperation_(CloudeinSessionOperation_method_names[0], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  {}
+
+::grpc::Status CloudeinSessionOperation::Stub::DoOperation(::grpc::ClientContext* context, const ::cloudeinapi::OperationRequest& request, ::cloudeinapi::OperationResponse* response) {
+  return ::grpc::internal::BlockingUnaryCall< ::cloudeinapi::OperationRequest, ::cloudeinapi::OperationResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_DoOperation_, context, request, response);
+}
+
+void CloudeinSessionOperation::Stub::experimental_async::DoOperation(::grpc::ClientContext* context, const ::cloudeinapi::OperationRequest* request, ::cloudeinapi::OperationResponse* response, std::function<void(::grpc::Status)> f) {
+  ::grpc::internal::CallbackUnaryCall< ::cloudeinapi::OperationRequest, ::cloudeinapi::OperationResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_DoOperation_, context, request, response, std::move(f));
+}
+
+void CloudeinSessionOperation::Stub::experimental_async::DoOperation(::grpc::ClientContext* context, const ::cloudeinapi::OperationRequest* request, ::cloudeinapi::OperationResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+  ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_DoOperation_, context, request, response, reactor);
+}
+
+::grpc::ClientAsyncResponseReader< ::cloudeinapi::OperationResponse>* CloudeinSessionOperation::Stub::PrepareAsyncDoOperationRaw(::grpc::ClientContext* context, const ::cloudeinapi::OperationRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::cloudeinapi::OperationResponse, ::cloudeinapi::OperationRequest, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_DoOperation_, context, request);
+}
+
+::grpc::ClientAsyncResponseReader< ::cloudeinapi::OperationResponse>* CloudeinSessionOperation::Stub::AsyncDoOperationRaw(::grpc::ClientContext* context, const ::cloudeinapi::OperationRequest& request, ::grpc::CompletionQueue* cq) {
+  auto* result =
+    this->PrepareAsyncDoOperationRaw(context, request, cq);
+  result->StartCall();
+  return result;
+}
+
+CloudeinSessionOperation::Service::Service() {
+  AddMethod(new ::grpc::internal::RpcServiceMethod(
+      CloudeinSessionOperation_method_names[0],
+      ::grpc::internal::RpcMethod::NORMAL_RPC,
+      new ::grpc::internal::RpcMethodHandler< CloudeinSessionOperation::Service, ::cloudeinapi::OperationRequest, ::cloudeinapi::OperationResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
+          [](CloudeinSessionOperation::Service* service,
+             ::grpc::ServerContext* ctx,
+             const ::cloudeinapi::OperationRequest* req,
+             ::cloudeinapi::OperationResponse* resp) {
+               return service->DoOperation(ctx, req, resp);
+             }, this)));
+}
+
+CloudeinSessionOperation::Service::~Service() {
+}
+
+::grpc::Status CloudeinSessionOperation::Service::DoOperation(::grpc::ServerContext* context, const ::cloudeinapi::OperationRequest* request, ::cloudeinapi::OperationResponse* response) {
+  (void) context;
+  (void) request;
+  (void) response;
+  return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+}
+
+
 static const char* CloudeinSession_method_names[] = {
   "/cloudeinapi.CloudeinSession/DoAllocateAPI",
   "/cloudeinapi.CloudeinSession/DoPrepareAPI",
